@@ -15,7 +15,7 @@ public class Logik{
 	}
 
 	private boolean isCompileable(){
-		if( ){//wenn text comiliert wird true zurück gegeben
+		if( ){//wenn text compiliert wird true zurück gegeben
 			return true;
 		}
 		return false;
