@@ -13,6 +13,10 @@ public class Logik{
 	public void save(){
 		//text in file schreiben
 	}
+	
+	public void loadKatalog(){
+		//Einen Katalog laden
+	}
 
 	private boolean isCompileable(){
 		if( ){//wenn text compiliert wird true zurück gegeben
