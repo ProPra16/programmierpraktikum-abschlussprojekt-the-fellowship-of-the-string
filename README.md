@@ -1,1 +1,1 @@
-Die Gefolgschaft des String
+Die Gefährten des String
