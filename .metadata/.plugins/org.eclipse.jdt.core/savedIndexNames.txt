@@ -1,0 +1,2 @@
+INDEX VERSION 1.127+C:\Users\Sabine\Documents\GitHub\programmierpraktikum-abschlussprojekt-the-fellowship-of-the-string\.metadata\.plugins\org.eclipse.jdt.core
+3440016486.index
