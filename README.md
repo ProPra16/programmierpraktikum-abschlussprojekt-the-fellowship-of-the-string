@@ -1,1 +1,0 @@
-Die Gefährten des String
