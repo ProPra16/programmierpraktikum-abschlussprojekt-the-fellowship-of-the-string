@@ -6,9 +6,12 @@ apply plugin: 'maven'
 group 'de.hhu.stups'
 version '1.0.2-SNAPSHOT'
 
+
 repositories { mavenCentral() }
 
-dependencies { compile 'junit:junit:4.12' }
+dependencies { compile 'junit:junit:4.12' 
+			   classpath 'org.ajoberstar:gradle-git:0.2.3' 	
+			}
 
 if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')) {
 
@@ -26,6 +29,16 @@ if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')
 	task sourcesJar(type: Jar) {
 		classifier = 'sources'
 		from sourceSets.main.allSource
+	}
+	//Quelle:	https://github.com/ajoberstar/gradle-git
+	import org.ajoberstar.gradle.git.tasks.*
+
+	task cloneGitRepo(type: GitClone) {
+        def destination = file("destination_folder")
+        uri = "https://github.com/ProPra16/programmierpraktikum-abschlussprojekt-the-fellowship-of-the-string/search?utf8=%E2%9C%93&q=uri"
+        destinationPath = destination
+        bare = false
+        enabled = !destination.exists() //to clone only once
 	}
 
 	artifacts { archives javadocJar, sourcesJar }
