@@ -4,12 +4,12 @@ import static org.junit.Assert.*;
 import vk.core.api;
 import vk.core.internal;
 
-public class Excercise {
+public class Exercise {
 	
 	private boolean status;
 	private CompilationUnit input;
 	
-	public Excercise(){
+	public Exercise(){
 		
 	}
 	
