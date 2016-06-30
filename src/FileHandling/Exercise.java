@@ -1,8 +1,10 @@
 package FileHandling;
 
-import static org.junit.Assert.*;
-import vk.core.api;
-import vk.core.internal;
+import vk.core.api.CompilationUnit;
+import vk.core.api.CompilerFactory;
+import vk.core.api.CompilerResult;
+import vk.core.api.JavaStringCompiler;
+import vk.core.api.TestHelpers;
 
 public class Exercise {
 	
@@ -23,11 +25,11 @@ public class Exercise {
 	}
 	
 	public boolean testingInput(){
-		JavaStingCompiler compiler = CompilerFactory.getCompiler(input);
-		input.compileAndRunTests();
+		JavaStringCompiler compiler = CompilerFactory.getCompiler(input);
+		compiler.compileAndRunTests();
 		CompilerResult result = compiler.getCompilerResult();
 		
-		if(result.hasCompileErrors == true) status = true;		//keine compilerfehler
+		if(result.hasCompileErrors() == true) status = true;		//keine compilerfehler
 		
 		else{
 			TestHelpers.getErrorMessages(compiler, result);
