@@ -17,29 +17,23 @@ public class Excercise {
 		
 		input = new CompilationUnit(className, classContent, true );
 		
-		status = testingInput_NoCompileErrors();
-//		status = testingInput_CompileErrors();
-		
+		status = testingInput();
 		
 		return status;
 	}
 	
-	public boolean testingInput_NoCompileErrors(){
+	public boolean testingInput(){
 		JavaStingCompiler compiler = CompilerFactory.getCompiler(input);
 		input.compileAndRunTests();
 		CompilerResult result = compiler.getCompilerResult();
-		assertFalse(TestHelpers.getErrorMessages(compiler, result), result.hasCompileErrors());
 		
-		return status = true;
+		if(result.hasCompileErrors == true) status = true;		//keine compilerfehler
+		
+		else{
+			TestHelpers.getErrorMessages(compiler, result);
+			status = false;
+		}
+		
+		return status;
 	}
-	
-/*	public boolean testingInput_CompileErrors() {
-		JavaStringCompiler compiler = CompilerFactory.getCompiler(input);
-		compiler.compileAndRunTests();
-		CompilerResult result = compiler.getCompilerResult();
-		assertTrue(result.hasCompileErrors());
-		
-		return status = false;
-	}*/
-
-}
+	}
