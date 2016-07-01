@@ -1,4 +1,4 @@
-package FileHandling;
+package src.FileHandling;
 
 public class Store {
 

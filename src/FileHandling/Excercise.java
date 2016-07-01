@@ -1,4 +1,4 @@
-package FileHandling;
+package src.FileHandling;
 
 import static org.junit.Assert.*;
 import vk.core.api;
