@@ -7,17 +7,15 @@ public class Exercise {
 	private TestList tests;
 	private boolean baby,timer;
 	
-	private boolean compilable;
 	
 	public Exercise(){
 		
 	}
 	
-	public boolean compilable(Code object){
+	public boolean codeCompiles(){
 		
-		compilable = object.testingCompilationUnit();
-		
-		return compilable;
-	}
+		return this.klassen.compilable();
 
 	}
+
+}
