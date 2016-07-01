@@ -10,20 +10,20 @@ public class Code {
 
 	private String code;
 	private String className;
-	private CompilationUnit input;
+	private CompilationUnit compilationUnit;
 	private boolean compilable;
 	
 	
 	public Code(String className,String code){
 		this.code=code;
 		this.className=className;
-		this.input = new CompilationUnit(className, code, true );
-		this.compilable = testingInput();
+		this.compilationUnit = new CompilationUnit(className, code, true );
+		this.compilable = testingCompilationUnit();
 
 	}
 	
-	public boolean testingInput(){
-		JavaStringCompiler compiler = CompilerFactory.getCompiler(input);
+	public boolean testingCompilationUnit(){
+		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnit);
 		compiler.compileAndRunTests();
 		CompilerResult result = compiler.getCompilerResult();
 		

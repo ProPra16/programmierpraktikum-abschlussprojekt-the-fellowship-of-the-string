@@ -1,11 +1,5 @@
 package FileHandling;
 
-import vk.core.api.CompilationUnit;
-import vk.core.api.CompilerFactory;
-import vk.core.api.CompilerResult;
-import vk.core.api.JavaStringCompiler;
-import vk.core.api.TestHelpers;
-
 public class Exercise {
 	
 	private String description;
@@ -13,34 +7,17 @@ public class Exercise {
 	private TestList tests;
 	private boolean baby,timer;
 	
-	private boolean status;
-	 input;
+	private boolean compilable;
 	
 	public Exercise(){
 		
 	}
 	
-	public boolean compilable(String className, String classContent){
-	// muss ein bisschen anders	
-		CompilationUnit input = new CompilationUnit(className, classContent, true );
+	public boolean compilable(Code object){
 		
-		status = testingInput();
+		compilable = object.testingCompilationUnit();
 		
-		return status;
+		return compilable;
 	}
-	
-	public boolean testingInput(){//ebenfalls
-		JavaStringCompiler compiler = CompilerFactory.getCompiler(input);
-		compiler.compileAndRunTests();
-		CompilerResult result = compiler.getCompilerResult();
-		
-		if(result.hasCompileErrors() == true) status = true;		//keine compilerfehler
-		
-		else{
-			TestHelpers.getErrorMessages(compiler, result);
-			status = false;
-		}
-		
-		return status;
-	}
+
 	}
