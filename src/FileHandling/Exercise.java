@@ -8,6 +8,11 @@ import vk.core.api.TestHelpers;
 
 public class Exercise {
 	
+	private String description;
+	private codeList klassen;
+	private testList tests;
+	private boolean baby,timer;
+	
 	private boolean status;
 	private CompilationUnit input;
 	
@@ -16,7 +21,7 @@ public class Exercise {
 	}
 	
 	public boolean compilable(String className, String classContent){
-		
+	// muss ein bisschen anders	
 		input = new CompilationUnit(className, classContent, true );
 		
 		status = testingInput();
@@ -24,7 +29,7 @@ public class Exercise {
 		return status;
 	}
 	
-	public boolean testingInput(){
+	public boolean testingInput(){//ebenfalls
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(input);
 		compiler.compileAndRunTests();
 		CompilerResult result = compiler.getCompilerResult();
