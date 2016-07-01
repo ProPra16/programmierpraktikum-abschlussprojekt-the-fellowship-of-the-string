@@ -2,6 +2,6 @@ package FileHandling;
 
 import java.util.ArrayList;
 
-public class testList extends ArrayList<test>{
-
+public class CodeList extends ArrayList<Code>{
+	
 }
