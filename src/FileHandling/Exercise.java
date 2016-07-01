@@ -14,7 +14,7 @@ public class Exercise {
 	private boolean baby,timer;
 	
 	private boolean status;
-	private CompilationUnit input;
+	 input;
 	
 	public Exercise(){
 		
@@ -22,7 +22,7 @@ public class Exercise {
 	
 	public boolean compilable(String className, String classContent){
 	// muss ein bisschen anders	
-		input = new CompilationUnit(className, classContent, true );
+		CompilationUnit input = new CompilationUnit(className, classContent, true );
 		
 		status = testingInput();
 		
