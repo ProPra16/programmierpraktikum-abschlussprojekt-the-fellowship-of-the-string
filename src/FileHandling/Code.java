@@ -1,8 +1,9 @@
 package FileHandling;
 
-public class code {
+public class Code {
 	private String code;
 	private String className;
+	
 	
 
 }

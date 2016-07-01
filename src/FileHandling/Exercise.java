@@ -9,8 +9,8 @@ import vk.core.api.TestHelpers;
 public class Exercise {
 	
 	private String description;
-	private codeList klassen;
-	private testList tests;
+	private CodeList klassen;
+	private TestList tests;
 	private boolean baby,timer;
 	
 	private boolean status;

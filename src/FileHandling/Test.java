@@ -1,5 +1,5 @@
 package FileHandling;
 
-public class test {
+public class Test {
 	private String testCode;
 }
