@@ -6,3 +6,5 @@
 
 /bin/
 src/vk
+bin/application/logik/Logik.class
+*.class
