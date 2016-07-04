@@ -1,5 +1,7 @@
 package application.logik;
 
+import FileHandling.Exercise;
+
 public class Logik implements LogikZuGui{
 
 	@Override
