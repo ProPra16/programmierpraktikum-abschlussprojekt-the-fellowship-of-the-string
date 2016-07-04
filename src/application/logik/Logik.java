@@ -17,14 +17,14 @@ public class Logik implements LogikZuGui{
 	}
 
 	@Override
-	public void nextStep() { //wenn der code kompiliert wird zum nächsten schritt gewechselt
+	public void nextStep() { //wenn der code kompiliert, wird zum nächsten schritt gewechselt
 		if(){
 			
 		}
 		
 	}
 	
-	private void countdown(long minuten){ //wenn aktiviert wird 
+	private void countdown(long minuten){ //wenn aktiviert, wird 
 		long t1 = 0;
 		long t2 = System.nanoTime();
 		long deltaT = t2 - t1;
