@@ -29,4 +29,15 @@ public class Logik implements LogikZuGui{
 		return false;
 	}
 	
+	private void countdown(long minuten){
+		long t1 = 0;
+		long t2 = System.nanoTime();
+		long deltaT = t2 - t1;
+		while(minuten-deltaT != 0){
+			
+		}
+	}
+	
+	
+	
 }
