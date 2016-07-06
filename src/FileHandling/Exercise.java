@@ -25,5 +25,10 @@ public class Exercise {
 		return this.klassen.compilable();
 
 	}
+	
+	public boolean testsRunning(){
+		
+		return this.tests.allPassing();
+	}
 
 }

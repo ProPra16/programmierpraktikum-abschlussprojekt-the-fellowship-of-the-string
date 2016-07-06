@@ -5,21 +5,21 @@ import java.util.ArrayList;
 public class TestList extends ArrayList<Test>{
 
 	private static final long serialVersionUID = 1L;
-	private boolean compilable;
+	private boolean running;
 
 	
 	public TestList(){
 		super();
 	}
 	
-	public boolean compilable(){
+	public boolean allPassing(){
 	
 		Test[] codeArray =  (Test[]) this.toArray();
 		
 		for(int i = 0; i< codeArray.length; i++){
-			//muss noch
+			running = codeArray[i].oneTestFailing();
 			
-			if(compilable == false) return false;
+				if(running == false) return false;
 		}
 		return true;
 	}
