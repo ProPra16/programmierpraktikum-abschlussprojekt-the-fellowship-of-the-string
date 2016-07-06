@@ -25,7 +25,7 @@ public class Logik implements LogikZuGui{
 	}
 	
 	private boolean isCompileable(){
-		if(){
+		if(true){
 			return true;
 		}
 		return false;

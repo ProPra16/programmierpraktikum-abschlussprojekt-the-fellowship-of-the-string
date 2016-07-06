@@ -1,9 +1,13 @@
 package FileHandling;
 
+
 import vk.core.api.CompilationUnit;
 import vk.core.api.CompilerFactory;
+
 import vk.core.api.CompilerResult;
+
 import vk.core.api.JavaStringCompiler;
+
 import vk.core.api.TestHelpers;
 
 public class Code {
@@ -24,7 +28,7 @@ public class Code {
 	
 	public boolean testingCompilationUnit(){
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnit);
-		//compiler.compileAndRunTests();
+		compiler.compileAndRunTests();
 		CompilerResult result = compiler.getCompilerResult();
 		
 		if(result.hasCompileErrors() == true) compilable = true;	
