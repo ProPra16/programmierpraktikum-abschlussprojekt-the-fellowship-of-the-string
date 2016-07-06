@@ -1,7 +1,7 @@
-/FileHandling/
-/application/
-/tests/
-/bin/
+FileHandling/
+application/
+tests/
+bin/
 src/vk
 bin/application/logik/Logik.class
 *.class
