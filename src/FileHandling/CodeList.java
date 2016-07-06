@@ -25,6 +25,5 @@ public class CodeList extends ArrayList<Code>{
 			if(compilable == false) return false;
 		}
 		return true;
-		
 	}
 }
