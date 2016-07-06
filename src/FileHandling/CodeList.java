@@ -4,18 +4,20 @@ import java.util.ArrayList;
 
 public class CodeList extends ArrayList<Code>{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private boolean compilable;
-	private ArrayList<Code> codeList;
+
 	
-	public CodeList(Code code){
-		this.codeList = new ArrayList<>();
-		codeList.add(code);
-		
+	public CodeList(){
+		super();
 	}
 	
 	public boolean compilable(){
 	
-		Code[] codeArray =  (Code[]) this.codeList.toArray();
+		Code[] codeArray =  (Code[]) this.toArray();
 		
 		for(int i = 0; i< codeArray.length; i++){
 			compilable = codeArray[i].testingCompilationUnit();

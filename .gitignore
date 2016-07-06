@@ -1,15 +1,12 @@
-/FileHandling/
-
-/application/
-
-/tests/
-
-/bin/
+FileHandling/
+application/
+tests/
+bin/
 src/vk
-<<<<<<< HEAD
+bin/application/logik/Logik.class
+*.class
 *.class
 *.classpath
-=======
 .classpath
 .project
->>>>>>> dd410e76658b58bc43bf919922adff25aea79768
+.settings/

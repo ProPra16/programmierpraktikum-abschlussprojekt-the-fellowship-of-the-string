@@ -1,6 +1,7 @@
 package FileHandling;
 import org.xml.sax.*;
 
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -19,24 +20,35 @@ public class Loader {
 		Stage loadStage= new Stage();
 		TextField fileName=new TextField("Katalogdatei");
 		Label anzeige=new Label("");
-		Document xmldoc;
+		
 		
 		
 		
 		Button laden=new Button("Katalog laden");
-		laden.setOnAction(e-> laden());
-		
-		
-		
-		
+		laden.setOnAction(e-> laden(fileName.getText(),anzeige,loadStage));
 		
 		return null;
 	}
 
-	private Object laden() {
+	private void laden(String filename,Label anzeige,Stage stage) {
+		try {
+			Document xmldoc=loadDoc(filename);
+			Scene choiseScreen=katalogView(xmldoc);
+			
+		} catch (SAXException | IOException e) {
+			anzeige.setText("Datei nicht vorhanden oder nicht kompatibel");
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	private Scene katalogView(Document xmldoc) {
 		
 		return null;
 	}
+
 	private Document loadDoc(String fileLocation) throws SAXException, IOException{
 		DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
 		Document toReturn;
