@@ -24,7 +24,7 @@ public class Code {
 	
 	public boolean testingCompilationUnit(){
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnit);
-		compiler.compileAndRunTests();
+		//compiler.compileAndRunTests();
 		CompilerResult result = compiler.getCompilerResult();
 		
 		if(result.hasCompileErrors() == true) compilable = true;	
