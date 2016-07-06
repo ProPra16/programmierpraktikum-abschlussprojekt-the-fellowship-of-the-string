@@ -9,3 +9,4 @@ bin/application/logik/Logik.class
 *.classpath
 .classpath
 .project
+.settings/
