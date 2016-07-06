@@ -6,5 +6,10 @@
 
 /bin/
 src/vk
+<<<<<<< HEAD
 *.class
 *.classpath
+=======
+.classpath
+.project
+>>>>>>> dd410e76658b58bc43bf919922adff25aea79768
