@@ -19,28 +19,21 @@ public class Logik implements LogikZuGui{
 	}
 
 	@Override
-	public void nextStep() { //wenn der code kompiliert, wird zum n‰chsten schritt gewechselt
+	public void nextStep() { //wenn der code kompiliert, wird zum n√§chsten schritt gewechselt
 		if(e.codeCompiles()){
 			
 		}
 		
 	}
 	
-<<<<<<< HEAD
+
 	private void countdown(long minuten){ //wenn aktiviert, wird 
 		long t1 = 0;
 		long t2 = System.nanoTime();
 		long deltaT = t2 - t1;
 		while(minuten-deltaT != 0){
 			
-=======
-	private boolean isCompileable(){
-		if(true){
-			return true;
->>>>>>> refs/remotes/origin/master
 		}
 	}
-	
-	
 	
 }
