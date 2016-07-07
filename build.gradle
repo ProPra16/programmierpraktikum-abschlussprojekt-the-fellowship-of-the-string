@@ -3,10 +3,9 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'eclipse'
-<<<<<<< HEAD
-=======
+
 apply plugin: 'maven'
->>>>>>> refs/remotes/origin/master
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
