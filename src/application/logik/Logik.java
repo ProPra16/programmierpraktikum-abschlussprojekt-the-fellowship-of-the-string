@@ -26,12 +26,18 @@ public class Logik implements LogikZuGui{
 		
 	}
 	
+<<<<<<< HEAD
 	private void countdown(long minuten){ //wenn aktiviert, wird 
 		long t1 = 0;
 		long t2 = System.nanoTime();
 		long deltaT = t2 - t1;
 		while(minuten-deltaT != 0){
 			
+=======
+	private boolean isCompileable(){
+		if(true){
+			return true;
+>>>>>>> refs/remotes/origin/master
 		}
 	}
 	

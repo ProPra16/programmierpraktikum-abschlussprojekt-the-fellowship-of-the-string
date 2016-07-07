@@ -8,14 +8,27 @@ public class Exercise {
 	private boolean baby,timer;
 	
 	
-	public Exercise(){
-		
+	public Exercise(String description,CodeList klassen,TestList tests,boolean baby,boolean timer){
+		this.description=description;
+		this.klassen=klassen;
+		this.tests=tests;
+		this.baby=baby;
+		this.timer=timer;
 	}
 	
+	public Exercise(){
+		
+		
+	}
 	public boolean codeCompiles(){
 		
 		return this.klassen.compilable();
 
+	}
+	
+	public boolean testsRunning(){
+		
+		return this.tests.allPassing();
 	}
 
 }
