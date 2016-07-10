@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import FileHandling.Code;
+import FileHandling.CodeList;
+
 public class TestMain {
 
 	@Test
@@ -13,7 +16,7 @@ public class TestMain {
 	
 	@Test
 	public void testCodeCompilableTrue(){
-		Code c = new Code("Foo", "public class Foo{public static void main(String[] args){System.out.println("Hello World");}}");//c = richtiger Hello World testcode;
+		Code c = new Code("Foo", "public class Foo{public static void main(String[] args){System.out.println("+"Hello World"+");}}");//c = richtiger Hello World testcode;
 		assertEquals(true, c.testingCompilationUnit());
 	}
 	
@@ -25,9 +28,9 @@ public class TestMain {
 	
 	@Test
 	public void testCodeListCompilableTrue(){
-		CodeList<Code> l = new CodeList<Code>();
-		Code c1 = new Code("Foo", "public class Foo{public static void main(String[] args){System.out.println("Hello World");}}");
-		Code c2 = new Code("Bar", "public class Foo{public static void main(String[] args){System.out.println("Hello World");}}");
+		CodeList l = new CodeList();
+		Code c1 = new Code("Foo", "public class Foo{public static void main(String[] args){System.out.println(" + "Hello World" + ");}}");
+		Code c2 = new Code("Bar", "public class Foo{public static void main(String[] args){System.out.println(Hello World);}}");
 		l.add(c1);
 		l.add(c2);
 		assertEquals(true, l.compilable());
@@ -35,8 +38,8 @@ public class TestMain {
 	
 	@Test
 	public void testCodeListCompilableFalse(){
-		CodeList<Code> l = new CodeList<Code>();
-		Code c1 = new Code("Foo", "public class Foo{public static void main(String[] args){System.out.println("Hello World");}}");//richtiger code todo
+		CodeList l = new CodeList();
+		Code c1 = new Code("Foo", "public class Foo{public static void main(String[] args){System.out.println("+"Hello World"+");}}");//richtiger code todo
 		Code c2 = new Code("Bar", "dieser code laeuft nicht");//falscher code
 		l.add(c1);
 		l.add(c2);
