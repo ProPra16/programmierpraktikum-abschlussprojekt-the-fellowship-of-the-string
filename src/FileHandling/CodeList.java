@@ -17,10 +17,10 @@ public class CodeList extends ArrayList<Code>{
 	
 	public boolean compilable(){
 	
-		Code[] codeArray =  (Code[]) this.toArray();
+		Object[] codeArray =  this.toArray();
 		
 		for(int i = 0; i< codeArray.length; i++){
-			compilable = codeArray[i].testingCompilationUnit();
+			compilable = ((Code) codeArray[i]).testingCompilationUnit();
 			
 			if(compilable == false) return false;
 		}

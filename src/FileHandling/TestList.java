@@ -14,10 +14,10 @@ public class TestList extends ArrayList<Test>{
 	
 	public boolean allPassing(){
 	
-		Test[] codeArray =  (Test[]) this.toArray();
+		Object[] codeArray =  this.toArray();
 		
 		for(int i = 0; i< codeArray.length; i++){
-			running = codeArray[i].oneTestFailing();
+			running = ((Test) codeArray[i]).oneTestFailing();
 			
 				if(running == false) return false;
 		}
