@@ -2,6 +2,7 @@ package FileHandling;
 
 
 import vk.core.api.CompilationUnit;
+import vk.core.api.CompileError;
 import vk.core.api.CompilerFactory;
 
 import vk.core.api.CompilerResult;
@@ -32,13 +33,13 @@ public class Code {
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitCode);
 		compiler.compileAndRunTests();
 		CompilerResult result = compiler.getCompilerResult();
-		
-		if(result.hasCompileErrors() == true) compilable = true;	
-		
-		else{
-			TestHelpers.getErrorMessages(compiler, result);
-			compilable = false;
+	
+		if( result.hasCompileErrors() == true){
+			System.out.println(TestHelpers.getErrorMessages(compiler, result));
+			compilable = false;	
 		}
+		
+		else if(result.hasCompileErrors() == false) compilable = true;
 		
 		return compilable;
 	}
