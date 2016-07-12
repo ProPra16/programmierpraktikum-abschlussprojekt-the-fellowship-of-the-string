@@ -23,11 +23,12 @@ public class Ampel extends StackPane{
 		StackPane pane = new StackPane();
 		labelkasten = new Rectangle(5,1,10,2);
 		label = new Label();
+		label.setText("");
 		
 		pane.getChildren().addAll(labelkasten,label);
 		box.getChildren().add(pane);
 		
-		Text zeit = new Text("hier aktuelle zeit einfügen");
+		Text zeit = new Text("hier aktuelle zeit einfuegen");
 		box.getChildren().add(zeit);
 		
 		StackPane pane1 = new StackPane();
@@ -41,7 +42,7 @@ public class Ampel extends StackPane{
 		gpane.setPadding(new Insets(5, 5, 5, 5));
 		gpane.setHgap(5);
 		gpane.setVgap(5);
-		pane.getChildren().add(pane1);
+		pane1.getChildren().add(gpane);
 		
 		rot = new Circle();
 		rot.setCenterX(10);
@@ -70,6 +71,7 @@ public class Ampel extends StackPane{
 		StackPane pane2 = new StackPane();
 		satzkasten = new Rectangle(1,60,20,2);
 		satz = new Label();
+		satz.setText("");
 		
 		pane2.getChildren().addAll(satzkasten,satz);
 		
@@ -84,10 +86,10 @@ public class Ampel extends StackPane{
 		
 		public void setTracking(boolean status){
 			if(status == true) label.setText("Tracking");
-			else label.setText("keien Erweiterung eingeschaltet");
+			else label.setText("keine Erweiterung eingeschaltet");
 		}
 		
-		public void wechselZuGrün(boolean status){
+		public void wechselZuGruen(boolean status){
 			if(status == true){
 				rot.setFill(Color.BLACK);
 				gruen.setFill(Color.YELLOWGREEN);
@@ -121,10 +123,5 @@ public class Ampel extends StackPane{
 				gelb.setFill(Color.YELLOW);
 				satz.setText("refactor");
 			}
-			
-
 		}
-	
-	
-
 }
