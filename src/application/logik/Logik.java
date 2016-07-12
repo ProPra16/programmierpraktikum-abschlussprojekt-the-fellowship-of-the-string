@@ -17,6 +17,7 @@ import FileHandling.Exercise;
 
 public class Logik implements LogikZuGui{
 	
+	boolean lauft = true;
 	Exercise e = new Exercise();
 	
 	@Override
@@ -34,19 +35,19 @@ public class Logik implements LogikZuGui{
 	@Override
 	public void nextStep() { //wenn der code kompiliert, wird zum nächsten schritt gewechselt
 		if(e.codeCompiles()){
-			
+			Controller.SwitchArea();//Die GUI methode zum textfeld wechseln wird aufgerufen
 		}
 		
 	}
 	
 
-	private void countdown(long minuten){ //wenn aktiviert, wird 
-		long t1 = 0;
-		long t2 = System.nanoTime();
-		long deltaT = t2 - t1;
-		while(minuten-deltaT != 0){
-			
+	private void countdown(long sekunden){ //wenn aktiviert, wird die übergebene zeit bis null runtergezählt
+		lauft = true;
+		long deltaT = System.nanoTime();
+		while(deltaT != sekunden){
+			deltaT += System.nanoTime()/1000000000;
 		}
+		lauft = false;
 	}
 	
 }
