@@ -8,7 +8,7 @@
 <!ELEMENT class (#CDATA)>
 <!ATTLIST class name CDATA #REQUIRED>
 
-<!ELEMENT tests (test)+>
+<!ELEMENT tests (test)>
 <!ELEMENT test (#CDATA)>
 <!ATTLIST test name CDATA #REQUIRED>
 
