@@ -24,7 +24,7 @@ public class Test {
 	private String testCode;
 	private CompilationUnit compilationUnitTest;
 
-	public Test(String testCode, String testName) {
+	public Test( String testName,String testCode) {
 		this.testCode = testCode;
 		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
 	}

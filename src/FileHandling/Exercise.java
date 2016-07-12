@@ -13,6 +13,13 @@
  *******************************************************************************/
 package FileHandling;
 
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+
 public class Exercise {
 
 	private String description;
@@ -54,4 +61,28 @@ public class Exercise {
 	public boolean tracking(){
 		return this.timer;
 	}
+	
+	public StackPane display(){
+		Label baby=new Label("Babysteps");
+		Label time=new Label("Timetracking");
+		HBox hbox=new HBox(50);
+		hbox.getChildren().addAll(baby,time);
+		
+		baby.setVisible(this.baby);
+		time.setVisible(this.timer);
+		
+		Rectangle background=new Rectangle(350,200);
+		background.setFill(Color.BEIGE);
+		background.setStroke(Color.BLACK);
+		
+		Label desc=new Label(this.description);
+		VBox vbox=new VBox(50);
+		vbox.getChildren().addAll(hbox,desc);
+		
+		StackPane pane=new StackPane();
+		pane.getChildren().addAll(background,vbox);
+		return pane;
+		
+	}
+	
 }
