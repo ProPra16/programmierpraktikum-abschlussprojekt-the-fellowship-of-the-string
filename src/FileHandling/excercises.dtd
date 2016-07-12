@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT exercises (exercise)+>
+<!ELEMENT exercise (description, classes, tests, config)>
+
+<!ELEMENT description (#CDATA)>
+
+<!ELEMENT classes (class)+>
+<!ELEMENT class (#CDATA)>
+<!ATTLIST class name CDATA #REQUIRED>
+
+<!ELEMENT tests (test)+>
+<!ELEMENT test (#CDATA)>
+<!ATTLIST test name CDATA #REQUIRED>
+
+<!ELEMENT config (babysteps, timetracking)>
+<!ELEMENT babysteps EMPTY>
+<!ATTLIST babysteps value CDATA #REQUIRED>
+
+<!ELEMENT timetracking EMPTY>
+<!ATTLIST timetracking value CDATA #REQUIRED>
