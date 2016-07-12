@@ -1,8 +1,6 @@
 package GUI;
 
-import javafx.geometry.Insets;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -39,12 +37,14 @@ public class Ampel extends StackPane{
 		rot.setCenterY(18);
 		rot.setRadius(5);
 		rot.setStroke(Color.BLACK);
+		rot.setFill(Color.RED);
 		
 		gelb = new Circle();
 		gelb.setCenterX(10);
 		gelb.setCenterY(31);
 		gelb.setRadius(5);
 		gelb.setStroke(Color.BLACK);
+		gelb.setFill(Color.YELLOW);
 
 		
 		gruen = new Circle();
@@ -52,6 +52,7 @@ public class Ampel extends StackPane{
 		gruen.setCenterY(44);
 		gruen.setRadius(5);
 		gruen.setStroke(Color.BLACK);
+		gruen.setFill(Color.YELLOWGREEN);
 		
 		pane1.getChildren().addAll(grund,rot,gelb,gruen);
 		
