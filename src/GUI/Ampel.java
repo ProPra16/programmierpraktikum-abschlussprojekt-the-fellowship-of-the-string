@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 public class Ampel extends StackPane{
 	private Label label,satz;
 	private Rectangle labelkasten, grund, satzkasten;
-	private Circle rot, gelb, grün;
+	private Circle rot, gelb, gruen;
 	public Ampel(){
 		
 		
@@ -47,13 +47,13 @@ public class Ampel extends StackPane{
 		gelb.setStroke(Color.BLACK);
 
 		
-		grün = new Circle();
-		grün.setCenterX(10);
-		grün.setCenterY(44);
-		grün.setRadius(5);
-		grün.setStroke(Color.BLACK);
+		gruen = new Circle();
+		gruen.setCenterX(10);
+		gruen.setCenterY(44);
+		gruen.setRadius(5);
+		gruen.setStroke(Color.BLACK);
 		
-		pane1.getChildren().addAll(grund,rot,gelb,grün);
+		pane1.getChildren().addAll(grund,rot,gelb,gruen);
 		
 		StackPane pane2 = new StackPane();
 		satzkasten = new Rectangle(1,60,20,2);
@@ -77,7 +77,7 @@ public class Ampel extends StackPane{
 		public void wechselZuGrün(boolean status){
 			if(status == true){
 				rot.setFill(Color.BLACK);
-				grün.setFill(Color.YELLOWGREEN);
+				gruen.setFill(Color.YELLOWGREEN);
 				satz.setText("make the Test pass");
 			}
 			else{
@@ -88,12 +88,12 @@ public class Ampel extends StackPane{
 		}
 		public void wechselZuGelb(boolean  status){
 			if(status == true){
-				grün.setFill(Color.BLACK);
+				gruen.setFill(Color.BLACK);
 				gelb.setFill(Color.YELLOW);
 				satz.setText("refactor");
 			}
 			else{
-				grün.setFill(Color.YELLOWGREEN);
+				gruen.setFill(Color.YELLOWGREEN);
 				satz.setText("make the Test pass");
 			}
 			
