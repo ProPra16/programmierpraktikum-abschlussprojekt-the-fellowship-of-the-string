@@ -17,13 +17,13 @@ public class Exercise {
 
 	private String description;
 	private CodeList klassen;
-	private TestList tests;
+	private Test test;
 	private boolean baby, timer;
 
-	public Exercise(String description, CodeList klassen, TestList tests, boolean baby, boolean timer) {
+	public Exercise(String description, CodeList klassen, Test test , boolean baby, boolean timer) {
 		this.description = description;
 		this.klassen = klassen;
-		this.tests = tests;
+		this.test = test;
 		this.baby = baby;
 		this.timer = timer;
 	}
@@ -40,7 +40,18 @@ public class Exercise {
 
 	public boolean testsRunning() {
 
-		return this.tests.allPassing();
+		return this.test.allTestsPassing();
 	}
-
+	
+	public boolean oneFailing(){
+		return this.test.oneTestFailing();
+	}
+	
+	public boolean baby(){
+		return this.baby;
+	}
+	
+	public boolean tracking(){
+		return this.timer;
+	}
 }

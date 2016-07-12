@@ -92,9 +92,9 @@ public class Loader {
 	}
 	private static Exercise[] parseExercises(Document xmldoc){
 		NodeList exerList=xmldoc.getElementsByTagName("Exercise");
-		Exercise[] exercArray=new Exercise[exerList.getLength()];
+		Exercise[] exerArray=new Exercise[exerList.getLength()];
 		
-		for(int i=0;i<exercArray.length;i++){
+		for(int i=0;i<exerArray.length;i++){
 			
 		}
 	}
