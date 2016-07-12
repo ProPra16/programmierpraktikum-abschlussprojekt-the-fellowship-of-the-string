@@ -31,9 +31,8 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="298.0" layoutY="580.0" mnemonicParsing="false" onMouseClicked="#SwitchArea" text="Switch" />
-      <Button layoutX="370.0" layoutY="580.0" mnemonicParsing="false" onMouseClicked="#Test" text="test" />
-      <Button layoutX="226.0" layoutY="580.0" mnemonicParsing="false" onMouseClicked="#Test2" text="test2" />
+      <Button layoutX="298.0" layoutY="580.0" mnemonicParsing="false" width="50" onMouseClicked="#SwitchArea" text="Switch" />
+      <Button layoutX="370.0" layoutY="580.0" mnemonicParsing="false" width="50" onMouseClicked="#Test" text="test" />
       <Label alignment="BASELINE_LEFT" layoutX="27.0" layoutY="551.0" prefHeight="25.0" prefWidth="301.0" style="-fx-border-style: solid hidden hidden hidden; -fx-border-color: lightgrey;" text="Status" textFill="#0e800e">
          <padding>
             <Insets left="10.0" />

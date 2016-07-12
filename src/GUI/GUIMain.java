@@ -11,8 +11,6 @@
  *     Phillippe Weise - initial API and implementation
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
-package GUI;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -26,8 +24,10 @@ public class GUIMain extends Application {
 	}
 
 	public void start(Stage stage) throws Exception {
-		Pane root = (Pane) FXMLLoader.load(getClass().getResource("ProPra.fxml"));
-		Scene scene = new Scene(root);
+		//Pane root = (Pane) FXMLLoader.load(getClass().getResource("ProPra.fxml"));
+		Ampel a = new Ampel();
+		//root = a;
+		Scene scene = new Scene(a);
 		stage.setScene(scene);
 		stage.show();
 	}

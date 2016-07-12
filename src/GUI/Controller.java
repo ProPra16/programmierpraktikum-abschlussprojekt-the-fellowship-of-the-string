@@ -11,8 +11,6 @@
  *     Phillippe Weise - initial API and implementation
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
-package GUI;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -35,4 +33,14 @@ public class Controller {
 			Area2.requestFocus();
 		}
 	}
+
+    @FXML 
+	protected void Test() {
+
+    }
+    @FXML
+    protected void Test2() {
+
+	}
+
 }
