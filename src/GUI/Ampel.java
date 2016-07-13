@@ -2,91 +2,23 @@ package GUI;
 
 //bugs gefixt mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
 
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
-public class Ampel extends Application{
+public class Ampel{
 	private Label label,satz;
 	private Rectangle labelkasten, grund, satzkasten;
 	private Circle rot, gelb, gruen;
 	private double paneWidth = 300;
-	private double paneHeight = 300;
 	
-	//public Ampel(){
-		
-		
-/*		VBox box = new VBox(10);
-		
-		StackPane pane = new StackPane();
-		labelkasten = new Rectangle(5,1,10,2);
-		label = new Label();
-		label.setText("");
-		
-		pane.getChildren().addAll(labelkasten,label);
-		box.getChildren().add(pane);
-		
-		Text zeit = new Text("hier aktuelle zeit einfuegen");
-		box.getChildren().add(zeit);
-		
-		StackPane pane1 = new StackPane();
-		grund = new Rectangle(3,10,14,42);
-		pane1.getChildren().add(grund);
-		grund.setStroke(Color.BLACK);
-		grund.setFill(Color.GREY);
-		
-		GridPane gpane = new GridPane();
-		gpane.setAlignment(Pos.CENTER);
-		gpane.setPadding(new Insets(5, 5, 5, 5));
-		gpane.setHgap(5);
-		gpane.setVgap(5);
-		pane1.getChildren().add(gpane);
-		
-		rot = new Circle();
-		rot.setCenterX(10);
-		rot.setCenterY(18);
-		rot.setRadius(5);
-		rot.setStroke(Color.BLACK);
-		rot.setFill(Color.RED);
-		gpane.add(rot,1,1);
-		
-		gelb = new Circle();
-		gelb.setCenterX(10);
-		gelb.setCenterY(31);
-		gelb.setRadius(5);
-		gelb.setStroke(Color.BLACK);
-		gelb.setFill(Color.YELLOW);
-		gpane.add(gelb,1,2);
-
-		gruen = new Circle();
-		gruen.setCenterX(10);
-		gruen.setCenterY(44);
-		gruen.setRadius(5);
-		gruen.setStroke(Color.BLACK);
-		gruen.setFill(Color.YELLOWGREEN);
-		gpane.add(gruen,1,3);
-		
-		StackPane pane2 = new StackPane();
-		satzkasten = new Rectangle(1,60,20,2);
-		satz = new Label();
-		satz.setText("");
-		
-		pane2.getChildren().addAll(satzkasten,satz);
-		
-		box.getChildren().addAll(gpane,pane2);	*/
-		
-		public void start(Stage primaryStage) {
+	public Ampel(){
 			
 		StackPane spane = new StackPane();
 		labelkasten = new Rectangle(70,20);
@@ -99,7 +31,7 @@ public class Ampel extends Application{
 		spane.getChildren().add(label);
 		
 		StackPane pane = new StackPane();
-		Rectangle grund = new Rectangle(125, 250, 100, 240);
+		grund = new Rectangle(125, 250, 100, 240);
 		pane.getChildren().add(grund);
 		grund.setFill(Color.BLACK);
 		grund.setStroke(Color.GREY);
@@ -142,15 +74,7 @@ public class Ampel extends Application{
 		borderPane.setCenter(pane);
 		borderPane.setTop(spane);
 		borderPane.setBottom(pane2);
-		
-		Scene scene = new Scene(borderPane, paneWidth, paneHeight +100);
-		primaryStage.setTitle("Ampel");
-		primaryStage.setScene(scene);
-		primaryStage.show();
-		
-		}
-		public static void main(String[] args) {
-			launch(args);
+			
 		}
 	
 		public void setBaby(boolean status){
