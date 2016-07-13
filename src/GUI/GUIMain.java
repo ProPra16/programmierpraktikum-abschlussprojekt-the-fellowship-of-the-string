@@ -11,7 +11,13 @@
  *     Phillippe Weise - initial API and implementation
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
+//package GUI;
 package GUI;
+import java.io.File;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +28,27 @@ import javafx.stage.Stage;
 public class GUIMain extends Application {
 
 	public static void main(String[] args) {
+			
+	/*	 try{
+			 Ampel ampel = new Ampel();
+				File file = new File("ProPra.xml");
+				JAXBContext jaxbContext;
+			
+				jaxbContext = JAXBContext.newInstance(Ampel.class);
+				
+				
+				Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+
+				// output pretty printed
+				jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+				jaxbMarshaller.marshal(ampel, file);
+				jaxbMarshaller.marshal(ampel, System.out);
+		 }
+		 catch(JAXBException e){
+			 e.printStackTrace();
+		 }*/
+			 
 		launch(args);
 	}
 

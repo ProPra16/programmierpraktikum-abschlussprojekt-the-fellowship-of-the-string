@@ -1,9 +1,14 @@
 package GUI;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+import javafx.application.Application;
+
 //bugs gefixt mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -11,21 +16,24 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
-public class Ampel{
+//@XmlRootElement
+public class Ampel /*extends Application*/{
 	private Label label,satz;
 	private Rectangle labelkasten, grund, satzkasten;
 	private Circle rot, gelb, gruen;
 	private double paneWidth = 300;
 	
-	public Ampel(){
-			
+public Ampel(){
+//	public void start(Stage stage){
+		
 		StackPane spane = new StackPane();
 		labelkasten = new Rectangle(70,20);
 		labelkasten.setStroke(Color.BLACK);
 		labelkasten.setFill(Color.TRANSPARENT);
-			
 		spane.getChildren().addAll(labelkasten);
+		
 		label = new Label();	
 		label.setText("Erweiterung");
 		spane.getChildren().add(label);
@@ -74,9 +82,18 @@ public class Ampel{
 		borderPane.setCenter(pane);
 		borderPane.setTop(spane);
 		borderPane.setBottom(pane2);
+		
+}
+		
+/*		Scene scene = new Scene(borderPane,500,500);
+		stage.setScene(scene);
+		stage.show();
 			
 		}
-	
+		public static void main(String[] args){
+			launch(args);
+		}
+	*/
 		public void setBaby(boolean status){
 			if(status == true) label.setText("Babysteps");
 			else label.setText("keine");
