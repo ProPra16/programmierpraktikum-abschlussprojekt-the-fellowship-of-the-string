@@ -14,19 +14,18 @@
 package FileHandling;
 
 import org.xml.sax.*;
-
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import org.w3c.dom.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -34,15 +33,16 @@ import javax.xml.parsers.*;
 
 public class Loader {
 
-	public static Exercise loadExcercise() {
+	public static void loadExcercise(Exercise exer) {
 		Stage loadStage = new Stage();
 		TextField fileName = new TextField("Katalogdatei");
 		fileName.setMaxWidth(100);
 		
 		Label anzeige = new Label("anzeige");
-
+		
+		 
 		Button laden = new Button("Katalog laden");
-		laden.setOnAction(e -> laden(fileName.getText(), anzeige, loadStage));
+		laden.setOnAction(e -> laden(fileName.getText(), anzeige, loadStage,exer));
 		
 		VBox vBox=new VBox(10);
 		vBox.getChildren().add(anzeige);
@@ -54,51 +54,70 @@ public class Loader {
 		Scene loadScene=new Scene(vBox,300,100);
 		loadStage.setScene(loadScene);
 		loadStage.show();
-		
-		
-		return null;
 	}
 
-	private static void laden(String filename, Label anzeige, Stage stage) {
-		try {
-			Document xmldoc = loadDoc(filename);
-			Scene choiseScreen = katalogView(xmldoc);
-			stage.setScene(choiseScreen);
+	private static  void laden(String filename, Label anzeige, Stage stage,Exercise exer) {
 			
+		
 			
-		} catch (SAXException | IOException e) {
-			anzeige.setText("Datei nicht vorhanden oder nicht kompatibel");
-			e.printStackTrace();
+			Document xmldoc;
+			try {
+				xmldoc = loadDoc(filename);
+				exer=katalogView(xmldoc,stage);
+			} catch (IOException e) {
+				anzeige.setText("Datei nicht vorhanden");
+				e.printStackTrace();
+			} catch (SAXException e) {
+				anzeige.setText("Datei ist kein gültiger Katalog");
+				e.printStackTrace();
+			}
+			
+
+	}
+
+	private static  Exercise katalogView(Document xmldoc,Stage stage) {
+		Exercise exer=null;
+		ArrayList<Exercise> exerList=parseExercises(xmldoc);
+		VBox vbox=new VBox(10);
+		for(int i=0;i<exerList.size();i++){
+			vbox.getChildren().add(exerList.get(i).display());
+			int j=i;
+			vbox.getChildren().get(i).setOnMouseClicked(e -> setExer(exer,exerList.get(j),stage));
 		}
-
-	}
-
-	private static Scene katalogView(Document xmldoc) {
-
-		return null;
+		Scene scene=new Scene(vbox,300,150*exerList.size());
+		stage.setScene(scene);
+		return exer;
 	}
 
 	
 	
-	private static Document loadDoc(String fileLocation) throws SAXException, IOException {
+	private static  void setExer(Exercise exer, Exercise exercise,Stage stage) {
+		exer=exercise;
+		stage.close();
+	}
+
+	private static  Document loadDoc(String file) throws   SAXException, IOException{
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		Document toReturn;
+		
 		factory.setIgnoringComments(true);
 		factory.setValidating(true);
-
 		DocumentBuilder builder;
 		try {
 			builder = factory.newDocumentBuilder();
-			return builder.parse(new InputSource(fileLocation));
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 			return null;
 		}
+		
+		
+		return builder.parse(new InputSource(file));
+		
+				
 	}
 	
 	
 	
-	private static ArrayList<Exercise> parseExercises(Document xmldoc){
+	private static  ArrayList<Exercise> parseExercises(Document xmldoc){
 		NodeList exerList=xmldoc.getElementsByTagName("Exercise");
 		//Exercise[] exerArray=new Exercise[exerList.getLength()];
 		ArrayList<Exercise> exerArray=new ArrayList<Exercise>();
