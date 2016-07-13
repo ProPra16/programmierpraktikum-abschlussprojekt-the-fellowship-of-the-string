@@ -92,13 +92,11 @@ public class Ampel extends Application{
 		labelkasten = new Rectangle(70,20);
 		labelkasten.setStroke(Color.BLACK);
 		labelkasten.setFill(Color.TRANSPARENT);
-		label = new Label();
-		label.setText("");
 			
-		spane.getChildren().addAll(labelkasten,label);
-			
-		//Text zeit = new Text("hier aktuelle zeit einfuegen");
-		//spane.getChildren().add(zeit);
+		spane.getChildren().addAll(labelkasten);
+		label = new Label();	
+		label.setText("Erweiterung");
+		spane.getChildren().add(label);
 		
 		StackPane pane = new StackPane();
 		Rectangle grund = new Rectangle(125, 250, 100, 240);
@@ -132,10 +130,12 @@ public class Ampel extends Application{
 		satzkasten = new Rectangle(200,20);
 		satzkasten.setStroke(Color.BLACK);
 		satzkasten.setFill(Color.TRANSPARENT);
-		satz = new Label();
-		satz.setText("");
 		
-		pane2.getChildren().addAll(satzkasten,satz);
+		pane2.getChildren().addAll(satzkasten);
+		
+		satz = new Label();
+		satz.setText("Statussatz");
+		pane2.getChildren().add(satz);
 		
 		BorderPane borderPane = new BorderPane();
 		borderPane.setPadding(new Insets(10,10,10,10));
