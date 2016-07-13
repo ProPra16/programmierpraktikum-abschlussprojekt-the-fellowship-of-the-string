@@ -14,6 +14,7 @@
 package application.logik;
 
 import FileHandling.Exercise;
+import GUI.Controller;
 
 public class Logik implements LogikZuGui{
 	
