@@ -19,12 +19,12 @@ import javafx.scene.control.*;
 public class Controller {
 
 	@FXML
-	private TextArea Area1;
+	private static TextArea Area1;
 	@FXML
-	private TextArea Area2;
+	private static TextArea Area2;
 
 	@FXML
-	protected void SwitchArea() {
+	public static void SwitchArea() {
 		if (Area1.isDisable()) {
 			Area1.setDisable(false);
 			Area2.setDisable(true);
