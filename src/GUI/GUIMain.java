@@ -11,7 +11,8 @@
  *     Phillippe Weise - initial API and implementation
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
-//package GUI;
+
+
 package GUI;
 import java.io.File;
 
@@ -24,6 +25,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.scene.layout.BorderPane;
+import javafx.geometry.Insets;
 
 public class GUIMain extends Application {
 
@@ -54,7 +57,14 @@ public class GUIMain extends Application {
 
 	public void start(Stage stage) throws Exception {
 		Pane root = (Pane) FXMLLoader.load(getClass().getResource("ProPra.fxml"));
+		Ampel A = new Ampel();
+		BorderPane bp = A.returnPane();
+		bp.setPrefSize(350, 350);
+		bp.setLayoutX(1070);
+		bp.setLayoutY(150);
+		root.getChildren().add(bp);
 		Scene scene = new Scene(root);
+		stage.setMaximized(true);
 		stage.setScene(scene);
 		stage.show();
 	}

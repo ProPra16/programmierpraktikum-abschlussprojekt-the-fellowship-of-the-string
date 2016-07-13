@@ -11,8 +11,6 @@
  *     Phillippe Weise - initial API and implementation
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
-package GUI;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -21,6 +19,7 @@ public class Controller {
 	@FXML
 	private static TextArea Area1;
 	@FXML
+
 	private static TextArea Area2;
 
 	@FXML
@@ -34,5 +33,15 @@ public class Controller {
 			Area1.setDisable(true);
 			Area2.requestFocus();
 		}
+	}
+
+    @FXML 
+	protected void Test() {
+
+    }
+
+    @FXML
+    protected void Test2() {
+
 	}
 }

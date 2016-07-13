@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <TextArea fx:id="Area1" layoutX="27.0" layoutY="58.0" prefHeight="517.0" prefWidth="301.0" text="public class hello {&#10;    public static void main(String args[]) {&#10;        System.out.println(&quot;Hello World!&quot;);&#10;     }&#10;}&#10;" />
+      <TextArea fx:id="Area2" disable="true" layoutX="328.0" layoutY="58.0" prefHeight="517.0" prefWidth="301.0" />
+      <MenuBar prefHeight="29.0" prefWidth="656.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Save" />
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="298.0" layoutY="580.0" mnemonicParsing="false" width="50" onMouseClicked="#SwitchArea" text="Switch" />
+      <Button layoutX="370.0" layoutY="580.0" mnemonicParsing="false" width="50" onMouseClicked="#Test" text="test" />
+      <Label alignment="BASELINE_LEFT" layoutX="27.0" layoutY="551.0" prefHeight="25.0" prefWidth="301.0" style="-fx-border-style: solid hidden hidden hidden; -fx-border-color: lightgrey;" text="Status" textFill="#0e800e">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets bottom="10.0" />
+         </opaqueInsets></Label>
+      <Label layoutX="328.0" layoutY="551.0" prefHeight="25.0" prefWidth="301.0" style="-fx-border-style: solid hidden hidden hidden; -fx-border-color: lightgrey;" text="Label" textFill="#9e1e1e">
+         <padding>
+            <Insets bottom="1.0" left="10.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets bottom="5.0" />
+         </opaqueInsets></Label>
+   </children>
+</Pane>

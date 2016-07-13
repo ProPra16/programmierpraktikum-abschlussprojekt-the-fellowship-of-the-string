@@ -1,8 +1,10 @@
+
 package GUI;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 import javafx.application.Application;
+
 
 //bugs gefixt mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
 
@@ -10,26 +12,38 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+
 import javafx.stage.Stage;
 
 //@XmlRootElement
-public class Ampel /*extends Application*/{
+
+import javafx.stage.*;
+import javafx.application.Application;
+
+public class Ampel {
+
 	private Label label,satz;
 	private Rectangle labelkasten, grund, satzkasten;
 	private Circle rot, gelb, gruen;
 	private double paneWidth = 300;
+ 	private BorderPane borderPane;
 	
-public Ampel(){
-//	public void start(Stage stage){
-		
+
+	public Ampel(){
+	//public void start(Stage stage) {
+	    super();
+	    Scene scene;	
+
 		StackPane spane = new StackPane();
-		labelkasten = new Rectangle(70,20);
+		labelkasten = new Rectangle(90,20);
 		labelkasten.setStroke(Color.BLACK);
 		labelkasten.setFill(Color.TRANSPARENT);
 		spane.getChildren().addAll(labelkasten);
@@ -77,20 +91,33 @@ public Ampel(){
 		satz.setText("Statussatz");
 		pane2.getChildren().add(satz);
 		
-		BorderPane borderPane = new BorderPane();
+		borderPane = new BorderPane();
 		borderPane.setPadding(new Insets(10,10,10,10));
 		borderPane.setCenter(pane);
 		borderPane.setTop(spane);
 		borderPane.setBottom(pane2);
+
 		
 }
 		
-/*		Scene scene = new Scene(borderPane,500,500);
-		stage.setScene(scene);
-		stage.show();
+	//	Scene scene = new Scene(borderPane,500,500);
+		//stage.setScene(scene);
+	//	stage.show();
 			
+
+		//scene = new Scene(borderPane, 300, 340);
+		//stage.setScene(scene);
+		//stage.show();
+		
+	//	public static void main(String args[]) {
+	//		launch(args);
+	//		}
+
+		public BorderPane returnPane() {
+			return borderPane;
+
 		}
-		public static void main(String[] args){
+	/*	public static void main(String[] args){
 			launch(args);
 		}
 	*/
