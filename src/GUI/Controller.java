@@ -20,7 +20,7 @@ public class Controller {
 	private TextArea Area1;
 	@FXML
 	private TextArea Area2;
-
+	
 	@FXML
 	protected void SwitchArea() {
 		if (Area1.isDisable()) {
@@ -38,9 +38,9 @@ public class Controller {
 	protected void Test() {
 
     }
+
     @FXML
     protected void Test2() {
 
 	}
-
 }
