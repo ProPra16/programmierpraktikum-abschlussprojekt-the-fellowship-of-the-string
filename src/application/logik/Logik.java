@@ -36,32 +36,34 @@ public class Logik implements LogikZuGui{
 
 	@Override
 	public void nextStep() {
-		switch(step)
-		case 0: {
-			if(code.codeCompiles() && test.oneTestFailing()){ //wenn tests kompilieren weiter
-				Controller.SwitchArea();//Die GUI methode zum textfeld wechseln wird aufgerufen
-				trT += trackStop();
-				trackStart();
-				step = 1;
+		switch(step){
+			case 0: {
+				if(code.codeCompiles() && test.oneTestFailing()){ //wenn tests kompilieren weiter
+					Controller.SwitchArea();//Die GUI methode zum textfeld wechseln wird aufgerufen
+					trT += trackStop();
+					trackStart();
+					step = 1;
+				}
+				break;
 			}
-			break;
-		}
-		case 1:{
-			if(code.codeCompiles() && test.allTestsPassing()){//wenn compiliert und alle tests laufen weiter
-				trC += trackStop();
-				trackStart();
-				step = 2;
+			case 1:{
+				if(code.codeCompiles() && test.allTestsPassing()){//wenn compiliert und alle tests laufen weiter
+					trC += trackStop();
+					trackStart();
+					step = 2;
+				}
+				break;
+			}
+			case 2:{
+				if(code.codeCompiles() && test.allTestsPassing()){//wenn immernoch alles laeuft weiter
+					Controller.SwitchArea();
+					trR += trackStop();
+					trackStart();
+					step = 0;
+				}
+				break;
 			}
 		}
-		case 2:{
-			if(code.codeCompiles() && test.allTestsPassing()){//wenn immernoch alles laeuft weiter
-				Controller.SwitchArea();
-				trR += trackStop();
-				trackStart();
-				step = 0;
-			}
-		}
-		
 	}
 	
 	//fuer babysteps
