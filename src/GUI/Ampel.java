@@ -155,12 +155,12 @@ public class Ampel extends Application{
 	
 		public void setBaby(boolean status){
 			if(status == true) label.setText("Babysteps");
-			else label.setText("keine Erweiterung eingeschaltet");
+			else label.setText("keine");
 		}
 		
 		public void setTracking(boolean status){
 			if(status == true) label.setText("Tracking");
-			else label.setText("keine Erweiterung eingeschaltet");
+			else label.setText("keine");
 		}
 		
 		public void wechselZuGruen(boolean status){
