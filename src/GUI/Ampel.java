@@ -1,8 +1,13 @@
 package GUI;
 
+//bugs gefixt mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
+
+import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -10,15 +15,19 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
-public class Ampel extends StackPane{
+public class Ampel extends Application{
 	private Label label,satz;
 	private Rectangle labelkasten, grund, satzkasten;
 	private Circle rot, gelb, gruen;
-	public Ampel(){
+	private double paneWidth = 300;
+	private double paneHeight = 300;
+	
+	//public Ampel(){
 		
 		
-		VBox box = new VBox(10);
+/*		VBox box = new VBox(10);
 		
 		StackPane pane = new StackPane();
 		labelkasten = new Rectangle(5,1,10,2);
@@ -75,9 +84,76 @@ public class Ampel extends StackPane{
 		
 		pane2.getChildren().addAll(satzkasten,satz);
 		
-		box.getChildren().addAll(gpane,pane2);
+		box.getChildren().addAll(gpane,pane2);	*/
+		
+		public void start(Stage primaryStage) {
+			
+		StackPane spane = new StackPane();
+		labelkasten = new Rectangle(70,20);
+		labelkasten.setStroke(Color.BLACK);
+		labelkasten.setFill(Color.TRANSPARENT);
+		label = new Label();
+		label.setText("");
+			
+		spane.getChildren().addAll(labelkasten,label);
+			
+			
+		//Text zeit = new Text("hier aktuelle zeit einfuegen");
+		//spane.getChildren().add(zeit);
+		
+			
+		StackPane pane = new StackPane();
+		Rectangle grund = new Rectangle(125, 250, 125, 300);
+		pane.getChildren().add(grund);
+		grund.setFill(Color.BLACK);
+		grund.setStroke(Color.GREY);
+		 
+		GridPane pane1 = new GridPane();
+		pane1.setAlignment(Pos.CENTER);
+		pane1.setPadding(new Insets(5, 5, 5, 5));
+		pane1.setHgap(5);
+		pane1.setVgap(5);
+		pane.getChildren().add(pane1);
+		 
+		Circle rot = new Circle(paneWidth / 2, 60, 40);
+		rot.setStroke(Color.BLACK);
+		rot.setFill(Color.LIGHTGREY);
+		pane1.add(rot, 1, 1);
+		 
+		Circle gelb = new Circle(paneWidth / 2, 60, 40);
+		gelb.setStroke(Color.BLACK);
+		gelb.setFill(Color.LIGHTGREY);
+		pane1.add(gelb, 1, 2);
+		 
+		Circle gruen = new Circle(paneWidth / 2, 60, 40);
+		gruen.setStroke(Color.BLACK);
+		gruen.setFill(Color.LIGHTGREY);
+		pane1.add(gruen, 1, 3);
+		
+		StackPane pane2 = new StackPane();
+		satzkasten = new Rectangle(200,20);
+		satzkasten.setStroke(Color.BLACK);
+		satzkasten.setFill(Color.TRANSPARENT);
+		satz = new Label();
+		satz.setText("");
+		
+		pane2.getChildren().addAll(satzkasten,satz);
+		
+		BorderPane borderPane = new BorderPane();
+		borderPane.setPadding(new Insets(10,10,10,10));
+		borderPane.setCenter(pane);
+		borderPane.setTop(spane);
+		borderPane.setBottom(pane2);
+		
+		Scene scene = new Scene(borderPane, paneWidth, paneHeight +100);
+		primaryStage.setTitle("Ampel");
+		primaryStage.setScene(scene);
+		primaryStage.show();
 		
 		}
+		public static void main(String[] args) {
+			launch(args);
+			}
 	
 		public void setBaby(boolean status){
 			if(status == true) label.setText("Babysteps");
