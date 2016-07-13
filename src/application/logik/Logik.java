@@ -46,6 +46,9 @@ public class Logik implements LogikZuGui{
 					trackStart();
 					step = 1;
 				}
+				else if(babysteps == true){
+					delete();
+				}
 				break;
 			}
 			case 1:{
@@ -53,6 +56,9 @@ public class Logik implements LogikZuGui{
 					trC += trackStop();
 					trackStart();
 					step = 2;
+				}
+				else if(babysteps == true){
+					delete();
 				}
 				break;
 			}
@@ -76,6 +82,7 @@ public class Logik implements LogikZuGui{
 			deltaT += System.nanoTime()/SEC;
 		}
 		lauft = false;
+		nextStep();
 	}
 	
 	//fuer tracking
