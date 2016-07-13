@@ -20,6 +20,7 @@ public class Logik implements LogikZuGui{
 	
 	boolean lauft = true;
 	int step = 0; //0 = test schreiben, 1 = code schreiben, 2 = refactor;
+	private final int SEC = 1000000000;
 	long tr1 = 0, tr2 = 0, trT = 0, trC = 0, trR = 0;
 	Exercise e = new Exercise();
 	
@@ -72,7 +73,7 @@ public class Logik implements LogikZuGui{
 		lauft = true;
 		long deltaT = System.nanoTime();
 		while(deltaT != sekunden){
-			deltaT += System.nanoTime()/1000000000;
+			deltaT += System.nanoTime()/SEC;
 		}
 		lauft = false;
 	}
@@ -80,11 +81,11 @@ public class Logik implements LogikZuGui{
 	//fuer tracking
 	// TODO trackStart() muss am anfang mit aufgerufen werden!!
 	private void trackStart(){
-		tr1 = System.nanoTime()/1000000000;
+		tr1 = System.nanoTime()/SEC;
 	}
 	
 	private long trackStop(){
-		tr2 = System.nanoTime()/1000000000;
+		tr2 = System.nanoTime()/SEC;
 		return tr2 - tr1;
 	}
 	
