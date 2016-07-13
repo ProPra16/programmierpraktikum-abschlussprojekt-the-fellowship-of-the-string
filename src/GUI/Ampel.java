@@ -97,13 +97,11 @@ public class Ampel extends Application{
 			
 		spane.getChildren().addAll(labelkasten,label);
 			
-			
 		//Text zeit = new Text("hier aktuelle zeit einfuegen");
 		//spane.getChildren().add(zeit);
 		
-			
 		StackPane pane = new StackPane();
-		Rectangle grund = new Rectangle(125, 250, 125, 300);
+		Rectangle grund = new Rectangle(125, 250, 100, 240);
 		pane.getChildren().add(grund);
 		grund.setFill(Color.BLACK);
 		grund.setStroke(Color.GREY);
@@ -115,17 +113,17 @@ public class Ampel extends Application{
 		pane1.setVgap(5);
 		pane.getChildren().add(pane1);
 		 
-		Circle rot = new Circle(paneWidth / 2, 60, 40);
+		Circle rot = new Circle(paneWidth / 2, 60, 30);
 		rot.setStroke(Color.BLACK);
 		rot.setFill(Color.LIGHTGREY);
 		pane1.add(rot, 1, 1);
 		 
-		Circle gelb = new Circle(paneWidth / 2, 60, 40);
+		Circle gelb = new Circle(paneWidth / 2, 60, 30);
 		gelb.setStroke(Color.BLACK);
 		gelb.setFill(Color.LIGHTGREY);
 		pane1.add(gelb, 1, 2);
 		 
-		Circle gruen = new Circle(paneWidth / 2, 60, 40);
+		Circle gruen = new Circle(paneWidth / 2, 60, 30);
 		gruen.setStroke(Color.BLACK);
 		gruen.setFill(Color.LIGHTGREY);
 		pane1.add(gruen, 1, 3);
@@ -153,7 +151,7 @@ public class Ampel extends Application{
 		}
 		public static void main(String[] args) {
 			launch(args);
-			}
+		}
 	
 		public void setBaby(boolean status){
 			if(status == true) label.setText("Babysteps");
