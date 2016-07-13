@@ -1,4 +1,3 @@
-package GUI;
 /*******************************************************************************
  * Copyright (c) 2016 The Fellowship of the String and others.
  * All rights reserved. This program and the accompanying materials
@@ -18,13 +17,14 @@ import javafx.scene.control.*;
 public class Controller {
 
 	@FXML
-	private static TextArea Area1;
+	private TextArea Area1;
 	@FXML
+	private TextArea Area2;
 
-	private static TextArea Area2;
+    private static Ampel ampel;
 
 	@FXML
-	public static void SwitchArea() {
+	protected void SwitchArea() {
 		if (Area1.isDisable()) {
 			Area1.setDisable(false);
 			Area2.setDisable(true);
@@ -38,11 +38,15 @@ public class Controller {
 
     @FXML 
 	protected void Test() {
-
+        ampel.wechselZuRot(true);
     }
 
     @FXML
     protected void Test2() {
 
 	}
+
+    public static void setAmpel(Ampel amp) {
+        ampel = amp;
+    }
 }

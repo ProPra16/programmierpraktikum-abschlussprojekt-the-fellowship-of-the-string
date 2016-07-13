@@ -12,8 +12,6 @@
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
 
-
-package GUI;
 import java.io.File;
 
 import javax.xml.bind.JAXBContext;
@@ -58,6 +56,7 @@ public class GUIMain extends Application {
 	public void start(Stage stage) throws Exception {
 		Pane root = (Pane) FXMLLoader.load(getClass().getResource("ProPra.fxml"));
 		Ampel A = new Ampel();
+        Controller.setAmpel(A);
 		BorderPane bp = A.returnPane();
 		bp.setPrefSize(350, 350);
 		bp.setLayoutX(1070);

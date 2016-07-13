@@ -1,6 +1,3 @@
-
-package GUI;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 import javafx.application.Application;
@@ -35,6 +32,11 @@ public class Ampel {
 	private Circle rot, gelb, gruen;
 	private double paneWidth = 300;
  	private BorderPane borderPane;
+    private Ampel ampel;
+    private StackPane spane;
+    private StackPane pane;
+    private GridPane pane1;
+    private StackPane pane2;
 	
 
 	public Ampel(){
@@ -42,7 +44,7 @@ public class Ampel {
 	    super();
 	    Scene scene;	
 
-		StackPane spane = new StackPane();
+		spane = new StackPane();
 		labelkasten = new Rectangle(90,20);
 		labelkasten.setStroke(Color.BLACK);
 		labelkasten.setFill(Color.TRANSPARENT);
@@ -52,35 +54,35 @@ public class Ampel {
 		label.setText("Erweiterung");
 		spane.getChildren().add(label);
 		
-		StackPane pane = new StackPane();
+        StackPane pane = new StackPane();
 		grund = new Rectangle(125, 250, 100, 240);
 		pane.getChildren().add(grund);
 		grund.setFill(Color.BLACK);
 		grund.setStroke(Color.GREY);
 		 
-		GridPane pane1 = new GridPane();
+		pane1 = new GridPane();
 		pane1.setAlignment(Pos.CENTER);
 		pane1.setPadding(new Insets(5, 5, 5, 5));
 		pane1.setHgap(5);
 		pane1.setVgap(5);
 		pane.getChildren().add(pane1);
 		 
-		Circle rot = new Circle(paneWidth / 2, 60, 30);
+		rot = new Circle(paneWidth / 2, 60, 30);
 		rot.setStroke(Color.BLACK);
 		rot.setFill(Color.LIGHTGREY);
 		pane1.add(rot, 1, 1);
 		 
-		Circle gelb = new Circle(paneWidth / 2, 60, 30);
+		gelb = new Circle(paneWidth / 2, 60, 30);
 		gelb.setStroke(Color.BLACK);
 		gelb.setFill(Color.LIGHTGREY);
 		pane1.add(gelb, 1, 2);
 		 
-		Circle gruen = new Circle(paneWidth / 2, 60, 30);
+		gruen = new Circle(paneWidth / 2, 60, 30);
 		gruen.setStroke(Color.BLACK);
 		gruen.setFill(Color.LIGHTGREY);
 		pane1.add(gruen, 1, 3);
 		
-		StackPane pane2 = new StackPane();
+		pane2 = new StackPane();
 		satzkasten = new Rectangle(200,20);
 		satzkasten.setStroke(Color.BLACK);
 		satzkasten.setFill(Color.TRANSPARENT);
@@ -121,6 +123,7 @@ public class Ampel {
 			launch(args);
 		}
 	*/
+
 		public void setBaby(boolean status){
 			if(status == true) label.setText("Babysteps");
 			else label.setText("keine");
