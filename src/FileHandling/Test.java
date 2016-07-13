@@ -15,16 +15,14 @@ package FileHandling;
 
 import vk.core.api.CompilationUnit;
 import vk.core.api.CompilerFactory;
-import vk.core.api.CompilerResult;
 import vk.core.api.JavaStringCompiler;
 import vk.core.api.TestResult;
-import vk.core.internal.InternalResult;
 
 public class Test {
 	private String testCode;
 	private CompilationUnit compilationUnitTest;
 
-	public Test(String testCode, String testName) {
+	public Test( String testName,String testCode) {
 		this.testCode = testCode;
 		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
 	}
