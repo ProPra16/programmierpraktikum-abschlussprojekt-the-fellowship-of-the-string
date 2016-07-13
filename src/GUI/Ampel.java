@@ -133,7 +133,7 @@ public class Ampel {
 		
 		public void wechselZuGruen(boolean status){
 			if(status == true){
-				rot.setFill(Color.BLACK);
+				rot.setFill(Color.LIGHTGREY);
 				gruen.setFill(Color.YELLOWGREEN);
 				satz.setText("make the Test pass");
 			}
@@ -141,11 +141,10 @@ public class Ampel {
 				rot.setFill(Color.RED);
 				satz.setText("write a failing Test");
 			}
-				
 		}
 		public void wechselZuGelb(boolean  status){
 			if(status == true){
-				gruen.setFill(Color.BLACK);
+				gruen.setFill(Color.LIGHTGREY);
 				gelb.setFill(Color.YELLOW);
 				satz.setText("refactor");
 			}
@@ -157,7 +156,7 @@ public class Ampel {
 		}
 		public void wechselZuRot(boolean status){
 			if(status == true){
-				gelb.setFill(Color.BLACK);
+				gelb.setFill(Color.LIGHTGREY);
 				rot.setFill(Color.RED);
 				satz.setText("write a failing Test");
 			}
