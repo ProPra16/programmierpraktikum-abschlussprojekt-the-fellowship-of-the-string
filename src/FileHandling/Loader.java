@@ -144,7 +144,7 @@ public class Loader {
 					
 					codeList.add(new Code(code.getAttribute("name"),code.getTextContent()));
 				}
-			}
+			} 
 			
 			NodeList testList=testsNode.getChildNodes();
 			Node testNameNode=testList.item(1);
