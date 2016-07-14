@@ -9,13 +9,13 @@
 public class HardHello{
 	}</class>
 <class name="HelloLSG">
-public class HHelloLSG{
+public class HelloLSG{
 //loesung hier}</class>
 </classes>
 <tests>
-<test name="HhelloTest">import static org.junit.Assert.*;
+<test name="HelloTest">import static org.junit.Assert.*;
 import org.junit.Test;
-public class RomanNumbersTest {
+public class HelloTest {
 	@Test
 	public void testSomething() {
 	}
