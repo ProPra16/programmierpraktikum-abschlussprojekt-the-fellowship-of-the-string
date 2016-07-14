@@ -22,8 +22,7 @@ public class Code {
 	public Code(String className, String code) {
 		this.code = code;
 		this.className = className;
-		this.compilable = this.testingCompilationUnit();
-
+		
 	}
 	public String getContent(){
 		return this.code;
@@ -33,6 +32,7 @@ public class Code {
 	}
 
 	public boolean testingCompilationUnit() {		
+		this.compilable = this.testingCompilationUnit();
 		this.compilationUnitCode = new CompilationUnit(className, code, false);
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(this.compilationUnitCode);
 		compiler.compileAndRunTests();
