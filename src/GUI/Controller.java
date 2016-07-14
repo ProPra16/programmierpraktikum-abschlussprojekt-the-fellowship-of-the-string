@@ -36,8 +36,8 @@ public class Controller {
     private Exercise e;
 
     public Controller() {
+        e = new Exercise();
         Loader.loadExcercise(e);
-        ampel.wechselZuRot(true);
         Area1.setText(e.getCode());
         Area2.setText(e.getTest());
         log = new Logik(e);
