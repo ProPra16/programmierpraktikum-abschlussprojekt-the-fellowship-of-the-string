@@ -9,21 +9,21 @@ import FileHandling.Exercise;
 
 
 public class CountDown {
-private long count;
+	private long count;
 
-public CountDown(Exercise e) {
-count = e.babyLimit();
-Timer timer = new Timer();
-TimerTask task = new TimerTask() {
+	public CountDown(Exercise e) {
+		count = e.babyLimit();
+		Timer timer = new Timer();
+		TimerTask task = new TimerTask() {
 
-public void run() {
-if (count > 0)
-count--;
+			public void run() {
+				if (count > 0)
+					count--;
 
-if (count == 0)
-System.out.println("Abgelaufen");
-}
-};
-timer.schedule(task, 0, 1000);
-}
+				if (count == 0)
+					System.out.println("Abgelaufen");
+			}
+		};
+		timer.schedule(task, 0, 1000);
+	}
 }
