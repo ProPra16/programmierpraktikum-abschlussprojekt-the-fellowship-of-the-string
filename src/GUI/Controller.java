@@ -21,9 +21,9 @@ import application.logik.Logik;
 public class Controller {
 
 	@FXML
-	private TextArea Area1;
+	private static TextArea Area1;
 	@FXML
-	private TextArea Area2;
+	private static TextArea Area2;
     @FXML
     private Button bRed;
     @FXML
@@ -33,6 +33,7 @@ public class Controller {
 
     private static Ampel ampel;
     private static Exercise e;
+    private static Logik log;
 
 	public void SwitchArea() {
 		if (Area1.isDisable()) {
@@ -93,5 +94,9 @@ public class Controller {
     public static void setExercise(Exercise ex) {
         Loader.loadExcercise(ex);
         e = ex;
+        log = new Logik(e);
+        ampel.wechselZuRot(true);
+        Area1.setText(e.getCode());
+        Area2.setText(e.getTest());
     }
 }
