@@ -33,7 +33,7 @@ public class Controller {
 
     private static Logik log;
     private static Ampel ampel;
-    private Exercise e;
+    private Exercise e=null;
 
     public Controller() {
         e = new Exercise();
