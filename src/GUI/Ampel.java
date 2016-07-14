@@ -1,4 +1,4 @@
-package GUI;
+//package GUI;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -22,8 +22,6 @@ import javafx.scene.shape.Rectangle;
 
 import javafx.stage.Stage;
 
-//@XmlRootElement
-
 import javafx.stage.*;
 import javafx.application.Application;
 
@@ -42,7 +40,6 @@ public class Ampel {
 	
 
 	public Ampel(){
-	//public void start(Stage stage) {
 	    super();
 	    Scene scene;	
 
@@ -100,32 +97,13 @@ public class Ampel {
 		borderPane.setCenter(pane);
 		borderPane.setTop(spane);
 		borderPane.setBottom(pane2);
-
 		
-}
-		
-	//	Scene scene = new Scene(borderPane,500,500);
-		//stage.setScene(scene);
-	//	stage.show();
-			
-
-		//scene = new Scene(borderPane, 300, 340);
-		//stage.setScene(scene);
-		//stage.show();
-		
-	//	public static void main(String args[]) {
-	//		launch(args);
-	//		}
+		}
 
 		public BorderPane returnPane() {
 			return borderPane;
 
 		}
-	/*	public static void main(String[] args){
-			launch(args);
-		}
-	*/
-
 		public void setBaby(boolean status){
 			if(status == true) label.setText("Babysteps");
 			else label.setText("keine");
