@@ -13,15 +13,25 @@ import GUI.Controller;
 
 public class Logik{
 	
-	static boolean lauft = true;
-	static int step = 0; //0 = test schreiben, 1 = code schreiben, 2 = refactor;
-	private final static int SEC = 1000000000;
-	static long tr1 = 0;
-	static long tr2 = 0;
-	static long trT = 0;
-	static long trC = 0;
-	static long trR = 0;
-	static Exercise e = null;
+	boolean lauft = true;
+	int step; //0 = test schreiben, 1 = code schreiben, 2 = refactor;
+	final static int SEC = 1000000000;
+	long tr1;
+	long tr2 ;
+	long trT ;
+	long trC;
+	long trR;
+	Exercise e;
+	
+	public Logik(Exercise e){
+		this.step = 0;
+		this.tr1 = 0;
+		this.tr2 = 0;
+		this.trT = 0;
+		this.trC = 0;
+		this.trR = 0;
+		this.e=e;
+	}
 	
 	
 	public void saveLatestCode(String content){ //Tests und Programmcode in Dateien speichern
@@ -30,14 +40,14 @@ public class Logik{
 	public void saveLatestTest(String content){
 		e.setTest(content);
 	}
-	public static void delete(){
+	public void delete(){
 		
 	}
-	public static void loadKatalog() { //Den katalog laden und tddt entsprechend einrichten
+	public void loadKatalog() { //Den katalog laden und tddt entsprechend einrichten
 		Loader.loadExcercise(e);
 		
 	}
-	public static boolean nextStep() {
+	public boolean nextStep() {
 		boolean switchArea=false;
 		if(e.getBaby()==true) new CountDown(e);
 		switch(step){
@@ -88,11 +98,11 @@ public class Logik{
 	}
 	//fuer tracking
 	// TODO trackStart() muss am anfang mit aufgerufen werden!!
-	private static void trackStart(){
+	private void trackStart(){
 		tr1 = System.nanoTime()/SEC;
 	}
 	
-	private static long trackStop(){
+	private long trackStop(){
 		tr2 = System.nanoTime()/SEC;
 		return tr2 - tr1;
 	}
