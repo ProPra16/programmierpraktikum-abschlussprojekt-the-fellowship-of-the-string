@@ -39,7 +39,7 @@ public class CodeList extends ArrayList<Code> {
 		}
 		return true;
 	}
-	public Code getLatest(){
-		return this.get(0);
+	public String getCodeText(){
+		return this.get(0).toString();
 	}
 }

@@ -26,6 +26,10 @@ public class Test {
 		this.testCode = testCode;
 		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
 	}
+	
+	public String getTestText(){
+		return this.testCode;
+	}
 
 	public boolean oneTestFailing() {
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitTest);
