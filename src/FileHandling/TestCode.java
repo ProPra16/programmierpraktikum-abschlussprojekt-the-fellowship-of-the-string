@@ -13,12 +13,12 @@ import vk.core.api.JavaStringCompiler;
 import vk.core.api.TestHelpers;
 import vk.core.api.TestResult;
 
-public class Test {
+public class TestCode {
 	private String testName;
 	private String testCode;
 	private CompilationUnit compilationUnitTest;
 
-	public Test( String testName,String testCode) {
+	public TestCode( String testName,String testCode) {
 		this.testCode = testCode;
 		this.testName=testName;
 	}
@@ -32,7 +32,8 @@ public class Test {
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitTest);
 		compiler.compileAndRunTests();
 		CompilerResult compilerResult = compiler.getCompilerResult();
-		
+		if (compilerResult.hasCompileErrors() == true) {
+			return false;}
 		TestResult result = compiler.getTestResult();
 		int fails = result.getNumberOfFailedTests();
 

@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import FileHandling.Code;
 import FileHandling.CodeList;
+import FileHandling.TestCode;
 
 public class TestMain {
 
@@ -32,9 +33,9 @@ public class TestMain {
 	}
 
 	@Test
-	public void testCodeCompilableFalse() {
-		Code c = new Code("Foo", "dieser code laeuft nicht");
-		assertEquals(false, c.testingCompilationUnit());
+	public void testTestCompilableFalse() {
+		TestCode c = new TestCode("Foo", "public class Foo{public static void main(String[] args){ System.out.print(15);}}");
+		assertEquals(false, c.oneTestFailing());
 	}
 
 	@Test

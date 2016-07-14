@@ -16,11 +16,11 @@ public class Exercise {
 
 	private String description;
 	private CodeList klassen;
-	private Test test;
+	private TestCode test;
 	private boolean timer;
 	private Babysteps baby;
 	
-	public Exercise(String description, CodeList klassen, Test test , Babysteps baby, boolean timer) {
+	public Exercise(String description, CodeList klassen, TestCode test , Babysteps baby, boolean timer) {
 		this.description = description;
 		this.klassen = klassen;
 		this.test = test;
@@ -33,7 +33,7 @@ public class Exercise {
 		Code code=new Code("here","Implement Code here");
 		list.add(code);
 		this.klassen=list;
-		this.test=new Test("HelloTest","Implement Test here");
+		this.test=new TestCode("HelloTest","Implement Test here");
 		this.baby=new Babysteps(false,12);
 		this.timer=false;
 	}
@@ -125,7 +125,7 @@ public class Exercise {
 	public void clone(Exercise exercise) {
 		this.description=exercise.describe();
 		this.klassen=CodeList.clone(exercise.klassen);
-		this.test=new Test(exercise.getTestName(),exercise.getTest());
+		this.test=new TestCode(exercise.getTestName(),exercise.getTest());
 		this.timer=exercise.tracking();
 		this.baby=new Babysteps(exercise.baby(),exercise.babyLimit());
 	}
