@@ -14,6 +14,9 @@
 package FileHandling;
 
 import org.xml.sax.*;
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -23,13 +26,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import org.w3c.dom.*;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.xml.parsers.*;
+
 
 public class Loader {
 
@@ -38,8 +39,8 @@ public class Loader {
 		TextField fileName = new TextField("Katalogdatei");
 		fileName.setMaxWidth(100);
 		
-		Label anzeige = new Label("anzeige");
-		
+		Label anzeige= new Label("anzeige");
+		anzeige.setVisible(false);
 		 
 		Button laden = new Button("Katalog laden");
 		laden.setOnAction(e -> laden(fileName.getText(), anzeige, loadStage,exer));
@@ -63,20 +64,22 @@ public class Loader {
 			Document xmldoc;
 			try {
 				xmldoc = loadDoc(filename);
-				exer=katalogView(xmldoc,stage);
+				katalogView(xmldoc,stage, exer);
 			} catch (IOException e) {
 				anzeige.setText("Datei nicht vorhanden");
+				anzeige.setVisible(true);
 				e.printStackTrace();
 			} catch (SAXException e) {
 				anzeige.setText("Datei ist kein gültiger Katalog");
+				anzeige.setVisible(true);
 				e.printStackTrace();
 			}
 			
 
 	}
 
-	private static  Exercise katalogView(Document xmldoc,Stage stage) {
-		Exercise exer=null;
+	private static  Exercise katalogView(Document xmldoc,Stage stage,Exercise exer) {
+		
 		ArrayList<Exercise> exerList=parseExercises(xmldoc);
 		VBox vbox=new VBox(10);
 		for(int i=0;i<exerList.size();i++){
@@ -104,6 +107,7 @@ public class Loader {
 		DocumentBuilder builder;
 		try {
 			builder = factory.newDocumentBuilder();
+		//	builder.setErrorHandler(e-> );
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 			return null;
@@ -118,7 +122,8 @@ public class Loader {
 	
 	
 	private static  ArrayList<Exercise> parseExercises(Document xmldoc){
-		NodeList exerList=xmldoc.getElementsByTagName("Exercise");
+		
+		NodeList exerList=xmldoc.getElementsByTagName("exercise");
 		//Exercise[] exerArray=new Exercise[exerList.getLength()];
 		ArrayList<Exercise> exerArray=new ArrayList<Exercise>();
 		String desc;
@@ -129,10 +134,15 @@ public class Loader {
 			Element exerElement=(Element) exerNode;
 			NodeList interList=exerElement.getChildNodes();
 			
-			Element description=(Element) interList.item(0);
-			Element classes=(Element) interList.item(1);
-			Element tests=(Element) interList.item(2);
-			Element config=(Element) interList.item(3);
+			Node descNode=interList.item(0);
+			Node classesNode=interList.item(1);
+			Node testsNode=interList.item(2);
+			Node configNode=interList.item(3);
+			
+			Element description=(Element) descNode;
+			Element classes=(Element) classesNode;
+			Element tests=(Element) testsNode;
+			Element config=(Element)  configNode;
 			
 			NodeList descriptionList=description.getChildNodes();
 			desc=descriptionList.item(0).getTextContent();
@@ -140,13 +150,15 @@ public class Loader {
 			NodeList classList=classes.getChildNodes();
 			CodeList codeList=new CodeList();
 			for (int j=0;j<classList.getLength();j++){
-				Element code=(Element)classList.item(j);
+				Node codeNode=classList.item(j);
+				Element code=(Element)codeNode;
 				NodeList egal=code.getChildNodes();
 				codeList.add(new Code(code.getAttribute("name"),egal.item(0).getNodeValue()));
 			}
 			
 			NodeList testList=tests.getChildNodes();
-			Element testName=(Element) testList.item(0);
+			Node testNameNode=testList.item(0);
+			Element testName=(Element) testNameNode;
 			NodeList testCode=testName.getChildNodes();
 			Test test=new Test(testName.getAttribute("name"),testCode.item(0).getNodeValue());
 			
