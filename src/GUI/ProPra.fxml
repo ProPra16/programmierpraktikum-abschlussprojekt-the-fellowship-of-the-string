@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-Infinity" prefWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-Infinity" prefWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
    <children>
       <TextArea fx:id="Area1" disable="true" layoutX="27.0" layoutY="58.0" prefHeight="617.0" prefWidth="551.0" text="public class hello {&#10;    public static void main(String args[]) {&#10;        System.out.println(&quot;Hello World!&quot;);&#10;     }&#10;}&#10;" />
       <TextArea fx:id="Area2" disable="false" layoutX="578.0" layoutY="58.0" prefHeight="617.0" prefWidth="551.0" />
