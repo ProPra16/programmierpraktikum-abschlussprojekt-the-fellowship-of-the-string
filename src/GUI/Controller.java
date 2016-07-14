@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package GUI;
 /*******************************************************************************
  * Copyright (c) 2016 The Fellowship of the String and others.
@@ -14,14 +13,9 @@ package GUI;
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
-=======
-
-// Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
-package GUI;
-
->>>>>>> 4f11c49830c9bc0997f7f3fd0b1dfcdb3a7069dd
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import FileHandling.*;
 
 public class Controller {
 
@@ -50,6 +44,7 @@ public class Controller {
 		}
 	}
 
+    // Buttons verändern
     @FXML 
 	protected void toRed() {
         ampel.wechselZuRot(true);
@@ -66,6 +61,7 @@ public class Controller {
     protected void toGreen() {
         ampel.wechselZuGruen(true);
         SwitchArea();
+        System.out.println(Area2.getText());
         // Button aktivieren
         bYellow.setDisable(false);
 
@@ -86,6 +82,7 @@ public class Controller {
         bGreen.setDisable(true);
     }
 
+    // Ampel referenz übergeben
     public static void setAmpel(Ampel amp) {
         ampel = amp;
     }
