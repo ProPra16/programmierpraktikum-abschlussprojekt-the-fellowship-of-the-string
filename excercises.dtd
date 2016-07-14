@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT exercises (exercise)+>
+<!ELEMENT excercises (exercise)+>
 <!ELEMENT exercise (description, classes, tests, config)>
 
-<!ELEMENT description (#CDATA)>
+<!ELEMENT description (#PCDATA)>
 
 <!ELEMENT classes (class)+>
-<!ELEMENT class (#CDATA)>
+<!ELEMENT class (#PCDATA)>
 <!ATTLIST class name CDATA #REQUIRED>
 
 <!ELEMENT tests (test)>
-<!ELEMENT test (#CDATA)>
+<!ELEMENT test (#PCDATA)>
 <!ATTLIST test name CDATA #REQUIRED>
 
 <!ELEMENT config (babysteps, timetracking)>

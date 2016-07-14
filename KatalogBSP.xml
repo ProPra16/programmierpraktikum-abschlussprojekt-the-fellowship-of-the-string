@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE KatalogBSP SYSTEM "excercises.dtd">
+<!DOCTYPE excercises SYSTEM "excercises.dtd">
 <excercises>
+<exercise>
+<description>Hard Hello World^^
+</description>
+<classes>
+<class name="HardHello">
+public class HardHello{
+	}</class>
+<class name="HelloLSG">
+public class HHelloLSG{
+//loesung hier}</class>
+</classes>
+<tests>
+<test name="HhelloTest">import static org.junit.Assert.*;
+import org.junit.Test;
+public class RomanNumbersTest {
+	@Test
+	public void testSomething() {
+	}
+}</test>
+</tests>
+<config>
+<babysteps value="bla"/>
+<timetracking value="true"/>
+</config>
+</exercise>
 <exercise>
 <description>
 Simple Hello World

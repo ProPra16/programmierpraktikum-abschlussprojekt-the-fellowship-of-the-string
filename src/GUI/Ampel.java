@@ -1,28 +1,25 @@
+<<<<<<< HEAD
 import javax.xml.bind.annotation.XmlRootElement;
 import javafx.application.Application;
 
 
 //bugs gefixt mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
+=======
+// Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
+package GUI;
+
+//(GridPane auf StackPane legen) mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
+>>>>>>> c61c09cb1dfefceb323f01129e25c7ff5c414aaf
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
-
-import javafx.stage.Stage;
-
-//@XmlRootElement
-
-import javafx.stage.*;
-import javafx.application.Application;
 
 public class Ampel {
 
@@ -31,7 +28,6 @@ public class Ampel {
 	private Circle rot, gelb, gruen;
 	private double paneWidth = 300;
  	private BorderPane borderPane;
-    private Ampel ampel;
     private StackPane spane;
     private StackPane pane;
     private GridPane pane1;
@@ -39,9 +35,7 @@ public class Ampel {
 	
 
 	public Ampel(){
-	//public void start(Stage stage) {
-	    super();
-	    Scene scene;	
+	    super();	
 
 		spane = new StackPane();
 		labelkasten = new Rectangle(90,20);
@@ -53,7 +47,7 @@ public class Ampel {
 		label.setText("Erweiterung");
 		spane.getChildren().add(label);
 		
-        StackPane pane = new StackPane();
+        pane = new StackPane();
 		grund = new Rectangle(125, 250, 100, 240);
 		pane.getChildren().add(grund);
 		grund.setFill(Color.BLACK);
@@ -97,32 +91,13 @@ public class Ampel {
 		borderPane.setCenter(pane);
 		borderPane.setTop(spane);
 		borderPane.setBottom(pane2);
-
 		
-}
-		
-	//	Scene scene = new Scene(borderPane,500,500);
-		//stage.setScene(scene);
-	//	stage.show();
-			
-
-		//scene = new Scene(borderPane, 300, 340);
-		//stage.setScene(scene);
-		//stage.show();
-		
-	//	public static void main(String args[]) {
-	//		launch(args);
-	//		}
+		}
 
 		public BorderPane returnPane() {
 			return borderPane;
 
 		}
-	/*	public static void main(String[] args){
-			launch(args);
-		}
-	*/
-
 		public void setBaby(boolean status){
 			if(status == true) label.setText("Babysteps");
 			else label.setText("keine");
@@ -154,7 +129,6 @@ public class Ampel {
 				gruen.setFill(Color.YELLOWGREEN);
 				satz.setText("make the Test pass");
 			}
-			
 		}
 		public void wechselZuRot(boolean status){
 			if(status == true){

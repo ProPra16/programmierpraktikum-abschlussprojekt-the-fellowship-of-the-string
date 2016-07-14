@@ -1,19 +1,10 @@
-/*******************************************************************************
- * Copyright (c) 2016 The Fellowship of the String and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     Marcel Beek - initial API and implementation
- *     Patrick Pirig - initial API and implementation
- *     Phillippe Weise - initial API and implementation
- *     Sabine Timmer - initial API and implementation
- *******************************************************************************/
+// Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package FileHandling;
 
 import org.xml.sax.*;
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -23,23 +14,21 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import org.w3c.dom.*;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.xml.parsers.*;
+
 
 public class Loader {
 
 	public static void loadExcercise(Exercise exer) {
 		Stage loadStage = new Stage();
-		TextField fileName = new TextField("Katalogdatei");
+		TextField fileName = new TextField("KatalogBSP.xml");
 		fileName.setMaxWidth(100);
 		
-		Label anzeige = new Label("anzeige");
-		
+		Label anzeige= new Label("anzeige");
+		anzeige.setVisible(false);
 		 
 		Button laden = new Button("Katalog laden");
 		laden.setOnAction(e -> laden(fileName.getText(), anzeige, loadStage,exer));
@@ -63,20 +52,22 @@ public class Loader {
 			Document xmldoc;
 			try {
 				xmldoc = loadDoc(filename);
-				exer=katalogView(xmldoc,stage);
+				katalogView(xmldoc,stage, exer);
 			} catch (IOException e) {
 				anzeige.setText("Datei nicht vorhanden");
+				anzeige.setVisible(true);
 				e.printStackTrace();
 			} catch (SAXException e) {
 				anzeige.setText("Datei ist kein gültiger Katalog");
+				anzeige.setVisible(true);
 				e.printStackTrace();
 			}
 			
 
 	}
 
-	private static  Exercise katalogView(Document xmldoc,Stage stage) {
-		Exercise exer=null;
+	private static  Exercise katalogView(Document xmldoc,Stage stage,Exercise exer) {
+		
 		ArrayList<Exercise> exerList=parseExercises(xmldoc);
 		VBox vbox=new VBox(10);
 		for(int i=0;i<exerList.size();i++){
@@ -104,6 +95,7 @@ public class Loader {
 		DocumentBuilder builder;
 		try {
 			builder = factory.newDocumentBuilder();
+		//	builder.setErrorHandler(e-> );
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 			return null;
@@ -118,7 +110,8 @@ public class Loader {
 	
 	
 	private static  ArrayList<Exercise> parseExercises(Document xmldoc){
-		NodeList exerList=xmldoc.getElementsByTagName("Exercise");
+		
+		NodeList exerList=xmldoc.getElementsByTagName("exercise");
 		//Exercise[] exerArray=new Exercise[exerList.getLength()];
 		ArrayList<Exercise> exerArray=new ArrayList<Exercise>();
 		String desc;
@@ -129,33 +122,52 @@ public class Loader {
 			Element exerElement=(Element) exerNode;
 			NodeList interList=exerElement.getChildNodes();
 			
-			Element description=(Element) interList.item(0);
-			Element classes=(Element) interList.item(1);
-			Element tests=(Element) interList.item(2);
-			Element config=(Element) interList.item(3);
+			Node descNode=interList.item(1);
+			Node classesNode=interList.item(3);
+			Node testsNode=interList.item(5);
+			Node configNode=interList.item(7);
 			
-			NodeList descriptionList=description.getChildNodes();
-			desc=descriptionList.item(0).getTextContent();
 			
+			Element classes=(Element) classesNode;
+			Element tests=(Element) testsNode;
+			Element config=(Element)  configNode;
+		
+			
+			desc=descNode.getTextContent();
+			//System.out.println(desc);
 			NodeList classList=classes.getChildNodes();
 			CodeList codeList=new CodeList();
 			for (int j=0;j<classList.getLength();j++){
-				Element code=(Element)classList.item(j);
-				NodeList egal=code.getChildNodes();
-				codeList.add(new Code(code.getAttribute("name"),egal.item(0).getNodeValue()));
+				if(j%2!=0){
+					Node codeNode=classList.item(j);
+					//System.out.println(codeNode.getNodeName());
+					Element code=(Element)codeNode;
+					//System.out.println(code.getAttribute("name"));
+					//System.out.println(code.getTextContent());
+					
+					codeList.add(new Code(code.getAttribute("name"),code.getTextContent()));
+				}
 			}
 			
-			NodeList testList=tests.getChildNodes();
-			Element testName=(Element) testList.item(0);
-			NodeList testCode=testName.getChildNodes();
-			Test test=new Test(testName.getAttribute("name"),testCode.item(0).getNodeValue());
+			NodeList testList=testsNode.getChildNodes();
+			Node testNameNode=testList.item(1);
+			//System.out.println(testNameNode.getNodeName());
 			
+			Element testName=(Element) testNameNode;
+			//System.out.println(testName.getAttribute("name"));
+			//System.out.println();
+			Test test=new Test(testName.getAttribute("name"),testName.getTextContent());
+				
 			NodeList configList=config.getChildNodes();
-			Element babySteps=(Element) configList.item(0);
-			Element timeTrack=(Element) configList.item(1);
+			Element babySteps=(Element) configList.item(1);
+			Element timeTrack=(Element) configList.item(3);
+			//System.out.println(babySteps.getNodeName());
+			//System.out.println(timeTrack.getNodeName());
 			
 			boolean baby=babySteps.getAttribute("value").equals("true");
 			boolean tracker=timeTrack.getAttribute("value").equals("true");
+			//System.out.println(baby);
+			//System.out.println(tracker);
 			
 			exerArray.add(new Exercise(desc,codeList,test,baby,tracker));
 			
