@@ -18,8 +18,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-
-
 public class Loader {
 
 	public static void loadExcercise(Exercise exer) {
@@ -46,8 +44,6 @@ public class Loader {
 	}
 
 	private static  void laden(String filename, Label anzeige, Stage stage,Exercise exer) {
-			
-		
 			
 			Document xmldoc;
 			try {
