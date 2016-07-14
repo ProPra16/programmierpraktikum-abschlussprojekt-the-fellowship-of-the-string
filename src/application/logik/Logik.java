@@ -11,7 +11,7 @@ import FileHandling.Exercise;
 import FileHandling.Loader;
 import GUI.Controller;
 
-public class Logik implements LogikZuGui{
+public class Logik{
 	
 	boolean lauft = true;
 	int step = 0; //0 = test schreiben, 1 = code schreiben, 2 = refactor;
@@ -33,21 +33,17 @@ public class Logik implements LogikZuGui{
 	public void delete(){
 		
 	}
-
-
-	@Override
 	public void loadKatalog() { //Den katalog laden und tddt entsprechend einrichten
 		Loader.loadExcercise(e);
 		
 	}
-
-	@Override
-	public void nextStep() {
-		if(e.getBaby()==true) countdown(3000);
+	public boolean nextStep() {
+		boolean switchArea=false;
+		if(e.getBaby()==true) countdown(e.getTime());
 		switch(step){
 			case 0: {
 				if(e.oneFailing()){ //wenn tests kompilieren weiter
-					Controller.SwitchArea();//Die GUI methode zum textfeld wechseln wird aufgerufen
+					switchArea=true;
 					
 					if(e.getTimer()==true){
 					trT += trackStop();
@@ -76,7 +72,7 @@ public class Logik implements LogikZuGui{
 			}
 			case 2:{
 				if(e.codeCompiles() && e.testsRunning()){//wenn immernoch alles laeuft weiter
-					Controller.SwitchArea();
+					switchArea=true;
 					
 					if(e.getTimer()== true){
 					trR += trackStop();
@@ -88,6 +84,7 @@ public class Logik implements LogikZuGui{
 				break;
 			}
 		}
+		return switchArea;
 	}
 		//fuer babysteps
 	private void countdown(long sekunden){ //wenn aktiviert, wird die übergebene zeit bis null runtergezählt
@@ -125,11 +122,6 @@ public class Logik implements LogikZuGui{
 		frame.pack();
 		RefineryUtilities.centerFrameOnScreen(frame);
 		frame.setVisible(true);
-	}
-	@Override
-	public void save() {
-		// TODO Auto-generated method stub
-		
 	}
 	
 }
