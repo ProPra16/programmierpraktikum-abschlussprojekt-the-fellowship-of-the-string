@@ -16,6 +16,7 @@ package GUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import FileHandling.*;
+import application.logik.*;
 
 public class Controller {
 
@@ -31,6 +32,8 @@ public class Controller {
     private Button bGreen;
 
     private static Ampel ampel;
+    //private Logik logik;
+    Logik.loadKatalog();
 
 	public void SwitchArea() {
 		if (Area1.isDisable()) {
