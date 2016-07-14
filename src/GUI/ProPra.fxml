@@ -48,5 +48,7 @@
          <opaqueInsets>
             <Insets bottom="5.0" />
          </opaqueInsets></Label>
-   </children>
+</children>
 </Pane>
+
+

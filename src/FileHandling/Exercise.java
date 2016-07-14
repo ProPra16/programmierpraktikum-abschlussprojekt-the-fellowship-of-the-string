@@ -40,6 +40,12 @@ public class Exercise {
 	public Exercise() {
 
 	}
+	public String getTest(){
+		return test.getTestText();
+	}
+	public String getCode(){
+		return klassen.getCodeText();
+	}
 
 	public boolean codeCompiles() {
 

@@ -1,3 +1,4 @@
+//package GUI;
 /*******************************************************************************
  * Copyright (c) 2016 The Fellowship of the String and others.
  * All rights reserved. This program and the accompanying materials
@@ -12,8 +13,6 @@
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
 
-
-package GUI;
 import java.io.File;
 
 import javax.xml.bind.JAXBContext;
@@ -31,33 +30,13 @@ import javafx.geometry.Insets;
 public class GUIMain extends Application {
 
 	public static void main(String[] args) {
-			
-	/*	 try{
-			 Ampel ampel = new Ampel();
-				File file = new File("ProPra.xml");
-				JAXBContext jaxbContext;
-			
-				jaxbContext = JAXBContext.newInstance(Ampel.class);
-				
-				
-				Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-				// output pretty printed
-				jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-				jaxbMarshaller.marshal(ampel, file);
-				jaxbMarshaller.marshal(ampel, System.out);
-		 }
-		 catch(JAXBException e){
-			 e.printStackTrace();
-		 }*/
-			 
 		launch(args);
 	}
 
 	public void start(Stage stage) throws Exception {
 		Pane root = (Pane) FXMLLoader.load(getClass().getResource("ProPra.fxml"));
 		Ampel A = new Ampel();
+        Controller.setAmpel(A);
 		BorderPane bp = A.returnPane();
 		bp.setPrefSize(350, 350);
 		bp.setLayoutX(1070);
