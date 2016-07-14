@@ -2,7 +2,7 @@ application/
 tests/
 bin/
 src/vk
-
+/bin/FileHandling/SaveTest.class
 *.class
 *.classpath
 .classpath
