@@ -94,6 +94,9 @@ public class Ampel {
 			return borderPane;
 
 		}
+		public void setBoth(boolean statusBaby, boolean statusTime){
+			if(statusBaby == true && statusTime==true) label.setText("Beides");
+		}
 		public void setBaby(boolean status){
 			if(status == true) label.setText("Babysteps");
 			else label.setText("keine");
