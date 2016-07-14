@@ -40,6 +40,10 @@ public class Exercise {
 	public Exercise() {
 
 	}
+	
+	public Code latestCode(){
+		return klassen.getLatest();
+	}
 
 	public boolean codeCompiles() {
 
