@@ -124,7 +124,7 @@ public class Logik{
 		frame.setVisible(true);
 	}*/
 	public static void main(String[] args){
-		countdown(500);
+		countdown(30);
 	}
 	
 }
