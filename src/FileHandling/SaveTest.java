@@ -11,7 +11,7 @@ public class SaveTest {
 		Code code=new Code("HelloWorld","public class HelloWorld {public static void main(String[] args){System.out.println(a);}}");
 		list.add(code);
 		Test test=new Test("HelloTest","import static org.junit.Assert.*;import org.junit.Test;public class HelloTest {@Testpublic void testSomething() {}}");
-		Exercise exer=new Exercise(desc,list,test,false,false);
+		Exercise exer=new Exercise(desc,list,test,new Babysteps(true,12),false);
 
 		try {
 			exer.save();
