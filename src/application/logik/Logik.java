@@ -64,7 +64,8 @@ public class Logik{
 				else if(e.getBaby() == true){
 					delete();//TODO
 				}
-				break;
+				//break;
+				return switchArea;
 			}
 			case 1:{
 				if(e.codeCompiles() && e.testsRunning()){//wenn compiliert und alle tests laufen weiter
@@ -78,7 +79,8 @@ public class Logik{
 				else if(e.getBaby() == true){
 					delete();//TODO
 				}
-				break;
+				//break;
+				return switchArea;
 			}
 			case 2:{
 				if(e.codeCompiles() && e.testsRunning()){//wenn immernoch alles laeuft weiter
@@ -92,7 +94,8 @@ public class Logik{
 						delete();//TODO
 					step = 0;
 				}
-				break;
+				//break;
+				return switchArea;
 			}
 		}
 		return switchArea;
