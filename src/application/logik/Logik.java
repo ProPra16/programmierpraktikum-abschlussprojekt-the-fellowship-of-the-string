@@ -8,6 +8,7 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.ui.RefineryUtilities;
 
 import FileHandling.Exercise;
+import FileHandling.Loader;
 import GUI.Controller;
 
 public class Logik implements LogikZuGui{
@@ -20,16 +21,23 @@ public class Logik implements LogikZuGui{
 	long trT = 0;
 	long trC = 0;
 	long trR = 0;
-	Exercise e = new Exercise();
+	Exercise e = null;
 	
-	@Override
-	public void save() { //Tests und Programmcode in Dateien speichern
-
+	
+	public void saveLatestCode(String content){ //Tests und Programmcode in Dateien speichern
+		e.setCode(content);
 	}
+	public void saveLatestTest(String content){
+		e.setTest(content);
+	}
+	public void delete(){
+		
+	}
+
 
 	@Override
 	public void loadKatalog() { //Den katalog laden und tddt entsprechend einrichten
-		
+		Loader.loadExcercise(e);
 		
 	}
 
@@ -37,10 +45,13 @@ public class Logik implements LogikZuGui{
 	public void nextStep() {
 		switch(step){
 			case 0: {
-				if(e.codeCompiles() && e.oneFailing()){ //wenn tests kompilieren weiter
+				if(e.oneFailing()){ //wenn tests kompilieren weiter
 					Controller.SwitchArea();//Die GUI methode zum textfeld wechseln wird aufgerufen
+					
+					if(e.getTimer()==true){
 					trT += trackStop();
 					trackStart();
+					}
 					step = 1;
 				}
 				else if(e.getBaby() == true){
@@ -50,8 +61,11 @@ public class Logik implements LogikZuGui{
 			}
 			case 1:{
 				if(e.codeCompiles() && e.testsRunning()){//wenn compiliert und alle tests laufen weiter
+					
+					if(e.getTimer()==true){
 					trC += trackStop();
 					trackStart();
+					}
 					step = 2;
 				}
 				else if(e.getBaby() == true){
@@ -62,16 +76,19 @@ public class Logik implements LogikZuGui{
 			case 2:{
 				if(e.codeCompiles() && e.testsRunning()){//wenn immernoch alles laeuft weiter
 					Controller.SwitchArea();
+					
+					if(e.getTimer()== true){
 					trR += trackStop();
 					trackStart();
+					}
+					if(e.getBaby()==true) delete();
 					step = 0;
 				}
 				break;
 			}
 		}
 	}
-	
-	//fuer babysteps
+		//fuer babysteps
 	private void countdown(long sekunden){ //wenn aktiviert, wird die übergebene zeit bis null runtergezählt
 		lauft = true;
 		long deltaT = System.nanoTime();
