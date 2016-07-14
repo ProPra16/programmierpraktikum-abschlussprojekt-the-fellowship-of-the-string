@@ -8,7 +8,9 @@ import java.io.IOException;
 
 import vk.core.api.CompilationUnit;
 import vk.core.api.CompilerFactory;
+import vk.core.api.CompilerResult;
 import vk.core.api.JavaStringCompiler;
+import vk.core.api.TestHelpers;
 import vk.core.api.TestResult;
 
 public class Test {
@@ -29,6 +31,8 @@ public class Test {
 		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitTest);
 		compiler.compileAndRunTests();
+		CompilerResult compilerResult = compiler.getCompilerResult();
+		
 		TestResult result = compiler.getTestResult();
 		int fails = result.getNumberOfFailedTests();
 
@@ -42,6 +46,8 @@ public class Test {
 		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitTest);
 		compiler.compileAndRunTests();
+		CompilerResult compilerResult = compiler.getCompilerResult();
+		
 		TestResult result = compiler.getTestResult();
 		int fails = result.getNumberOfFailedTests();
 
