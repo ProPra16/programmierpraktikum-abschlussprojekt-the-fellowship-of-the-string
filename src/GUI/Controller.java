@@ -16,6 +16,7 @@ package GUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import FileHandling.*;
+import application.logik.Logik;
 
 public class Controller {
 
@@ -31,6 +32,7 @@ public class Controller {
     private Button bGreen;
 
     private static Ampel ampel;
+    private static Exercise e;
 
 	public void SwitchArea() {
 		if (Area1.isDisable()) {
@@ -51,6 +53,7 @@ public class Controller {
         SwitchArea();
         // Button aktivieren
         bGreen.setDisable(false);
+        Loader.loadExcercise(e);
 
         // Buttons deaktivieren
         bYellow.setDisable(true);
@@ -85,5 +88,10 @@ public class Controller {
     // Ampel referenz übergeben
     public static void setAmpel(Ampel amp) {
         ampel = amp;
+    }
+
+    public static void setExercise(Exercise ex) {
+        Loader.loadExcercise(ex);
+        e = ex;
     }
 }

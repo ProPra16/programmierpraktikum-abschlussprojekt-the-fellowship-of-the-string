@@ -5,19 +5,11 @@
 <description>Hard Hello World^^
 </description>
 <classes>
-<class name="HardHello">
-public class HardHello{
-	}</class>
 <class name="HelloLSG">
-<<<<<<< HEAD
-public class HelloLSG{public static void main(String[] args){System.out.print(15);}}</class>
-=======
-
 public class HelloLSG{
 	public static void main(String[] args){
 		System.out.print(15);}}
 </class>
->>>>>>> 4f11c49830c9bc0997f7f3fd0b1dfcdb3a7069dd
 </classes>
 <tests>
 <test name="HelloTest">import static org.junit.Assert.*;

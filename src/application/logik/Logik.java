@@ -96,6 +96,7 @@ public class Logik{
 		}
 		return switchArea;
 	}
+
 	//fuer tracking
 	// TODO trackStart() muss am anfang mit aufgerufen werden!!
 	private void trackStart(){
