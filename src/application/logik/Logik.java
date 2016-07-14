@@ -90,11 +90,12 @@ public class Logik{
 	private static void countdown(long sekunden){ //wenn aktiviert, wird die übergebene zeit bis null runtergezählt
 		lauft = true;
 		long deltaT = System.nanoTime();
-		while(deltaT != sekunden){
-			deltaT += System.nanoTime()/SEC - deltaT;
+		while(deltaT < sekunden){
+			deltaT += System.nanoTime()/SEC;
 		}
 		lauft = false;
-		nextStep();
+		//nextStep();
+        System.out.println("Final Countdown");
 	}
 	
 	//fuer tracking
@@ -124,7 +125,7 @@ public class Logik{
 		frame.setVisible(true);
 	}*/
 	public static void main(String[] args){
-		countdown(500);
+		countdown(10);
 	}
 	
 }
