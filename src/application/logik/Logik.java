@@ -97,9 +97,9 @@ public class Logik implements LogikZuGui{
 		//http://www.math.hu-berlin.de/~ccafm/lehre_BZQ_Numerik/allg/JAVA_Pakete/JFreeChart/Codes/PieChart_code.html
 		//JFreeChart Library (GNU License)
 		DefaultPieDataset pieDataset = new DefaultPieDataset();
-		pieDataset.setValue("Red", 25);
-		pieDataset.setValue("Refactor", 25);
-		pieDataset.setValue("Green", 50);
+		pieDataset.setValue("Red", 100/trT);
+		pieDataset.setValue("Refactor", 100/trR);
+		pieDataset.setValue("Green",100/ trC);
 		
 		JFreeChart chart = ChartFactory.createPieChart
 		("Time",pieDataset,true,false,false);
