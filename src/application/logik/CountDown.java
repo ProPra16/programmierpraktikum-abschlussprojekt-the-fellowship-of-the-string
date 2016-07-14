@@ -1,28 +1,27 @@
-//http://www.java-forum.org/thema/countdown-timer-fuer-spiel.96377/
+package application.logik;
+//inspiriert von http://www.java-forum.org/thema/countdown-timer-fuer-spiel.96377/
 import java.util.Timer;
 import java.util.TimerTask;
 
+import FileHandling.Exercise;
+
 
 public class CountDown {
-private int count = 10;
+private long count;
 
-public CountDown() {
+public CountDown(Exercise e) {
+count = e.babyLimit();
 Timer timer = new Timer();
 TimerTask task = new TimerTask() {
-@Override
+
 public void run() {
-System.out.println(count);
 if (count > 0)
 count--;
 
 if (count == 0)
-System.exit(0);
+System.out.println("Abgelaufen");
 }
 };
 timer.schedule(task, 0, 1000);
-}
-
-public static void main(String[] args) {
-new CountDown();
 }
 }

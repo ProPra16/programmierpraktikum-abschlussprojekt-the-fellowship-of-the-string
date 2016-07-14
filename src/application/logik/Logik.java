@@ -39,7 +39,7 @@ public class Logik{
 	}
 	public static boolean nextStep() {
 		boolean switchArea=false;
-		if(e.getBaby()==true) countdown(e.babyLimit());
+		if(e.getBaby()==true) new CountDown(e);
 		switch(step){
 			case 0: {
 				if(e.oneFailing()){ //wenn tests kompilieren weiter
