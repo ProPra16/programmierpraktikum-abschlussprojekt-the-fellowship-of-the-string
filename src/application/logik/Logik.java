@@ -1,11 +1,11 @@
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package application.logik;
 
-/*import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.ui.RefineryUtilities;*/
+import org.jfree.ui.RefineryUtilities;
 
 import FileHandling.Exercise;
 import FileHandling.Loader;
@@ -86,17 +86,6 @@ public class Logik{
 		}
 		return switchArea;
 	}
-		//fuer babysteps
-	private static void countdown(long sekunden){ //wenn aktiviert, wird die übergebene zeit bis null runtergezählt
-		lauft = true;
-		long deltaT = System.nanoTime();
-		while(deltaT != sekunden){
-			deltaT += System.nanoTime()/SEC - deltaT;
-		}
-		lauft = false;
-		nextStep();
-	}
-	
 	//fuer tracking
 	// TODO trackStart() muss am anfang mit aufgerufen werden!!
 	private static void trackStart(){
@@ -108,7 +97,7 @@ public class Logik{
 		return tr2 - tr1;
 	}
 	
-/*	public void stats(){
+	public void stats(){
 		//http://www.math.hu-berlin.de/~ccafm/lehre_BZQ_Numerik/allg/JAVA_Pakete/JFreeChart/Codes/PieChart_code.html
 		//JFreeChart Library (GNU License)
 		DefaultPieDataset pieDataset = new DefaultPieDataset();
@@ -122,9 +111,5 @@ public class Logik{
 		frame.pack();
 		RefineryUtilities.centerFrameOnScreen(frame);
 		frame.setVisible(true);
-	}*/
-	public static void main(String[] args){
-		countdown(500);
 	}
-	
 }
