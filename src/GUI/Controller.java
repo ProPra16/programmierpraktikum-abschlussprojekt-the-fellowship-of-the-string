@@ -56,6 +56,7 @@ public class Controller {
     // Buttons verändern
     @FXML 
     protected void toRed() {
+        System.out.println("toRed");
         String code = Area1.getText();
         if (log.nextStep(code)) {
             ampel.wechselZuRot(true);
@@ -71,6 +72,7 @@ public class Controller {
 
     @FXML
     protected void toGreen() {
+        System.out.println("toGreen");
         String code = Area2.getText();
         if (log.nextStep(code)) {
             ampel.wechselZuGruen(true);
@@ -86,6 +88,7 @@ public class Controller {
 
     @FXML
     protected void toYellow() {
+        System.out.println("toYellow");
         String code = Area2.getText();
         if (log.nextStep(code)) {
             ampel.wechselZuGelb(true);
