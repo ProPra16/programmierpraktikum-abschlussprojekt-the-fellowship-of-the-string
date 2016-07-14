@@ -27,21 +27,37 @@ public class Exercise {
 		this.baby = baby;
 		this.timer = timer;
 	}
+	public Exercise(){
+		this.description="Guten tag";
+		CodeList list=new CodeList();
+		Code code=new Code("here","Implement Code here");
+		list.add(code);
+		this.klassen=list;
+		this.test=new Test("HelloTest","Implement Test here");
+		this.baby=new Babysteps(false,12);
+		this.timer=false;
+	}
+	
 	public boolean getBaby(){
 		return this.baby.value();		
 	}
+	
 	public boolean getTimer(){
 		return this.timer;
 	}
+	
 	public String getTest(){
 		return test.getTestText();
 	}
+	
 	public String getCode(){
 		return klassen.getCodeText();
 	}
+	
 	public void setCode(String newContent){
 		klassen.setCodeText(newContent);
 	}
+	
 	public void setTest(String newContent){
 		test.setTestText(newContent);
 	}
