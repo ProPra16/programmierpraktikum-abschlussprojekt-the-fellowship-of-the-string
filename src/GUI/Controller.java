@@ -25,13 +25,10 @@ public class Controller {
     @FXML
     public void initialize(){
         e = new Exercise();
-        log = new Logik(e);
         Loader.loadExcercise(e);
+        log = new Logik(e);
         Area1.setText(e.getCode());
         Area2.setText(e.getTest());
-
-       
-
     }
     //public Controller() {
     //    Area1 = new TextArea();
