@@ -10,8 +10,10 @@ public class HardHello{
 	}</class>
 <class name="HelloLSG">
 
-public class HelloLSG{public static void main(String[] args){System.out.print(15);}}</class>
-
+public class HelloLSG{
+	public static void main(String[] args){
+		System.out.print(15);}}
+</class>
 </classes>
 <tests>
 <test name="HelloTest">import static org.junit.Assert.*;
