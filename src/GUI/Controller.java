@@ -28,6 +28,7 @@ public class Controller {
         log = new Logik(e);
         Area1.setText(e.getCode());
         Area2.setText(e.getTest());
+        ampel.wechselZuRot(true);
         Loader.loadExcercise(e);
     }
     //public Controller() {
