@@ -27,7 +27,7 @@ public class Test {
 
 		if (fails == 1)
 			return true;
-		return false; // mehr als ein test schlägt fehl sollte nicht sein im
+		return false; // mehr als ein test schlaegt fehl sollte nicht sein im
 						// tddt kreislauf
 	}
 

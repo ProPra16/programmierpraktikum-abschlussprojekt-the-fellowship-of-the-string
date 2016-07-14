@@ -58,7 +58,7 @@ public class Loader {
 				anzeige.setVisible(true);
 				e.printStackTrace();
 			} catch (SAXException e) {
-				anzeige.setText("Datei ist kein gültiger Katalog");
+				anzeige.setText("Datei ist kein gueltiger Katalog");
 				anzeige.setVisible(true);
 				e.printStackTrace();
 			}

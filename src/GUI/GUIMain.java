@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+package GUI;
 /*******************************************************************************
  * Copyright (c) 2016 The Fellowship of the String and others.
  * All rights reserved. This program and the accompanying materials
@@ -12,11 +12,7 @@
  *     Phillippe Weise - initial API and implementation
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
-=======
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
->>>>>>> c61c09cb1dfefceb323f01129e25c7ff5c414aaf
-
-package GUI;
 import java.io.File;
 
 import javax.xml.bind.JAXBContext;

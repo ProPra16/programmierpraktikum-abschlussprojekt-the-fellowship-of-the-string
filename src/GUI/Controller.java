@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-
+package GUI;
 /*******************************************************************************
  * Copyright (c) 2016 The Fellowship of the String and others.
  * All rights reserved. This program and the accompanying materials
@@ -13,10 +12,7 @@
  *     Phillippe Weise - initial API and implementation
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
-=======
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
-package GUI;
->>>>>>> c61c09cb1dfefceb323f01129e25c7ff5c414aaf
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -35,7 +31,7 @@ public class Controller {
 
     private static Ampel ampel;
 
-	private void SwitchArea() {
+	public void SwitchArea() {
 		if (Area1.isDisable()) {
 			Area1.setDisable(false);
 			Area2.setDisable(true);
