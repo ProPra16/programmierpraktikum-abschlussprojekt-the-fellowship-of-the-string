@@ -37,30 +37,30 @@ public class Logik implements LogikZuGui{
 	public void nextStep() {
 		switch(step){
 			case 0: {
-				if(code.codeCompiles() && test.oneTestFailing()){ //wenn tests kompilieren weiter
+				if(e.codeCompiles() && e.oneFailing()){ //wenn tests kompilieren weiter
 					Controller.SwitchArea();//Die GUI methode zum textfeld wechseln wird aufgerufen
 					trT += trackStop();
 					trackStart();
 					step = 1;
 				}
-				else if(babysteps == true){
+				else if(e.getBaby() == true){
 					delete();
 				}
 				break;
 			}
 			case 1:{
-				if(code.codeCompiles() && test.allTestsPassing()){//wenn compiliert und alle tests laufen weiter
+				if(e.codeCompiles() && e.testsRunning()){//wenn compiliert und alle tests laufen weiter
 					trC += trackStop();
 					trackStart();
 					step = 2;
 				}
-				else if(babysteps == true){
+				else if(e.getBaby() == true){
 					delete();
 				}
 				break;
 			}
 			case 2:{
-				if(code.codeCompiles() && test.allTestsPassing()){//wenn immernoch alles laeuft weiter
+				if(e.codeCompiles() && e.testsRunning()){//wenn immernoch alles laeuft weiter
 					Controller.SwitchArea();
 					trR += trackStop();
 					trackStart();
