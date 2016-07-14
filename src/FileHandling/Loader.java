@@ -43,7 +43,7 @@ public class Loader {
 		loadStage.show();
 	}
 
-	private static  void laden(String filename, Label anzeige, Stage stage,Exercise exer) {
+	private static void laden(String filename, Label anzeige, Stage stage,Exercise exer) {
 			
 			Document xmldoc;
 			try {
@@ -62,7 +62,7 @@ public class Loader {
 
 	}
 
-	private static  Exercise katalogView(Document xmldoc,Stage stage,Exercise exer) {
+	private static Exercise katalogView(Document xmldoc,Stage stage,Exercise exer) {
 		
 		ArrayList<Exercise> exerList=parseExercises(xmldoc);
 		VBox vbox=new VBox(10);
@@ -84,7 +84,7 @@ public class Loader {
 		stage.close();
 	}
 
-	private static  Document loadDoc(String file) throws   SAXException, IOException{
+	private static Document loadDoc(String file) throws   SAXException, IOException{
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		
 		factory.setIgnoringComments(true);
@@ -106,7 +106,7 @@ public class Loader {
 	
 	
 	
-	private static  ArrayList<Exercise> parseExercises(Document xmldoc){
+	private static ArrayList<Exercise> parseExercises(Document xmldoc){
 		
 		NodeList exerList=xmldoc.getElementsByTagName("exercise");
 		//Exercise[] exerArray=new Exercise[exerList.getLength()];
