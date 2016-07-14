@@ -30,8 +30,8 @@ public class Loader {
 		
 		Label anzeige= new Label("anzeige");
 		anzeige.setVisible(false);
-		 
-		Button laden = new Button("Katalog laden");
+		  
+		Button laden = new Button("Katalog laden");    
 		laden.setOnAction(e -> laden(fileName.getText(), anzeige, loadStage,exer));
 		
 		VBox vBox=new VBox(10);
