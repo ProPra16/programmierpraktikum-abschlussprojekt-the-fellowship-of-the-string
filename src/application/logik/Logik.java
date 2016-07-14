@@ -50,7 +50,7 @@ public class Logik{
 	public boolean nextStep(String code) {
 		boolean switchArea=false;
 		Exercise tmp = new Exercise();
-		tmp = e;
+		tmp.clone(e);
 		
 		if(e.getBaby()==true) new CountDown(e);
 		switch(step){
@@ -63,7 +63,7 @@ public class Logik{
 					trT += trackStop();
 					trackStart();
 					}
-					e = tmp;
+					e.clone(tmp);
 					step = 1;
 				}
 				else if(tmp.getBaby() == true){
@@ -79,7 +79,7 @@ public class Logik{
 					trC += trackStop();
 					trackStart();
 					}
-					e = tmp;
+					e.clone(tmp);
 					step = 2;
 				}
 				else if(tmp.getBaby() == true){
@@ -98,7 +98,7 @@ public class Logik{
 					}
 					if(tmp.getBaby()==true) 
 						delete();//TODO
-					e = tmp;
+					e.clone(tmp);
 					step = 0;
 				}
 				break;
