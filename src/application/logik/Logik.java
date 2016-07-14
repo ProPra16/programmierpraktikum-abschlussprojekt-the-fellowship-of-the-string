@@ -1,27 +1,27 @@
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package application.logik;
 
-import org.jfree.chart.ChartFactory;
+/*import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.ui.RefineryUtilities;
+import org.jfree.ui.RefineryUtilities;*/
 
 import FileHandling.Exercise;
 import FileHandling.Loader;
 import GUI.Controller;
 
-public class Logik implements LogikZuGui{
+public class Logik{
 	
-	boolean lauft = true;
-	int step = 0; //0 = test schreiben, 1 = code schreiben, 2 = refactor;
+	static boolean lauft = true;
+	static int step = 0; //0 = test schreiben, 1 = code schreiben, 2 = refactor;
 	private final static int SEC = 1000000000;
 	static long tr1 = 0;
 	static long tr2 = 0;
-	long trT = 0;
-	long trC = 0;
-	long trR = 0;
-	Exercise e = null;
+	static long trT = 0;
+	static long trC = 0;
+	static long trR = 0;
+	static Exercise e = null;
 	
 	
 	public void saveLatestCode(String content){ //Tests und Programmcode in Dateien speichern
@@ -30,24 +30,20 @@ public class Logik implements LogikZuGui{
 	public void saveLatestTest(String content){
 		e.setTest(content);
 	}
-	public void delete(){
+	public static void delete(){
 		
 	}
-
-
-	@Override
 	public void loadKatalog() { //Den katalog laden und tddt entsprechend einrichten
 		Loader.loadExcercise(e);
 		
 	}
-
-	@Override
-	public void nextStep() {
-		if(e.getBaby()==true) countdown(3000);
+	public static boolean nextStep() {
+		boolean switchArea=false;
+		if(e.getBaby()==true) countdown(e.babyLimit());
 		switch(step){
 			case 0: {
 				if(e.oneFailing()){ //wenn tests kompilieren weiter
-					Controller.SwitchArea();//Die GUI methode zum textfeld wechseln wird aufgerufen
+					switchArea=true;
 					
 					if(e.getTimer()==true){
 					trT += trackStop();
@@ -76,7 +72,7 @@ public class Logik implements LogikZuGui{
 			}
 			case 2:{
 				if(e.codeCompiles() && e.testsRunning()){//wenn immernoch alles laeuft weiter
-					Controller.SwitchArea();
+					switchArea=true;
 					
 					if(e.getTimer()== true){
 					trR += trackStop();
@@ -88,9 +84,10 @@ public class Logik implements LogikZuGui{
 				break;
 			}
 		}
+		return switchArea;
 	}
 		//fuer babysteps
-	private void countdown(long sekunden){ //wenn aktiviert, wird die übergebene zeit bis null runtergezählt
+	private static void countdown(long sekunden){ //wenn aktiviert, wird die übergebene zeit bis null runtergezählt
 		lauft = true;
 		long deltaT = System.nanoTime();
 		while(deltaT != sekunden){
@@ -102,7 +99,7 @@ public class Logik implements LogikZuGui{
 	
 	//fuer tracking
 	// TODO trackStart() muss am anfang mit aufgerufen werden!!
-	private void trackStart(){
+	private static void trackStart(){
 		tr1 = System.nanoTime()/SEC;
 	}
 	
@@ -111,7 +108,7 @@ public class Logik implements LogikZuGui{
 		return tr2 - tr1;
 	}
 	
-	public void stats(){
+/*	public void stats(){
 		//http://www.math.hu-berlin.de/~ccafm/lehre_BZQ_Numerik/allg/JAVA_Pakete/JFreeChart/Codes/PieChart_code.html
 		//JFreeChart Library (GNU License)
 		DefaultPieDataset pieDataset = new DefaultPieDataset();
@@ -125,11 +122,9 @@ public class Logik implements LogikZuGui{
 		frame.pack();
 		RefineryUtilities.centerFrameOnScreen(frame);
 		frame.setVisible(true);
-	}
-	@Override
-	public void save() {
-		// TODO Auto-generated method stub
-		
+	}*/
+	public static void main(String[] args){
+		countdown(500);
 	}
 	
 }
