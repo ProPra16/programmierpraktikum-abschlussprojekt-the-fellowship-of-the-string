@@ -62,7 +62,7 @@ public class Logik{
 					step = 1;
 				}
 				else if(e.getBaby() == true){
-					delete();
+					delete();//TODO
 				}
 				break;
 			}
@@ -76,7 +76,7 @@ public class Logik{
 					step = 2;
 				}
 				else if(e.getBaby() == true){
-					delete();
+					delete();//TODO
 				}
 				break;
 			}
