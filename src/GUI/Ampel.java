@@ -1,3 +1,5 @@
+package GUI;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 import javafx.application.Application;

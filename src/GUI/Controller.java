@@ -1,3 +1,5 @@
+package GUI;
+
 /*******************************************************************************
  * Copyright (c) 2016 The Fellowship of the String and others.
  * All rights reserved. This program and the accompanying materials
