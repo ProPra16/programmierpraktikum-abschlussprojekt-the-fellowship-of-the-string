@@ -47,55 +47,61 @@ public class Logik{
 		Loader.loadExcercise(e);
 		
 	}
-	public boolean nextStep() {
+	public boolean nextStep(String code) {
 		boolean switchArea=false;
+		Excercise tmp = new Excercise();
+		tmp = e;
+		
 		if(e.getBaby()==true) new CountDown(e);
 		switch(step){
 			case 0: {
-				if(e.oneFailing()){ //wenn tests kompilieren weiter
+				tmp.setTest(code);
+				if(tmp.oneFailing()){ //wenn tests kompilieren weiter
 					switchArea=true;
 					
-					if(e.getTimer()==true){
+					if(tmp.getTimer()==true){
 					trT += trackStop();
 					trackStart();
 					}
+					e = tmp;
 					step = 1;
 				}
-				else if(e.getBaby() == true){
+				else if(tmp.getBaby() == true){
 					delete();//TODO
 				}
-				//break;
-				return switchArea;
+				break;
 			}
 			case 1:{
-				if(e.codeCompiles() && e.testsRunning()){//wenn compiliert und alle tests laufen weiter
+				tmp.setCode(code);
+				if(tmp.codeCompiles() && tmp.testsRunning()){//wenn compiliert und alle tests laufen weiter
 					
-					if(e.getTimer()==true){
+					if(tmp.getTimer()==true){
 					trC += trackStop();
 					trackStart();
 					}
+					e = tmp;
 					step = 2;
 				}
-				else if(e.getBaby() == true){
+				else if(tmp.getBaby() == true){
 					delete();//TODO
 				}
-				//break;
-				return switchArea;
+				break;
 			}
 			case 2:{
-				if(e.codeCompiles() && e.testsRunning()){//wenn immernoch alles laeuft weiter
+				tmp.setCode(code);
+				if(tmp.codeCompiles() && tmp.testsRunning()){//wenn immernoch alles laeuft weiter
 					switchArea=true;
 					
-					if(e.getTimer()== true){
+					if(tmp.getTimer()== true){
 					trR += trackStop();
 					trackStart();
 					}
-					if(e.getBaby()==true) 
+					if(tmp.getBaby()==true) 
 						delete();//TODO
+					e = tmp;
 					step = 0;
 				}
-				//break;
-				return switchArea;
+				break;
 			}
 		}
 		return switchArea;
