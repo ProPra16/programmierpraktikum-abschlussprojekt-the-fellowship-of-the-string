@@ -26,6 +26,12 @@ public class Code {
 		this.compilable = this.testingCompilationUnit();
 
 	}
+	public String getContent(){
+		return this.code;
+	}
+	public void setContent(String newContent){
+		this.code = newContent;
+	}
 
 	public boolean testingCompilationUnit() {
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(this.compilationUnitCode);

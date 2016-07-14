@@ -26,15 +26,23 @@ public class Exercise {
 		this.baby = baby;
 		this.timer = timer;
 	}
-
-	public Exercise() {
-
+	public boolean getBaby(){
+		return this.baby;		
+	}
+	public boolean getTimer(){
+		return this.timer;
 	}
 	public String getTest(){
 		return test.getTestText();
 	}
 	public String getCode(){
 		return klassen.getCodeText();
+	}
+	public void setCode(String newContent){
+		klassen.setCodeText(newContent);
+	}
+	public void setTest(String newContent){
+		test.setTestText(newContent);
 	}
 
 	public boolean codeCompiles() {
