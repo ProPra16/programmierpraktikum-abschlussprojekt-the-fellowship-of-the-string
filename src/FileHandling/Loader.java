@@ -156,7 +156,7 @@ public class Loader {
 			Element testName=(Element) testNameNode;
 			//System.out.println(testName.getAttribute("name"));
 			//System.out.println();
-			Test test=new Test(testName.getAttribute("name"),testName.getTextContent());
+			TestCode test=new TestCode(testName.getAttribute("name"),testName.getTextContent());
 				
 			NodeList configList=config.getChildNodes();
 			Element babyElement=(Element) configList.item(1);

@@ -13,12 +13,12 @@ import vk.core.api.JavaStringCompiler;
 import vk.core.api.TestHelpers;
 import vk.core.api.TestResult;
 
-public class Test {
+public class TestCode {
 	private String testName;
 	private String testCode;
 	private CompilationUnit compilationUnitTest;
 
-	public Test( String testName,String testCode) {
+	public TestCode( String testName,String testCode) {
 		this.testCode = testCode;
 		this.testName=testName;
 	}

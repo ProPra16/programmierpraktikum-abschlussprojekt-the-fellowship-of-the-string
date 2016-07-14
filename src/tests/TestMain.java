@@ -31,19 +31,12 @@ public class TestMain {
 														// deshalb stattdessen
 														// zahlen
 	}
-
-	@Test
-	public void testCodeCompilableFalse() {
-		Code c = new Code("Foo", "dieser code laeuft nicht");
-		assertEquals(false, c.testingCompilationUnit());
-	}
-	
-	@Test
+@Test
 	public void testOneTestFailing(){
 		TestCode t = new TestCode("Test", "public class Test{}");
 		assertEquals(false,t.oneTestFailing());
 	}
-	
+		
 	@Test
 	public void testCodeListCompilableTrue() {
 		CodeList l = new CodeList();

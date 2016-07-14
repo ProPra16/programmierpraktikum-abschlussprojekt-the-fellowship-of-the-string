@@ -32,7 +32,7 @@ public class Code {
 	}
 
 	public boolean testingCompilationUnit() {		
-		this.compilable = this.testingCompilationUnit();
+		//this.compilable = this.testingCompilationUnit();
 		this.compilationUnitCode = new CompilationUnit(className, code, false);
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(this.compilationUnitCode);
 		compiler.compileAndRunTests();
