@@ -14,16 +14,10 @@
 package FileHandling;
 
 import vk.core.api.CompilationUnit;
-import vk.core.api.CompileError;
 import vk.core.api.CompilerFactory;
-
 import vk.core.api.CompilerResult;
-
 import vk.core.api.JavaStringCompiler;
-
 import vk.core.api.TestHelpers;
-import vk.core.api.TestResult;
-import vk.core.internal.InternalResult;
 
 public class Code {
 

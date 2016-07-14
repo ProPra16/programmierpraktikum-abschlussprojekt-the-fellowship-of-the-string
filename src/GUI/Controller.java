@@ -1,4 +1,4 @@
-//package GUI;
+package GUI;
 
 /*******************************************************************************
  * Copyright (c) 2016 The Fellowship of the String and others.

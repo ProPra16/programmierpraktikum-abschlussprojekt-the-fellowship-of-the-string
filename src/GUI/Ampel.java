@@ -1,29 +1,16 @@
-//package GUI;
+package GUI;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-import javafx.application.Application;
-
-
-//bugs gefixt mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
+//(GridPane auf StackPane legen) mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
-
-import javafx.stage.Stage;
-
-import javafx.stage.*;
-import javafx.application.Application;
 
 public class Ampel {
 
@@ -32,7 +19,6 @@ public class Ampel {
 	private Circle rot, gelb, gruen;
 	private double paneWidth = 300;
  	private BorderPane borderPane;
-    private Ampel ampel;
     private StackPane spane;
     private StackPane pane;
     private GridPane pane1;
@@ -40,8 +26,7 @@ public class Ampel {
 	
 
 	public Ampel(){
-	    super();
-	    Scene scene;	
+	    super();	
 
 		spane = new StackPane();
 		labelkasten = new Rectangle(90,20);
@@ -53,7 +38,7 @@ public class Ampel {
 		label.setText("Erweiterung");
 		spane.getChildren().add(label);
 		
-        StackPane pane = new StackPane();
+        pane = new StackPane();
 		grund = new Rectangle(125, 250, 100, 240);
 		pane.getChildren().add(grund);
 		grund.setFill(Color.BLACK);
@@ -135,7 +120,6 @@ public class Ampel {
 				gruen.setFill(Color.YELLOWGREEN);
 				satz.setText("make the Test pass");
 			}
-			
 		}
 		public void wechselZuRot(boolean status){
 			if(status == true){
