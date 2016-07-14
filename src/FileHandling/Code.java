@@ -1,6 +1,11 @@
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package FileHandling;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import vk.core.api.CompilationUnit;
 import vk.core.api.CompilerFactory;
 import vk.core.api.CompilerResult;
@@ -37,5 +42,14 @@ public class Code {
 
 		return compilable;
 	}
-
+	public void save() throws IOException{
+		File file=new File(this.className+".java");
+		FileWriter writer=new FileWriter(file,true);
+		BufferedWriter out=new BufferedWriter(writer);
+		
+		out.write(this.code);
+		out.close();
+		writer.close();	
+	}
+	
 }

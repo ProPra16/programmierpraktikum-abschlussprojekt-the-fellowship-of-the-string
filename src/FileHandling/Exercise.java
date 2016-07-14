@@ -1,6 +1,8 @@
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package FileHandling;
 
+import java.io.IOException;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -82,6 +84,10 @@ public class Exercise {
 		pane.getChildren().addAll(background,vbox);
 		return pane;
 		
+	}
+	public void save() throws IOException{
+		this.klassen.saveCode();
+		this.test.save();
 	}
 	
 }
