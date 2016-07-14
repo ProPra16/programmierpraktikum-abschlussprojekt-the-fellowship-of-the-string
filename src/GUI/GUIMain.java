@@ -23,7 +23,7 @@ public class GUIMain extends Application {
         // Status-Ampel
 		Ampel A = new Ampel();
         Controller.setAmpel(A);
-
+        A.wechselZuRot(true);
         //Controller.setExercise(e);
 
 		BorderPane bp = A.returnPane();
