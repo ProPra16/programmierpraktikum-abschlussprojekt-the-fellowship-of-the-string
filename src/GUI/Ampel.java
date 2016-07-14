@@ -133,7 +133,7 @@ public class Ampel {
 		
 		public void wechselZuGruen(boolean status){
 			if(status == true){
-				rot.setFill(Color.LIGHTGREY);
+				this.rot.setFill(Color.LIGHTGREY);
 				gruen.setFill(Color.YELLOWGREEN);
 				satz.setText("make the Test pass");
 			}
