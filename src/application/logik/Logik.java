@@ -88,7 +88,8 @@ public class Logik{
 					trR += trackStop();
 					trackStart();
 					}
-					if(e.getBaby()==true) delete();
+					if(e.getBaby()==true) 
+						delete();//TODO
 					step = 0;
 				}
 				break;
