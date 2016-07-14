@@ -57,5 +57,8 @@ public class Code {
 		out.close();
 		writer.close();	
 	}
+	public String getName() {
+		return this.className;
+	}
 	
 }

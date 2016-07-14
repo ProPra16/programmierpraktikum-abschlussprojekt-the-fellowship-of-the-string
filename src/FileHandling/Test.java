@@ -61,4 +61,9 @@ public class Test {
 	public void setTestText(String newContent) {
 		this.testCode = newContent;
 	}
+
+	public String getName() {
+		
+		return this.testName;
+	}
 }

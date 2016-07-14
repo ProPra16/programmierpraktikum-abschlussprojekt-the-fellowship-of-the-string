@@ -26,6 +26,7 @@ public class Controller {
     public void initialize(){
         e = new Exercise();
         log = new Logik(e);
+        Loader.loadExcercise(e);
         Area1.setText(e.getCode());
         Area2.setText(e.getTest());
         ampel.wechselZuRot(true);

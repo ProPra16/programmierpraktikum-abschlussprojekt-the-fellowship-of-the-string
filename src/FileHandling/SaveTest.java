@@ -12,7 +12,7 @@ public class SaveTest {
 		list.add(code);
 		Test test=new Test("HelloTest","import static org.junit.Assert.*;import org.junit.Test;public class HelloTest {@Testpublic void testSomething() {}}");
 		Exercise exer=new Exercise(desc,list,test,new Babysteps(true,12),false);
-
+		Loader.loadExcercise(exer);
 		try {
 			exer.save();
 		} catch (IOException e) {
