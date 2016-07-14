@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -22,6 +23,8 @@ public class Loader {
 
 	public static void loadExcercise(Exercise exer) {
 		Stage loadStage = new Stage();
+		loadStage.initModality(Modality.APPLICATION_MODAL);
+		loadStage.setTitle("Katalog laden");
 		TextField fileName = new TextField("KatalogBSP.xml");
 		fileName.setMaxWidth(100);
 		
@@ -52,11 +55,11 @@ public class Loader {
 			} catch (IOException e) {
 				anzeige.setText("Datei nicht vorhanden");
 				anzeige.setVisible(true);
-				//e.printStackTrace();
+				e.printStackTrace();
 			} catch (SAXException e) {
 				anzeige.setText("Datei ist kein gueltiger Katalog");
 				anzeige.setVisible(true);
-				//e.printStackTrace();
+				e.printStackTrace();
 			}
 			
 
@@ -144,7 +147,7 @@ public class Loader {
 					
 					codeList.add(new Code(code.getAttribute("name"),code.getTextContent()));
 				}
-			} 
+			}
 			
 			NodeList testList=testsNode.getChildNodes();
 			Node testNameNode=testList.item(1);
