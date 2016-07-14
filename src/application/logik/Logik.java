@@ -43,6 +43,7 @@ public class Logik implements LogikZuGui{
 
 	@Override
 	public void nextStep() {
+		if(e.getBaby()==true) countdown(3000);
 		switch(step){
 			case 0: {
 				if(e.oneFailing()){ //wenn tests kompilieren weiter
@@ -124,6 +125,11 @@ public class Logik implements LogikZuGui{
 		frame.pack();
 		RefineryUtilities.centerFrameOnScreen(frame);
 		frame.setVisible(true);
+	}
+	@Override
+	public void save() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
