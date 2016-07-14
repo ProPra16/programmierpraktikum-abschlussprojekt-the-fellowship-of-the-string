@@ -91,7 +91,7 @@ public class Logik{
 		lauft = true;
 		long deltaT = System.nanoTime();
 		while(deltaT != sekunden){
-			deltaT += System.nanoTime()/SEC;
+			deltaT += System.nanoTime()/SEC - deltaT;
 		}
 		lauft = false;
 		nextStep();
