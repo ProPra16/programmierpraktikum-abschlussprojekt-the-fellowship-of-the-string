@@ -19,7 +19,6 @@ public class Test {
 	public Test( String testName,String testCode) {
 		this.testCode = testCode;
 		this.testName=testName;
-		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
 	}
 	
 	public String getTestText(){
@@ -27,6 +26,7 @@ public class Test {
 	}
 
 	public boolean oneTestFailing() {
+		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitTest);
 		compiler.compileAndRunTests();
 		TestResult result = compiler.getTestResult();
@@ -39,6 +39,7 @@ public class Test {
 	}
 
 	public boolean allTestsPassing() {
+		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitTest);
 		compiler.compileAndRunTests();
 		TestResult result = compiler.getTestResult();
