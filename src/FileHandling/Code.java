@@ -30,22 +30,22 @@ public class Code {
 		this.code = code;
 		this.className = className;
 		this.compilationUnitCode = new CompilationUnit(className, code, false);
-		//this.compilable = testingCompilationUnit();
+		this.compilable = this.testingCompilationUnit();
 
 	}
 
 	public boolean testingCompilationUnit() {
-		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitCode);
+		JavaStringCompiler compiler = CompilerFactory.getCompiler(this.compilationUnitCode);
 		compiler.compileAndRunTests();
 		CompilerResult result = compiler.getCompilerResult();
 
 		if (result.hasCompileErrors() == true) {
 			System.out.println(TestHelpers.getErrorMessages(compiler, result));
-			compilable = false;
+			this.compilable = false;
 		}
 
 		else if (result.hasCompileErrors() == false)
-			compilable = true;
+			this.compilable = true;
 
 		return compilable;
 	}
