@@ -33,13 +33,13 @@ public class Logik{
 	public static void delete(){
 		
 	}
-	public void loadKatalog() { //Den katalog laden und tddt entsprechend einrichten
+	public static void loadKatalog() { //Den katalog laden und tddt entsprechend einrichten
 		Loader.loadExcercise(e);
 		
 	}
 	public static boolean nextStep() {
 		boolean switchArea=false;
-		if(e.getBaby()==true) countdown(e.babyLimit());
+		if(e.getBaby()==true) new CountDown(e);
 		switch(step){
 			case 0: {
 				if(e.oneFailing()){ //wenn tests kompilieren weiter
@@ -91,7 +91,7 @@ public class Logik{
 		lauft = true;
 		long deltaT = System.nanoTime();
 		while(deltaT != sekunden){
-			deltaT += System.nanoTime()/SEC;
+			deltaT += System.nanoTime()/SEC - deltaT;
 		}
 		lauft = false;
 		nextStep();
