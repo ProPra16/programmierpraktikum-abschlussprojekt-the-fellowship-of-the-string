@@ -36,7 +36,7 @@ public class Code {
 		this.code = code;
 		this.className = className;
 		this.compilationUnitCode = new CompilationUnit(className, code, false);
-		this.compilable = testingCompilationUnit();
+		//this.compilable = testingCompilationUnit();
 
 	}
 

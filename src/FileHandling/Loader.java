@@ -36,7 +36,7 @@ public class Loader {
 
 	public static void loadExcercise(Exercise exer) {
 		Stage loadStage = new Stage();
-		TextField fileName = new TextField("Katalogdatei");
+		TextField fileName = new TextField("KatalogBSP.xml");
 		fileName.setMaxWidth(100);
 		
 		Label anzeige= new Label("anzeige");
@@ -134,40 +134,52 @@ public class Loader {
 			Element exerElement=(Element) exerNode;
 			NodeList interList=exerElement.getChildNodes();
 			
-			Node descNode=interList.item(0);
-			Node classesNode=interList.item(1);
-			Node testsNode=interList.item(2);
-			Node configNode=interList.item(3);
+			Node descNode=interList.item(1);
+			Node classesNode=interList.item(3);
+			Node testsNode=interList.item(5);
+			Node configNode=interList.item(7);
 			
-			Element description=(Element) descNode;
+			
 			Element classes=(Element) classesNode;
 			Element tests=(Element) testsNode;
 			Element config=(Element)  configNode;
+		
 			
-			NodeList descriptionList=description.getChildNodes();
-			desc=descriptionList.item(0).getTextContent();
-			
+			desc=descNode.getTextContent();
+			//System.out.println(desc);
 			NodeList classList=classes.getChildNodes();
 			CodeList codeList=new CodeList();
 			for (int j=0;j<classList.getLength();j++){
-				Node codeNode=classList.item(j);
-				Element code=(Element)codeNode;
-				NodeList egal=code.getChildNodes();
-				codeList.add(new Code(code.getAttribute("name"),egal.item(0).getNodeValue()));
+				if(j%2!=0){
+					Node codeNode=classList.item(j);
+					//System.out.println(codeNode.getNodeName());
+					Element code=(Element)codeNode;
+					//System.out.println(code.getAttribute("name"));
+					//System.out.println(code.getTextContent());
+					
+					codeList.add(new Code(code.getAttribute("name"),code.getTextContent()));
+				}
 			}
 			
-			NodeList testList=tests.getChildNodes();
-			Node testNameNode=testList.item(0);
-			Element testName=(Element) testNameNode;
-			NodeList testCode=testName.getChildNodes();
-			Test test=new Test(testName.getAttribute("name"),testCode.item(0).getNodeValue());
+			NodeList testList=testsNode.getChildNodes();
+			Node testNameNode=testList.item(1);
+			//System.out.println(testNameNode.getNodeName());
 			
+			Element testName=(Element) testNameNode;
+			//System.out.println(testName.getAttribute("name"));
+			//System.out.println();
+			Test test=new Test(testName.getAttribute("name"),testName.getTextContent());
+				
 			NodeList configList=config.getChildNodes();
-			Element babySteps=(Element) configList.item(0);
-			Element timeTrack=(Element) configList.item(1);
+			Element babySteps=(Element) configList.item(1);
+			Element timeTrack=(Element) configList.item(3);
+			//System.out.println(babySteps.getNodeName());
+			//System.out.println(timeTrack.getNodeName());
 			
 			boolean baby=babySteps.getAttribute("value").equals("true");
 			boolean tracker=timeTrack.getAttribute("value").equals("true");
+			//System.out.println(baby);
+			//System.out.println(tracker);
 			
 			exerArray.add(new Exercise(desc,codeList,test,baby,tracker));
 			
