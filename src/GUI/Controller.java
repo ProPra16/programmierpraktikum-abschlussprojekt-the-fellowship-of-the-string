@@ -80,7 +80,7 @@ public class Controller {
     @FXML
     protected void toYellow() {
         ampel.wechselZuGelb(true);
-        SwitchArea();
+        //SwitchArea();
         // Button aktivieren
         bRed.setDisable(false);
 
