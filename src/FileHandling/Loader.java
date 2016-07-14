@@ -52,11 +52,11 @@ public class Loader {
 			} catch (IOException e) {
 				anzeige.setText("Datei nicht vorhanden");
 				anzeige.setVisible(true);
-				e.printStackTrace();
+				//e.printStackTrace();
 			} catch (SAXException e) {
 				anzeige.setText("Datei ist kein gueltiger Katalog");
 				anzeige.setVisible(true);
-				e.printStackTrace();
+				//e.printStackTrace();
 			}
 			
 
@@ -94,7 +94,7 @@ public class Loader {
 			builder = factory.newDocumentBuilder();
 		//	builder.setErrorHandler(e-> );
 		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			return null;
 		}
 		
