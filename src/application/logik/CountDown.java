@@ -1,5 +1,7 @@
+
 package application.logik;
 //inspiriert von http://www.java-forum.org/thema/countdown-timer-fuer-spiel.96377/
+
 import java.util.Timer;
 import java.util.TimerTask;
 
