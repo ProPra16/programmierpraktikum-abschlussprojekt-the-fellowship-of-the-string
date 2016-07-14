@@ -73,7 +73,9 @@ public class Exercise {
 	}
 	
 	public StackPane display(){
-		Label baby=new Label("Babysteps");
+		double babyTime=Math.round((Double.parseDouble(Long.toString(this.babyLimit()))/60)*100)/100.0;
+		
+		Label baby=new Label("Babysteps:  "+babyTime+"min");
 		Label time=new Label("Timetracking");
 		baby.setUnderline(true);
 		time.setUnderline(true);

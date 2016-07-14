@@ -156,12 +156,12 @@ public class Loader {
 			Test test=new Test(testName.getAttribute("name"),testName.getTextContent());
 				
 			NodeList configList=config.getChildNodes();
-			Element babySteps=(Element) configList.item(1);
+			Element babyElement=(Element) configList.item(1);
 			Element timeTrack=(Element) configList.item(3);
 			//System.out.println(babySteps.getNodeName());
 			//System.out.println(timeTrack.getNodeName());
 			
-			boolean baby=babySteps.getAttribute("value").equals("true");
+			Babysteps baby=new Babysteps(babyElement.getAttribute("value").equals("true"),Long.parseLong(babyElement.getAttribute("seconds")));
 			boolean tracker=timeTrack.getAttribute("value").equals("true");
 			//System.out.println(baby);
 			//System.out.println(tracker);

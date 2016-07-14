@@ -25,7 +25,7 @@ public class HelloTest {
 }</test>
 </tests>
 <config>
-<babysteps value="bla"/>
+<babysteps value="bla" seconds="3"/>
 <timetracking value="true"/>
 </config>
 </exercise>
@@ -54,7 +54,7 @@ public class RomanNumbersTest {
 </test>
 </tests>
 <config>
-<babysteps value="true" />
+<babysteps value="true" seconds="250" />
 <timetracking value="false" />
 </config>
 </exercise>
