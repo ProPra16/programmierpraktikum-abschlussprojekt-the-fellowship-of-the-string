@@ -36,8 +36,7 @@ public class GUIMain extends Application {
 		Ampel A = new Ampel();
         Controller.setAmpel(A);
 
-        Exercise e = null;
-        Loader.loadExcercise(e);
+        //Controller.setExercise(e);
 
 		BorderPane bp = A.returnPane();
 		bp.setPrefSize(350, 350);
