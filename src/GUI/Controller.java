@@ -1,5 +1,22 @@
+<<<<<<< HEAD
+
+/*******************************************************************************
+ * Copyright (c) 2016 The Fellowship of the String and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Marcel Beek - initial API and implementation
+ *     Patrick Pirig - initial API and implementation
+ *     Phillippe Weise - initial API and implementation
+ *     Sabine Timmer - initial API and implementation
+ *******************************************************************************/
+=======
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package GUI;
+>>>>>>> c61c09cb1dfefceb323f01129e25c7ff5c414aaf
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -9,11 +26,16 @@ public class Controller {
 	private TextArea Area1;
 	@FXML
 	private TextArea Area2;
+    @FXML
+    private Button bRed;
+    @FXML
+    private Button bYellow;
+    @FXML
+    private Button bGreen;
 
     private static Ampel ampel;
 
-	@FXML
-	protected void SwitchArea() {
+	private void SwitchArea() {
 		if (Area1.isDisable()) {
 			Area1.setDisable(false);
 			Area2.setDisable(true);
@@ -26,14 +48,40 @@ public class Controller {
 	}
 
     @FXML 
-	protected void Test() {
+	protected void toRed() {
         ampel.wechselZuRot(true);
+        SwitchArea();
+        // Button aktivieren
+        bGreen.setDisable(false);
+
+        // Buttons deaktivieren
+        bYellow.setDisable(true);
+        bRed.setDisable(true);
     }
 
     @FXML
-    protected void Test2() {
+    protected void toGreen() {
+        ampel.wechselZuGruen(true);
+        SwitchArea();
+        // Button aktivieren
+        bYellow.setDisable(false);
 
+        // Buttons deaktivieren
+        bGreen.setDisable(true);
+        bRed.setDisable(true);
 	}
+
+    @FXML
+    protected void toYellow() {
+        ampel.wechselZuGelb(true);
+        SwitchArea();
+        // Button aktivieren
+        bRed.setDisable(false);
+
+        // Buttons deaktivieren
+        bYellow.setDisable(true);
+        bGreen.setDisable(true);
+    }
 
     public static void setAmpel(Ampel amp) {
         ampel = amp;

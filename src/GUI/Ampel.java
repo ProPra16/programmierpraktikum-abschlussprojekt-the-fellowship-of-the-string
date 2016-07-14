@@ -1,7 +1,15 @@
+<<<<<<< HEAD
+import javax.xml.bind.annotation.XmlRootElement;
+import javafx.application.Application;
+
+
+//bugs gefixt mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
+=======
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package GUI;
 
 //(GridPane auf StackPane legen) mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
+>>>>>>> c61c09cb1dfefceb323f01129e25c7ff5c414aaf
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
