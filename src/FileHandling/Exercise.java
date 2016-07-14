@@ -17,9 +17,10 @@ public class Exercise {
 	private String description;
 	private CodeList klassen;
 	private Test test;
-	private boolean baby, timer;
-
-	public Exercise(String description, CodeList klassen, Test test , boolean baby, boolean timer) {
+	private boolean timer;
+	private Babysteps baby;
+	
+	public Exercise(String description, CodeList klassen, Test test , Babysteps baby, boolean timer) {
 		this.description = description;
 		this.klassen = klassen;
 		this.test = test;
@@ -59,9 +60,12 @@ public class Exercise {
 	}
 	
 	public boolean baby(){
-		return this.baby;
+		return this.baby.value();
 	}
 	
+	public long babyLimit(){
+		return this.baby.limit();
+	}
 	public boolean tracking(){
 		return this.timer;
 	}
@@ -69,15 +73,18 @@ public class Exercise {
 	public StackPane display(){
 		Label baby=new Label("Babysteps");
 		Label time=new Label("Timetracking");
+		baby.setUnderline(true);
+		time.setUnderline(true);
+		
 		HBox hbox=new HBox(50);
 		hbox.getChildren().addAll(baby,time);
 		hbox.setAlignment(Pos.CENTER);
 		hbox.setPadding(new Insets(10,10,10,10));
 		
-		baby.setVisible(this.baby);
+		baby.setVisible(this.baby.value());
 		time.setVisible(this.timer);
 		
-		Rectangle background=new Rectangle(300,150);
+		Rectangle background=new Rectangle(275,145);
 		background.setFill(Color.BEIGE);
 		background.setStroke(Color.BLACK);
 		

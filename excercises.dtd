@@ -14,7 +14,7 @@
 
 <!ELEMENT config (babysteps, timetracking)>
 <!ELEMENT babysteps EMPTY>
-<!ATTLIST babysteps value CDATA #REQUIRED>
+<!ATTLIST babysteps value CDATA #REQUIRED seconds CDATA #REQUIRED>
 
 <!ELEMENT timetracking EMPTY>
 <!ATTLIST timetracking value CDATA #REQUIRED>

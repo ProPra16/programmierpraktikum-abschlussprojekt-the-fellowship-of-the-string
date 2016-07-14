@@ -66,12 +66,13 @@ public class Loader {
 		
 		ArrayList<Exercise> exerList=parseExercises(xmldoc);
 		VBox vbox=new VBox(10);
+		vbox.setPadding(new Insets(5,5,5,5));
 		for(int i=0;i<exerList.size();i++){
 			vbox.getChildren().add(exerList.get(i).display());
 			int j=i;
 			vbox.getChildren().get(i).setOnMouseClicked(e -> setExer(exer,exerList.get(j),stage));
 		}
-		Scene scene=new Scene(vbox,300,150*exerList.size());
+		Scene scene=new Scene(vbox,300,155*exerList.size());
 		stage.setScene(scene);
 		return exer;
 	}
