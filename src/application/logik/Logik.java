@@ -49,7 +49,7 @@ public class Logik{
 	}
 	public boolean nextStep(String code) {
 		boolean switchArea=false;
-		Excercise tmp = new Excercise();
+		Exercise tmp = new Exercise();
 		tmp = e;
 		
 		if(e.getBaby()==true) new CountDown(e);
