@@ -4,7 +4,6 @@ bin/
 src/vk
 bin/application/logik/Logik.class
 *.class
-*.class
 *.classpath
 .classpath
 .project
