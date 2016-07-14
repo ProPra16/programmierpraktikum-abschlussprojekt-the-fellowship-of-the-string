@@ -28,7 +28,7 @@ public class Exercise {
 		this.timer = timer;
 	}
 	public boolean getBaby(){
-		return this.baby;		
+		return this.baby.value();		
 	}
 	public boolean getTimer(){
 		return this.timer;
