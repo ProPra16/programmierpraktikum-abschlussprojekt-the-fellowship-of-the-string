@@ -1,4 +1,5 @@
 //http://www.java-forum.org/thema/countdown-timer-fuer-spiel.96377/
+package application.logik;
 import java.util.Timer;
 import java.util.TimerTask;
 
