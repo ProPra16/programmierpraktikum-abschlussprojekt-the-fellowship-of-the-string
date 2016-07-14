@@ -1,6 +1,7 @@
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package FileHandling;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class CodeList extends ArrayList<Code> {
@@ -29,5 +30,8 @@ public class CodeList extends ArrayList<Code> {
 	}
 	public String getCodeText(){
 		return this.get(0).toString();
+	}
+	public void saveCode() throws IOException{
+		this.get(0).save();
 	}
 }

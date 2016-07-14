@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package GUI;
 /*******************************************************************************
  * Copyright (c) 2016 The Fellowship of the String and others.
@@ -13,6 +14,12 @@ package GUI;
  *     Sabine Timmer - initial API and implementation
  *******************************************************************************/
 // Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
+=======
+
+// Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
+package GUI;
+
+>>>>>>> 4f11c49830c9bc0997f7f3fd0b1dfcdb3a7069dd
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
