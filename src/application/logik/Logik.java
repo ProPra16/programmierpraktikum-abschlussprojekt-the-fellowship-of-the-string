@@ -33,7 +33,7 @@ public class Logik{
 	public static void delete(){
 		
 	}
-	public void loadKatalog() { //Den katalog laden und tddt entsprechend einrichten
+	public static void loadKatalog() { //Den katalog laden und tddt entsprechend einrichten
 		Loader.loadExcercise(e);
 		
 	}
