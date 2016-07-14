@@ -2,7 +2,6 @@ application/
 tests/
 bin/
 src/vk
-bin/application/logik/Logik.class
 *.class
 *.classpath
 .classpath
