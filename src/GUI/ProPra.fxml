@@ -9,8 +9,8 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-Infinity" prefWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <TextArea fx:id="Area1" layoutX="27.0" layoutY="58.0" prefHeight="617.0" prefWidth="551.0" text="public class hello {&#10;    public static void main(String args[]) {&#10;        System.out.println(&quot;Hello World!&quot;);&#10;     }&#10;}&#10;" />
-      <TextArea fx:id="Area2" disable="true" layoutX="578.0" layoutY="58.0" prefHeight="617.0" prefWidth="551.0" />
+      <TextArea fx:id="Area1" disable="true" layoutX="27.0" layoutY="58.0" prefHeight="617.0" prefWidth="551.0" text="public class hello {&#10;    public static void main(String args[]) {&#10;        System.out.println(&quot;Hello World!&quot;);&#10;     }&#10;}&#10;" />
+      <TextArea fx:id="Area2" disable="false" layoutX="578.0" layoutY="58.0" prefHeight="617.0" prefWidth="551.0" />
       <MenuBar fx:id="MBar" prefHeight="29.0" prefWidth="3000.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
@@ -31,9 +31,9 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="598.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#SwitchArea" text="Switch" />
-      <Button layoutX="670.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#Test" text="test" />
-      <Button layoutX="536.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#Test2" text="test2" />
+      <Button fx:id="bYellow" disable="true" layoutX="548.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#toYellow" style="-fx-background-color: yellow" text="refactor" />
+      <Button fx:id="bRed" disable="true" layoutX="626.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#toRed" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: red" text="to red" />
+      <Button fx:id="bGreen" layoutX="465.0" layoutY="677.0" mnemonicParsing="false" onMouseClicked="#toGreen" style="-fx-background-color: green" text="to green" />
       <Label alignment="BASELINE_LEFT" layoutX="27.0" layoutY="647.0" prefHeight="25.0" prefWidth="551.0" style="-fx-border-style: solid hidden hidden hidden; -fx-border-color: lightgrey;" text="Status" textFill="#0e800e">
          <padding>
             <Insets left="10.0" />
@@ -50,5 +50,3 @@
          </opaqueInsets></Label>
 </children>
 </Pane>
-
-
