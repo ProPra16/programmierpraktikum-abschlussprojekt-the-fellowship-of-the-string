@@ -27,7 +27,7 @@ public class Controller {
         e = new Exercise();
         Area1.setText(e.getCode());
         Area2.setText(e.getTest());
-        //Loader.loadExcercise(e);
+        Loader.loadExcercise(e);
     }
     //public Controller() {
     //    Area1 = new TextArea();
