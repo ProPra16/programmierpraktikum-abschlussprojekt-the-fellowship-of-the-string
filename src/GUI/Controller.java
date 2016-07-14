@@ -22,13 +22,22 @@ public class Controller {
     private static Ampel ampel;
     private Exercise e=null;
 
-    public Controller() {
+    @FXML
+    public void initialize(){
         e = new Exercise();
-        Loader.loadExcercise(e);
         Area1.setText(e.getCode());
         Area2.setText(e.getTest());
-        log = new Logik(e);
+        //Loader.loadExcercise(e);
     }
+    //public Controller() {
+    //    Area1 = new TextArea();
+    //    Area2 = new TextArea();
+    //    e = new Exercise();
+    //    Area1.setText(e.getCode());
+    //    Area2.setText(e.getTest());
+    //    log = new Logik(e);
+    //    Loader.loadExcercise(e);
+    //}
 
 
 	public void SwitchArea() {
@@ -50,7 +59,6 @@ public class Controller {
         SwitchArea();
         // Button aktivieren
         bGreen.setDisable(false);
-        Loader.loadExcercise(e);
 
         // Buttons deaktivieren
         bYellow.setDisable(true);
@@ -61,7 +69,6 @@ public class Controller {
     protected void toGreen() {
         ampel.wechselZuGruen(true);
         SwitchArea();
-        System.out.println(Area2.getText());
         // Button aktivieren
         bYellow.setDisable(false);
 
