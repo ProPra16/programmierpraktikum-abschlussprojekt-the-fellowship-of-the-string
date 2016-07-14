@@ -29,7 +29,10 @@ public class CodeList extends ArrayList<Code> {
 		return true;
 	}
 	public String getCodeText(){
-		return this.get(0).toString();
+		return this.get(0).getContent();
+	}
+	public String setCodeText(String newContent){
+		return this.get(0).setContent(newContent);
 	}
 	public void saveCode() throws IOException{
 		this.get(0).save();

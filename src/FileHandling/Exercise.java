@@ -36,6 +36,12 @@ public class Exercise {
 	public String getCode(){
 		return klassen.getCodeText();
 	}
+	public String setCode(String newContent){
+		return klassen.setCodeText(newContent);
+	}
+	public String setTest(String newContent){
+		return test.setTestText(newContent);
+	}
 
 	public boolean codeCompiles() {
 
