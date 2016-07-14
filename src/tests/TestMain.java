@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import FileHandling.Code;
 import FileHandling.CodeList;
+import FileHandling.TestCode;
 
 public class TestMain {
 
@@ -36,7 +37,13 @@ public class TestMain {
 		Code c = new Code("Foo", "dieser code laeuft nicht");
 		assertEquals(false, c.testingCompilationUnit());
 	}
-
+	
+	@Test
+	public void testOneTestFailing(){
+		TestCode t = new TestCode("Test", "public class Test{}");
+		assertEquals(false,t.oneTestFailing());
+	}
+	
 	@Test
 	public void testCodeListCompilableTrue() {
 		CodeList l = new CodeList();
@@ -58,5 +65,7 @@ public class TestMain {
 		l.add(c2);
 		assertEquals(false, l.compilable());
 	}
+	
+	
 
 }
