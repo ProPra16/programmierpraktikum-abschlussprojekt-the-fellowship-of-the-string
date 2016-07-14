@@ -9,8 +9,7 @@
 public class HardHello{
 	}</class>
 <class name="HelloLSG">
-public class HHelloLSG{
-//loesung hier}</class>
+public class HelloLSG{public static void main(String[] args){System.out.print(15);}}</class>
 </classes>
 <tests>
 <test name="HhelloTest">import static org.junit.Assert.*;
