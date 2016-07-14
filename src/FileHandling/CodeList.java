@@ -4,6 +4,8 @@ package FileHandling;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import vk.core.api.CompilationUnit;
+
 public class CodeList extends ArrayList<Code> {
 
 	/**
@@ -27,6 +29,9 @@ public class CodeList extends ArrayList<Code> {
 				return false;
 		}
 		return true;
+	}
+	public CompilationUnit getCodeUnit(){
+		return this.get(0).returnCodeUnit();
 	}
 	public String getCodeText(){
 		return this.get(0).getContent();

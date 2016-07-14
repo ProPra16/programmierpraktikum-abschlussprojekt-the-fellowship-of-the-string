@@ -57,6 +57,7 @@ public class Exercise {
 	public void setCode(String newContent){
 		klassen.setCodeText(newContent);
 	}
+
 	
 	public void setTest(String newContent){
 		test.setTestText(newContent);
@@ -74,7 +75,7 @@ public class Exercise {
 	}
 	
 	public boolean oneFailing(){
-		return this.test.oneTestFailing();
+		return this.test.oneTestFailing(this.klassen.getCodeUnit());
 	}
 	
 	public boolean baby(){

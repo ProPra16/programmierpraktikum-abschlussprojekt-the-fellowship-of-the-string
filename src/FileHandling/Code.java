@@ -30,9 +30,12 @@ public class Code {
 	public void setContent(String newContent){
 		this.code = newContent;
 	}
+	public CompilationUnit returnCodeUnit(){
+		return this.compilationUnitCode = new CompilationUnit(className, code, false);	
+	}
 
 	public boolean testingCompilationUnit() {		
-		//this.compilable = this.testingCompilationUnit();
+
 		this.compilationUnitCode = new CompilationUnit(className, code, false);
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(this.compilationUnitCode);
 		compiler.compileAndRunTests();

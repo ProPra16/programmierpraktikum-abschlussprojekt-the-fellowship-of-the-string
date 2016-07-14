@@ -27,12 +27,13 @@ public class TestCode {
 		return this.testCode;
 	}
 
-	public boolean oneTestFailing() {
+	public boolean oneTestFailing(CompilationUnit compilationUnitCode) {
 		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
-		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitTest);
+		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitCode,compilationUnitTest);
 		compiler.compileAndRunTests();
 		CompilerResult compilerResult = compiler.getCompilerResult();
-		
+		if (compilerResult.hasCompileErrors() == true) {
+			return false;}
 		TestResult result = compiler.getTestResult();
 		int fails = result.getNumberOfFailedTests();
 

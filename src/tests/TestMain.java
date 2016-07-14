@@ -31,11 +31,8 @@ public class TestMain {
 														// deshalb stattdessen
 														// zahlen
 	}
-@Test
-	public void testOneTestFailing(){
-		TestCode t = new TestCode("Test", "public class Test{}");
-		assertEquals(false,t.oneTestFailing());
-	}
+
+
 		
 	@Test
 	public void testCodeListCompilableTrue() {
