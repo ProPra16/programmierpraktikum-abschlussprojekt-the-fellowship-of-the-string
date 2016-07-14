@@ -29,8 +29,8 @@ public class Code {
 	public String getContent(){
 		return this.code;
 	}
-	public String setContent(String newContent){
-		return this.code = newContent;
+	public void setContent(String newContent){
+		this.code = newContent;
 	}
 
 	public boolean testingCompilationUnit() {

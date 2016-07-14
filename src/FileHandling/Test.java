@@ -58,7 +58,7 @@ public class Test {
 		writer.close();	
 	}
 
-	public String setTestText(String newContent) {
-		return this.testCode = newContent;
+	public void setTestText(String newContent) {
+		this.testCode = newContent;
 	}
 }
