@@ -37,4 +37,11 @@ public class CodeList extends ArrayList<Code> {
 	public void saveCode() throws IOException{
 		this.get(0).save();
 	}
+	public static CodeList clone(CodeList root){
+		CodeList clone=new CodeList();
+		for (int i=0;i<root.size();i++){
+			clone.add(new Code(root.get(i).getName(),root.get(i).getContent()));
+		}
+		return clone;
+	}
 }

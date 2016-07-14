@@ -122,5 +122,21 @@ public class Exercise {
 		this.klassen.saveCode();
 		this.test.save();
 	}
+	public void clone(Exercise exercise) {
+		this.description=exercise.describe();
+		this.klassen=CodeList.clone(exercise.klassen);
+		this.test=new Test(exercise.getTestName(),exercise.getTest());
+		this.timer=exercise.tracking();
+		this.baby=new Babysteps(exercise.baby(),exercise.babyLimit());
+	}
+	
+	private String describe() {
+		return this.description;
+	}
+	private String getTestName() {
+		return this.test.getName();
+	}
+	
+	
 	
 }

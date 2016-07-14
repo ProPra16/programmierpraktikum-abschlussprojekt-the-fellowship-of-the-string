@@ -43,7 +43,7 @@ public class Loader {
 		
 		Scene loadScene=new Scene(vBox,300,100);
 		loadStage.setScene(loadScene);
-		loadStage.show();
+		loadStage.showAndWait();
 	}
 
 	private static void laden(String filename, Label anzeige, Stage stage,Exercise exer) {
@@ -65,7 +65,7 @@ public class Loader {
 
 	}
 
-	private static Exercise katalogView(Document xmldoc,Stage stage,Exercise exer) {
+	private static void katalogView(Document xmldoc,Stage stage,Exercise exer) {
 		
 		ArrayList<Exercise> exerList=parseExercises(xmldoc);
 		VBox vbox=new VBox(10);
@@ -77,13 +77,13 @@ public class Loader {
 		}
 		Scene scene=new Scene(vbox,300,155*exerList.size());
 		stage.setScene(scene);
-		return exer;
+		
 	}
 
 	
 	
 	private static  void setExer(Exercise exer, Exercise exercise,Stage stage) {
-		exer=exercise;
+		exer.clone(exercise);
 		stage.close();
 	}
 
