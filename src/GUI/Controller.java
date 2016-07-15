@@ -82,6 +82,10 @@ public class Controller {
         System.out.println("toRed");
         String code = Area1.getText();
         if (log.nextStep(code)) {
+        	ampel.setBaby(e.baby());
+        	ampel.setTracking(e.tracking());
+        	ampel.setBoth(e.baby(),e.tracking());
+
             ampel.wechselZuRot(true);
             SwitchArea();
             // Button aktivieren
@@ -98,6 +102,10 @@ public class Controller {
         System.out.println("toGreen");
         String code = Area2.getText();
         if (log.nextStep(code)) {
+        	ampel.setBaby(e.baby());
+        	ampel.setTracking(e.tracking());
+        	ampel.setBoth(e.baby(),e.tracking());
+
             ampel.wechselZuGruen(true);
             SwitchArea();
             // Button aktivieren
@@ -114,6 +122,10 @@ public class Controller {
         System.out.println("toYellow");
         String code = Area1.getText();
         if (log.nextStep(code)) {
+        	ampel.setBaby(e.baby());
+        	ampel.setTracking(e.tracking());
+        	ampel.setBoth(e.baby(),e.tracking());
+
             ampel.wechselZuGelb(true);
             //SwitchArea();
             // Button aktivieren
