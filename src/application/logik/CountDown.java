@@ -22,7 +22,7 @@ public class CountDown {
 
 				if (count == 0)
 					System.out.println("Abgelaufen");//TODO
-					Logik.nextStep();//das laeuft NICHT wir brauchen hier das log Objekt
+					//Logik.nextStep();//das laeuft NICHT wir brauchen hier das log Objekt
 			}
 		};
 		timer.schedule(task, 0, 1000);
