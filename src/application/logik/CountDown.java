@@ -12,6 +12,7 @@ import javafx.scene.control.TextArea;
 public class CountDown extends Thread {
 	private String oldText;
 	private long count;
+
 	private Timer timer;
 	private TextArea area;
 	
@@ -35,5 +36,6 @@ public class CountDown extends Thread {
 		}
 		this.area.setText(this.oldText);
 	}
-	
 }
+
+

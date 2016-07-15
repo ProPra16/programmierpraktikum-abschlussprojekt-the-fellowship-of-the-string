@@ -31,6 +31,7 @@ public class Logik{
 		this.trC = 0;
 		this.trR = 0;
 		this.e=e;
+		this.trackStart();
 	}
 	
 	
