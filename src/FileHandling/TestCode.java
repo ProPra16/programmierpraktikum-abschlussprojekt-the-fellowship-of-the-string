@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import GUI.Warner;
 import vk.core.api.CompilationUnit;
 import vk.core.api.CompilerFactory;
 import vk.core.api.CompilerResult;
@@ -33,7 +34,7 @@ public class TestCode {
 		compiler.compileAndRunTests();
 		CompilerResult compilerResult = compiler.getCompilerResult();
 		if (compilerResult.hasCompileErrors() == true) {
-			System.out.println(TestHelpers.getErrorMessages(compiler, compilerResult));
+			Warner.display(TestHelpers.getErrorMessages(compiler, compilerResult));
 
 			return false;}		//muss vorher kompilieren
 		TestResult result = compiler.getTestResult();
@@ -50,7 +51,7 @@ public class TestCode {
 		compiler.compileAndRunTests();
 		CompilerResult compilerResult = compiler.getCompilerResult();
 		if (compilerResult.hasCompileErrors() == true) {
-			System.out.println(TestHelpers.getErrorMessages(compiler, compilerResult));
+			Warner.display(TestHelpers.getErrorMessages(compiler, compilerResult));
 
 			return false;}
 		
