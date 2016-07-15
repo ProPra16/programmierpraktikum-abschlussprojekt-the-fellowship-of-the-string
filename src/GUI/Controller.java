@@ -57,7 +57,8 @@ public class Controller {
 
     @FXML
     protected void diagram() {
-        log.stats();
+        if (e.getTimer())
+            log.stats();
     }
 
     @FXML
@@ -93,14 +94,19 @@ public class Controller {
         System.out.println("toRed");
         String code = Area1.getText();
         if (log.nextStep(code)) {
-        	ampel.setBaby(e.baby());
-        	ampel.setTracking(e.tracking());
-        	ampel.setBoth(e.baby(),e.tracking());
-
+            
         	if(e.baby()){
+                ampel.setBaby(true);
         		this.count=new CountDown(e,Area2,true);
         		this.count.start();
         	}
+
+            if (e.tracking())
+                ampel.setTracking(true);
+
+            if (e.baby() && e.tracking())
+                ampel.setBoth(true, true);
+
             ampel.wechselZuRot(true);
             SwitchArea();
             // Button aktivieren
@@ -119,18 +125,24 @@ public class Controller {
         System.out.println("toGreen");
         String code = Area2.getText();
         if (log.nextStep(code)) {
-        	ampel.setBaby(e.baby());
-        	ampel.setTracking(e.tracking());
-        	ampel.setBoth(e.baby(),e.tracking());
-
             ampel.wechselZuGruen(true);
             SwitchArea();
             // Button aktivieren
             bYellow.setDisable(false);
+            
+
             if(e.baby()){
+                ampel.setBaby(true);
             	this.count.stop();
             	this.count=new CountDown(e,Area1,false);
             	this.count.start();
+            }
+
+            if (e.tracking())
+                ampel.setTracking(e.tracking());
+
+            if (e.baby() && e.tracking()) {
+                ampel.setBoth(true, true);
             }
             // Buttons deaktivieren
             bGreen.setDisable(true);
@@ -144,14 +156,17 @@ public class Controller {
         System.out.println("toYellow");
         String code = Area1.getText();
         if (log.nextStep(code)) {
-        	ampel.setBaby(e.baby());
-        	ampel.setTracking(e.tracking());
-        	ampel.setBoth(e.baby(),e.tracking());
-
-
+            
         	if(e.baby()){
-    		this.count.stop();
+                ampel.setBaby(true);
+                this.count.stop();
         	}
+
+            if (e.tracking()) 
+                ampel.setTracking(true);
+
+            if (e.baby() && e.tracking())
+                ampel.setBoth(true, true);
 
             ampel.wechselZuGelb(true);
             //SwitchArea();
