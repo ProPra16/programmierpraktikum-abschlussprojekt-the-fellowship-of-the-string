@@ -50,6 +50,11 @@ public class Controller {
     }
 
     @FXML
+    protected void diagram() {
+        log.stats();
+    }
+
+    @FXML
     protected void load() {
         Loader.loadExcercise(e);
         Area1.setText(e.getCode());
