@@ -35,6 +35,7 @@ public class CountDown extends Thread {
 			e.printStackTrace();
 		}
 		this.area.setText(this.oldText);
+		this.run();
 	}
 }
 

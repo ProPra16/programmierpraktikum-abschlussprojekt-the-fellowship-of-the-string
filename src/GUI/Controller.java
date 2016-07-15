@@ -3,6 +3,7 @@ package GUI;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import FileHandling.*;
+import application.logik.CountDown;
 import application.logik.Logik;
 import java.io.IOException;
 
@@ -22,7 +23,8 @@ public class Controller {
     private static Logik log;
     private static Ampel ampel;
     private Exercise e=null;
-
+    private CountDown count;
+    
     @FXML
     public void initialize(){
         e = new Exercise();
@@ -30,6 +32,10 @@ public class Controller {
         log = new Logik(e);
         Area1.setText(e.getCode());
         Area2.setText(e.getTest());
+        if(e.baby()){
+        	this.count=new CountDown(e,Area2,true);
+        	this.count.start();
+        }
     }
     //public Controller() {
     //    Area1 = new TextArea();
@@ -87,6 +93,10 @@ public class Controller {
         System.out.println("toRed");
         String code = Area1.getText();
         if (log.nextStep(code)) {
+        	if(e.baby()){
+        		this.count=new CountDown(e,Area2,true);
+        		this.count.start();
+        	}
             ampel.wechselZuRot(true);
             SwitchArea();
             // Button aktivieren
@@ -98,8 +108,10 @@ public class Controller {
         }
     }
 
-    @FXML
+    @SuppressWarnings("deprecation")
+	@FXML
     protected void toGreen() {
+    	
         System.out.println("toGreen");
         String code = Area2.getText();
         if (log.nextStep(code)) {
@@ -107,7 +119,11 @@ public class Controller {
             SwitchArea();
             // Button aktivieren
             bYellow.setDisable(false);
-
+            if(e.baby()){
+            	this.count.stop();
+            	this.count=new CountDown(e,Area1,false);
+            	this.count.start();
+            }
             // Buttons deaktivieren
             bGreen.setDisable(true);
             bRed.setDisable(true);
@@ -116,9 +132,13 @@ public class Controller {
 
     @FXML
     protected void toYellow() {
+    	
         System.out.println("toYellow");
         String code = Area1.getText();
         if (log.nextStep(code)) {
+        	if(e.baby()){
+    		this.count.stop();
+        	}
             ampel.wechselZuGelb(true);
             //SwitchArea();
             // Button aktivieren
