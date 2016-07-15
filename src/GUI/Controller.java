@@ -1,5 +1,5 @@
+// Copyright (c) <2016> <Marcel Beeck, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package GUI;
-// Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import FileHandling.*;
