@@ -127,9 +127,11 @@ public class Logik{
 		//http://www.math.hu-berlin.de/~ccafm/lehre_BZQ_Numerik/allg/JAVA_Pakete/JFreeChart/Codes/PieChart_code.html
 		//JFreeChart Library (GNU License deshalb benutzen wir die MIT-Lizenz)
 		long[] arr=new long[3];
-		arr[0]=trT/1000;arr[1]=trR/1000;arr[2]=trC/1000;
+		arr[0]=trT;arr[2]=trR;arr[1]=trC;
+		arr[step]+=trackStop();
 		String[] timeText=new String[3];
 		for(int i=0;i<timeText.length;i++){
+			arr[i]=arr[i]/1000;
 			long sek=arr[i]%60;
 			long min=arr[i]/60;
 			if(sek<10){
@@ -141,9 +143,9 @@ public class Logik{
 		}
 		long ges=(trT+trR+trC)/100;
 		DefaultPieDataset pieDataset = new DefaultPieDataset();
-		pieDataset.setValue("Red: "+timeText[0]+"min", ges*trT);
-		pieDataset.setValue("Refactor: "+timeText[1]+"min", ges*trR);
-		pieDataset.setValue("Green: "+timeText[2]+"min",ges*trC);
+		pieDataset.setValue("Red: "+timeText[0]+"min", ges*arr[0]);
+		pieDataset.setValue("Refactor: "+timeText[2]+"min", ges*arr[2]);
+		pieDataset.setValue("Green: "+timeText[1]+"min",ges*arr[1]);
 		
 		JFreeChart chart = ChartFactory.createPieChart
 		("Time",pieDataset,true,false,false);
