@@ -8,7 +8,7 @@ import java.util.TimerTask;
 import FileHandling.Exercise;
 
 
-public class CountDown {
+public class CountDown{
 	private long count;
 
 	public CountDown(Exercise e) {

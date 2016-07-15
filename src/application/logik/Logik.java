@@ -31,7 +31,6 @@ public class Logik{
 		this.trC = 0;
 		this.trR = 0;
 		this.e=e;
-		this.trackStart();
 	}
 	
 	
@@ -124,9 +123,10 @@ public class Logik{
 		return tr2 - tr1;
 	}
 	
+	
 	public void stats(){
 		//http://www.math.hu-berlin.de/~ccafm/lehre_BZQ_Numerik/allg/JAVA_Pakete/JFreeChart/Codes/PieChart_code.html
-		//JFreeChart Library (GNU License)
+		//JFreeChart Library (GNU License deshalb benutzen wir die MIT-Lizenz)
 		DefaultPieDataset pieDataset = new DefaultPieDataset();
 		pieDataset.setValue("Red", 100/trT);
 		pieDataset.setValue("Refactor", 100/trR);
