@@ -1,6 +1,6 @@
+// Copyright (c) <2016> <Marcel Beeck, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package GUI;
 
-// Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 import java.io.File;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

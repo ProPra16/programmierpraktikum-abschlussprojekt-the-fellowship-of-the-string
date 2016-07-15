@@ -1,3 +1,5 @@
+// Copyright (c) <2016> <Marcel Beeck, Patrick Pirig, Phillippe Weise, Sabine Timmer>
+
 package FileHandling;
 
 import java.io.IOException;

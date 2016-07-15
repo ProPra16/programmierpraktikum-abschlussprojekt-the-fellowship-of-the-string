@@ -1,4 +1,4 @@
-// Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
+// Copyright (c) <2016> <Marcel Beeck, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package application.logik;
 
 import org.jfree.chart.ChartFactory;
