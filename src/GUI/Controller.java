@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import FileHandling.*;
 import application.logik.Logik;
+import java.io.IOException;
 
 public class Controller {
 
@@ -39,6 +40,19 @@ public class Controller {
     //    log = new Logik(e);
     //    Loader.loadExcercise(e);
     //}
+    @FXML
+    protected void save() {
+        try {
+            e.save();
+        } catch (IOException i) {
+            System.out.println("Fehler!");
+        }
+    }
+
+    @FXML
+    protected void load() {
+        Loader.loadExcercise(e);
+    }
 
 
     public void SwitchArea() {
