@@ -21,7 +21,7 @@ public class CountDown {
 					count--;
 
 				if (count == 0)
-					System.out.println("Abgelaufen");
+					System.out.println("Abgelaufen");//TODO
 			}
 		};
 		timer.schedule(task, 0, 1000);
