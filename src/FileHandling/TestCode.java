@@ -44,9 +44,9 @@ public class TestCode {
 						// tddt kreislauf
 	}
 
-	public boolean allTestsPassing() {
+	public boolean allTestsPassing(CompilationUnit compilationUnitCode) {
 		this.compilationUnitTest = new CompilationUnit(testName, testCode, true);
-		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitTest);
+		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitCode,compilationUnitTest);
 		compiler.compileAndRunTests();
 		CompilerResult compilerResult = compiler.getCompilerResult();
 		
@@ -75,4 +75,7 @@ public class TestCode {
 		
 		return this.testName;
 	}
+
+	public CompilationUnit getTestUnit() {
+		return this.compilationUnitTest = new CompilationUnit(testName, testCode, true);		}
 }

@@ -18,12 +18,12 @@ public class CodeList extends ArrayList<Code> {
 		super();
 	}
 
-	public boolean compilable() {
+	public boolean compilable(CompilationUnit compilationUnitTest) {
 
 		Object[] codeArray = this.toArray();
 
 		for (int i = 0; i < codeArray.length; i++) {
-			compilable = ((Code) codeArray[i]).testingCompilationUnit();
+			compilable = ((Code) codeArray[i]).testingCompilationUnit(compilationUnitTest);
 
 			if (compilable == false)
 				return false;
