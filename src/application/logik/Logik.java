@@ -52,7 +52,7 @@ public class Logik{
 		Exercise tmp = new Exercise();
 		tmp.clone(e);
 		
-		if(e.getBaby()==true) new CountDown(e);
+		//if(e.getBaby()==true) new CountDown(e);
 		switch(step){
 			case 0: {
 				

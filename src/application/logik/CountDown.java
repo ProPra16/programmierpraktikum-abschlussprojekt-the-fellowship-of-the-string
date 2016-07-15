@@ -6,25 +6,34 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import FileHandling.Exercise;
+import javafx.scene.control.TextArea;
 
 
-public class CountDown {
+public class CountDown extends Thread {
+	private String oldText;
 	private long count;
-
-	public CountDown(Exercise e) {
-		count = e.babyLimit();
-		Timer timer = new Timer();
-		TimerTask task = new TimerTask() {
-
-			public void run() {
-				if (count > 0)
-					count--;
-
-				if (count == 0)
-					System.out.println("Abgelaufen");//TODO
-					Logik.nextStep();//das laeuft NICHT wir brauchen hier das log Objekt
-			}
-		};
-		timer.schedule(task, 0, 1000);
+	private Timer timer;
+	private TextArea area;
+	
+	public CountDown(Exercise e,TextArea area,boolean isTest) {
+		if(isTest)this.oldText=e.getTest();
+		else{
+			this.oldText=e.getCode();
+		}
+		
+		this.count = e.babyLimit();
+		this.area=area;
+		
+		}
+	@Override	
+	public void run(){
+		try {
+			Thread.sleep(count*1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.area.setText(this.oldText);
 	}
+	
 }
