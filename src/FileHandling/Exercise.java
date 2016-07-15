@@ -65,13 +65,13 @@ public class Exercise {
 
 	public boolean codeCompiles() {
 
-		return this.klassen.compilable(this.klassen.getCodeUnit());
+		return this.klassen.compilable();
 
 	}
 
 	public boolean testsRunning() {
 
-		return this.test.allTestsPassing(this.test.getTestUnit());
+		return this.test.allTestsPassing(this.klassen.getCodeUnit());
 	}
 	
 	public boolean oneFailing(){

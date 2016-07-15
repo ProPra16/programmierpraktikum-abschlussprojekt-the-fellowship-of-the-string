@@ -34,10 +34,10 @@ public class Code {
 		return this.compilationUnitCode = new CompilationUnit(className, code, false);	
 	}
 
-	public boolean testingCompilationUnit(CompilationUnit compilationUnitTest) {		
+	public boolean testingCompilationUnit() {		
 
 		this.compilationUnitCode = new CompilationUnit(className, code, false);
-		JavaStringCompiler compiler = CompilerFactory.getCompiler(this.compilationUnitCode,compilationUnitTest);
+		JavaStringCompiler compiler = CompilerFactory.getCompiler(this.compilationUnitCode);
 		compiler.compileAndRunTests();
 		CompilerResult result = compiler.getCompilerResult();
 
