@@ -55,7 +55,9 @@ public class Logik{
 		if(e.getBaby()==true) new CountDown(e);
 		switch(step){
 			case 0: {
+				
 				tmp.setTest(code);
+				System.out.println(tmp.oneFailing());
 				if(tmp.oneFailing()){ //wenn tests kompilieren weiter
 					switchArea=true;
 					
@@ -72,6 +74,7 @@ public class Logik{
 				break;
 			}
 			case 1:{
+				System.out.println("case1");
 				tmp.setCode(code);
 				if(tmp.codeCompiles() && tmp.testsRunning()){//wenn compiliert und alle tests laufen weiter
 					
@@ -88,6 +91,7 @@ public class Logik{
 				break;
 			}
 			case 2:{
+				System.out.println("case2");
 				tmp.setCode(code);
 				if(tmp.codeCompiles() && tmp.testsRunning()){//wenn immernoch alles laeuft weiter
 					switchArea=true;
