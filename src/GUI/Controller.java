@@ -52,6 +52,12 @@ public class Controller {
     @FXML
     protected void load() {
         Loader.loadExcercise(e);
+        Area1.setText(e.getCode());
+        Area2.setText(e.getTest());
+        ampel.wechselZuRot(true);
+        log=new Logik(e);
+        Area1.setDisable(true);
+        Area2.setDisable(false);
     }
 
 
@@ -120,4 +126,5 @@ public class Controller {
     public static void setAmpel(Ampel amp) {
         ampel = amp;
     }
+    
 }
