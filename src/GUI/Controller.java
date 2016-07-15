@@ -58,6 +58,9 @@ public class Controller {
         log=new Logik(e);
         Area1.setDisable(true);
         Area2.setDisable(false);
+        bGreen.setDisable(false);
+        bRed.setDisable(true);
+        bYellow.setDisable(true);
     }
 
 
