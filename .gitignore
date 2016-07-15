@@ -9,3 +9,5 @@ src/vk
 jfreechart-1.0.19/
 HelloWorld.java
 HelloTest.java
+*.odt
+*.odt#
