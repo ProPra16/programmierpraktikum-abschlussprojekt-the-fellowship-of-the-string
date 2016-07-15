@@ -49,6 +49,10 @@ public class TestCode {
 		JavaStringCompiler compiler = CompilerFactory.getCompiler(compilationUnitCode,compilationUnitTest);
 		compiler.compileAndRunTests();
 		CompilerResult compilerResult = compiler.getCompilerResult();
+		if (compilerResult.hasCompileErrors() == true) {
+			System.out.println(TestHelpers.getErrorMessages(compiler, compilerResult));
+
+			return false;}
 		
 		TestResult result = compiler.getTestResult();
 		int fails = result.getNumberOfFailedTests();
