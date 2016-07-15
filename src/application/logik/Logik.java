@@ -31,6 +31,7 @@ public class Logik{
 		this.trC = 0;
 		this.trR = 0;
 		this.e=e;
+		trackStart();
 	}
 	
 	
@@ -63,6 +64,7 @@ public class Logik{
 					
 					if(tmp.getTimer()==true){
 					trT += trackStop();
+				//	System.out.println(trT/1000);
 					trackStart();
 					}
 					e.clone(tmp);
@@ -86,11 +88,10 @@ public class Logik{
 					e.clone(tmp);
 					step = 2;
 				}
-				else if(tmp.getBaby() == true){
-					delete();//TODO
-				}
-				break;
+					break;
 			}
+				
+			
 			case 2:{
 				System.out.println("case2");
 				tmp.setCode(code);
@@ -101,8 +102,6 @@ public class Logik{
 					trR += trackStop();
 					trackStart();
 					}
-					if(tmp.getBaby()==true) 
-						delete();//TODO
 					e.clone(tmp);
 					step = 0;
 				}
@@ -115,22 +114,36 @@ public class Logik{
 	//fuer tracking
 	// TODO trackStart() muss am anfang mit aufgerufen werden!!
 	private void trackStart(){
-		tr1 = System.nanoTime()/SEC;
+		tr1 = System.currentTimeMillis();
 	}
 	
 	private long trackStop(){
-		tr2 = System.nanoTime()/SEC;
-		return tr2 - tr1;
+		tr2 = System.currentTimeMillis()-tr1;
+		return tr2;
 	}
 	
 	
 	public void stats(){
 		//http://www.math.hu-berlin.de/~ccafm/lehre_BZQ_Numerik/allg/JAVA_Pakete/JFreeChart/Codes/PieChart_code.html
 		//JFreeChart Library (GNU License deshalb benutzen wir die MIT-Lizenz)
+		long[] arr=new long[3];
+		arr[0]=trT/1000;arr[1]=trR/1000;arr[2]=trC/1000;
+		String[] timeText=new String[3];
+		for(int i=0;i<timeText.length;i++){
+			long sek=arr[i]%60;
+			long min=arr[i]/60;
+			if(sek<10){
+				timeText[i]=min+" : 0"+sek;
+			}
+			else {
+				timeText[i]=min+" : "+sek;
+			}
+		}
+		long ges=(trT+trR+trC)/100;
 		DefaultPieDataset pieDataset = new DefaultPieDataset();
-		pieDataset.setValue("Red", 100/trT);
-		pieDataset.setValue("Refactor", 100/trR);
-		pieDataset.setValue("Green",100/ trC);
+		pieDataset.setValue("Red: "+timeText[0]+"min", ges*trT);
+		pieDataset.setValue("Refactor: "+timeText[1]+"min", ges*trR);
+		pieDataset.setValue("Green: "+timeText[2]+"min",ges*trC);
 		
 		JFreeChart chart = ChartFactory.createPieChart
 		("Time",pieDataset,true,false,false);

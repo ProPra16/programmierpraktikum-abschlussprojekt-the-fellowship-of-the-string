@@ -80,8 +80,8 @@ public class NumbersTest{
 </test>
 		</tests>
 		<config>
-			<babysteps value="false" seconds="0" />
-			<timetracking value="false" />
+			<babysteps value="true" seconds="70" />
+			<timetracking value="true" />
 		</config>
 	</exercise>
 </excercises>
