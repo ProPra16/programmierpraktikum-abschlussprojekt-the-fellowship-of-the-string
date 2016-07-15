@@ -60,7 +60,7 @@ public class RomanNumbersTest {
 		<classes>
 			<class name="Numbers">
 public class Numbers{
-	public int convert(int i){
+	public static int convert(int i){
 		return 0;
 	}
 }</class>
@@ -69,12 +69,12 @@ public class Numbers{
 <test name="NumbersTest">
 import static org.junit.Assert.*;
 import org.junit.Test;
-import Numbers;
+
 public class NumbersTest{
-	@test
+	@Test
 	public void Test1(){
 	int i=1;
-	assertEquals(i,Numbers.convert(i));
+	assertEquals(1,Numbers.convert(i));
 	}
 }
 </test>

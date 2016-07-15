@@ -89,7 +89,7 @@ public class Controller {
     @FXML
     protected void toYellow() {
         System.out.println("toYellow");
-        String code = Area2.getText();
+        String code = Area1.getText();
         if (log.nextStep(code)) {
             ampel.wechselZuGelb(true);
             //SwitchArea();

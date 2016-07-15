@@ -76,8 +76,9 @@ public class Logik{
 			case 1:{
 				System.out.println("case1");
 				tmp.setCode(code);
-				if(tmp.codeCompiles() && tmp.testsRunning()){//wenn compiliert und alle tests laufen weiter
-					
+				System.out.println(tmp.testsRunning());
+				if(tmp.testsRunning()){//wenn compiliert und alle tests laufen weiter
+					switchArea=true;
 					if(tmp.getTimer()==true){
 					trC += trackStop();
 					trackStart();
@@ -93,7 +94,7 @@ public class Logik{
 			case 2:{
 				System.out.println("case2");
 				tmp.setCode(code);
-				if(tmp.codeCompiles() && tmp.testsRunning()){//wenn immernoch alles laeuft weiter
+				if(tmp.testsRunning()){//wenn immernoch alles laeuft weiter
 					switchArea=true;
 					
 					if(tmp.getTimer()== true){
