@@ -1,11 +1,6 @@
+// Copyright (c) <2016> <Marcel Beeck, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package GUI;
-
 //bugs gefixt mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
-// Copyright (c) <2016> <Marcel Beek, Patrick Pirig, Phillippe Weise, Sabine Timmer>
-
-
-//(GridPane auf StackPane legen) mit hilfe von https://kjswebdevelopment.wordpress.com/2014/06/12/simple-java-traffic-light/
-
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

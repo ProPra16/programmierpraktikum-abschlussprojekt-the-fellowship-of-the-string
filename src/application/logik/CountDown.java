@@ -1,4 +1,4 @@
-
+// Copyright (c) <2016> <Marcel Beeck, Patrick Pirig, Phillippe Weise, Sabine Timmer>
 package application.logik;
 //inspiriert von http://www.java-forum.org/thema/countdown-timer-fuer-spiel.96377/
 
