@@ -33,6 +33,8 @@ public class TestCode {
 		compiler.compileAndRunTests();
 		CompilerResult compilerResult = compiler.getCompilerResult();
 		if (compilerResult.hasCompileErrors() == true) {
+			System.out.println(TestHelpers.getErrorMessages(compiler, compilerResult));
+
 			return false;}		//muss vorher kompilieren
 		TestResult result = compiler.getTestResult();
 		int fails = result.getNumberOfFailedTests();
