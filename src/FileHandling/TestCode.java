@@ -38,7 +38,7 @@ public class TestCode {
 		int fails = result.getNumberOfFailedTests();
 
 		if (fails == 1)
-			return true;
+			return false;
 		return false; // mehr als ein test schlaegt fehl sollte nicht sein im
 						// tddt kreislauf
 	}
