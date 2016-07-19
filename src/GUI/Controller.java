@@ -51,7 +51,7 @@ public class Controller {
         try {
             e.save();
         } catch (IOException i) {
-            System.out.println("Fehler!");
+           // System.out.println("Fehler!");
         }
     }
 
@@ -91,7 +91,7 @@ public class Controller {
     // Buttons verändern
     @FXML 
     protected void toRed() {
-        System.out.println("toRed");
+       // System.out.println("toRed");
         String code = Area1.getText();
         if (log.nextStep(code)) {
             
@@ -122,7 +122,7 @@ public class Controller {
 	@FXML
     protected void toGreen() {
     	
-        System.out.println("toGreen");
+        //System.out.println("toGreen");
         String code = Area2.getText();
         if (log.nextStep(code)) {
             ampel.wechselZuGruen(true);
@@ -153,7 +153,7 @@ public class Controller {
     @FXML
     protected void toYellow() {
     	
-        System.out.println("toYellow");
+        //System.out.println("toYellow");
         String code = Area1.getText();
         if (log.nextStep(code)) {
             

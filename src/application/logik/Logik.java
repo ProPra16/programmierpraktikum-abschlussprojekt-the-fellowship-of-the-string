@@ -58,7 +58,7 @@ public class Logik{
 			case 0: {
 				
 				tmp.setTest(code);
-				System.out.println(tmp.oneFailing());
+				//System.out.println(tmp.oneFailing());
 				if(tmp.oneFailing()){ //wenn tests kompilieren weiter
 					switchArea=true;
 					
@@ -76,9 +76,9 @@ public class Logik{
 				break;
 			}
 			case 1:{
-				System.out.println("case1");
+				//System.out.println("case1");
 				tmp.setCode(code);
-				System.out.println(tmp.testsRunning());
+				//System.out.println(tmp.testsRunning());
 				if(tmp.testsRunning()){//wenn compiliert und alle tests laufen weiter
 					switchArea=true;
 					if(tmp.getTimer()==true){
@@ -93,7 +93,7 @@ public class Logik{
 				
 			
 			case 2:{
-				System.out.println("case2");
+				//System.out.println("case2");
 				tmp.setCode(code);
 				if(tmp.testsRunning()){//wenn immernoch alles laeuft weiter
 					switchArea=true;
