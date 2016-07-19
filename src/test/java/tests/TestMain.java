@@ -11,8 +11,6 @@ import FileHandling.TestCode;
 
 public class TestMain {
 
-
-
 	@Test
 	public void testCodeCompilableTrue() {
 		Code c = new Code("Foo",
@@ -29,8 +27,6 @@ public class TestMain {
 														// zahlen
 	}
 
-
-		
 	@Test
 	public void testCodeListCompilableTrue() {
 		CodeList l = new CodeList();
@@ -52,7 +48,5 @@ public class TestMain {
 		l.add(c2);
 		assertEquals(false, l.compilable());
 	}
-	
-	
 
 }
