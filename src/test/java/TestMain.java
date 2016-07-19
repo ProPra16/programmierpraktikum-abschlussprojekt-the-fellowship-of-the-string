@@ -11,10 +11,7 @@ import FileHandling.TestCode;
 
 public class TestMain {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+
 
 	@Test
 	public void testCodeCompilableTrue() {
@@ -26,7 +23,7 @@ public class TestMain {
 																										// World
 																										// testcode;
 		assertEquals(true, c.testingCompilationUnit()); // fehler wegen
-														// anführungzeichen
+														// anfuehrungzeichen
 														// innerhalb des prints,
 														// deshalb stattdessen
 														// zahlen

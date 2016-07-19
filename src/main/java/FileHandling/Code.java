@@ -10,7 +10,7 @@ import vk.core.api.CompilationUnit;
 import vk.core.api.CompilerFactory;
 import vk.core.api.CompilerResult;
 import vk.core.api.JavaStringCompiler;
-import vk.core.api.TestHelpers;
+
 
 public class Code {
 
@@ -42,7 +42,6 @@ public class Code {
 		CompilerResult result = compiler.getCompilerResult();
 
 		if (result.hasCompileErrors() == true) {
-			System.out.println(TestHelpers.getErrorMessages(compiler, result));
 			this.compilable = false;
 		}
 

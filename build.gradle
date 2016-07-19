@@ -4,6 +4,9 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'maven'
+apply plugin: 'application'
+
+mainClassName="GUI.GUIMain"
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -14,8 +17,18 @@ repositories {
 dependencies {
     // The production code uses the SLF4J logging API at compile time
     compile 'org.slf4j:slf4j-api:1.7.13'
-    compile 'https://repo1.maven.org/maven2/jfreechart/jfreechart/1.0.0/jfreechart-1.0.0.pom'
-    compile 'group:de.hhu.stups name:virtual-kata-lib version:1.0.1'
+    compile 'jfreechart:jfreechart:1.0.0'
+    compile 'de.hhu.stups:virtual-kata-lib:1.0.1'
     
     testCompile 'junit:junit:4.12'
+}
+
+distributions {
+    main {
+        contents {
+            from("katalog") {
+                into "bin"
+            }
+        }
+    }
 }

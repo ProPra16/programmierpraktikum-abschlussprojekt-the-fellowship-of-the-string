@@ -11,3 +11,5 @@ HelloWorld.java
 HelloTest.java
 *.odt
 *.odt#
+.gradle
+build

@@ -19,7 +19,7 @@ public class GUIMain extends Application {
 
 	public void start(Stage stage) throws Exception {
         // FXML-Datei laden
-		Pane root = (Pane) FXMLLoader.load(getClass().getResource("ProPra.fxml"));
+		Pane root = (Pane) FXMLLoader.load(getClass().getResource("/ProPra.fxml"));
         // Status-Ampel
 		Ampel A = new Ampel();
         Controller.setAmpel(A);
