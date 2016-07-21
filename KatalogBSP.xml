@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE excercises SYSTEM "excercises.dtd">
+<excercises>
+
+<exercise>
+<description>Hard Hello World^^
+</description>
+<classes>
+<class name="HelloLSG">
+public class HelloLSG{
+	public static void main(String[] args){
+		System.out.print(15);}}
+</class>
+</classes>
+<tests>
+<test name="HelloTest">import static org.junit.Assert.*;
+import org.junit.Test;
+public class HelloTest {
+	@Test
+	public void testSomething() {
+	}
+}</test>
+</tests>
+<config>
+<babysteps value="bla" seconds="3"/>
+<timetracking value="true"/>
+</config>
+</exercise>
+<exercise>
+<description>
+Simple Hello World
+</description>
+<classes>
+<class name="hello">
+public class hello {
+	public static void main(String[] args){
+	System.out.println("Hello World");
+	}
+}
+</class>
+</classes>
+<tests>
+<test name="HelloTest">
+import static org.junit.Assert.*;
+import org.junit.Test;
+public class RomanNumbersTest {
+	@Test
+	public void testSomething() {
+	}
+}
+</test>
+</tests>
+<config>
+<babysteps value="true" seconds="250" />
+<timetracking value="false" />
+</config>
+</exercise>
+	<exercise>
+		<description>Funktioniert</description>
+		<classes>
+			<class name="Numbers">
+public class Numbers{
+	public static int convert(int i){
+		return 0;
+	}
+}</class>
+</classes>
+<tests>
+<test name="NumbersTest">
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class NumbersTest{
+	@Test
+	public void Test1(){
+	int i=1;
+	assertEquals(1,Numbers.convert(i));
+	}
+}
+</test>
+		</tests>
+		<config>
+			<babysteps value="true" seconds="70" />
+			<timetracking value="true" />
+		</config>
+	</exercise>
+</excercises>
